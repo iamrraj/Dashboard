@@ -14,7 +14,7 @@ import user from './Views/User/user'
 import Udetails from './Views/User/Udetails'
 import Login from './Container/Login'
 import Notification from './Views/Page/Notification'
-import Report from './Views/Page/Notification'
+import Report from './Views/Page/Report'
 
 import './App.css';
 
