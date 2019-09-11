@@ -39,19 +39,32 @@ class Dashboard extends Component {
             <div className="container" style={{marginTop:"20px"}}>
            
                 <div className="row">
-                    <div className="col-sm-5">
+                    <div className="col-sm-3">
                        Hello <strong>UserName,</strong>
                        <Datee/>
                     </div>
-                    <div className="col-sm-3">
-                        <form>
+            <div className="col-sm-8">
+                <form>
+                <div className="row">
+                    <div className="col-sm-5">
                         <div class="form-group">
+                            From 
+                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px"}} />
                         
-                            <input type="date" name="from"  class="form-control datepicker"  />
-                                  
-                         </div>
-                        </form>
+                        </div>
                     </div>
+
+                    <div className="col-sm-4">
+                        <div class="form-group">
+                            To
+                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px"}} />
+                        
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+                   
                 </div>
 
 <div style={{background:"white", padding:"15px"}}>

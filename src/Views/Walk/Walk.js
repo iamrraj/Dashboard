@@ -4,62 +4,76 @@ class Walk extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                    <center>
-                        <form className="col-sm-3">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Select Date</option>
-                                <option value="2019-08">2019-08</option>
-                                <option value="2019-07">2019-07</option>
-                                <option value="2019-06">2019-06</option>
-                                <option value="2019-05">2019-05</option>
-                                <option value="2019-04">2019-04</option>
-                                <option value="2019-03">2019-03</option>
-                            </select>
-                        </form>
-                    </center>
+                <form >
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                From 
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
+
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                To
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
                 <h3 className="text-center" style={{marginTop:"10px"}}> Walk All List </h3>
 
                     <table class="table table-bordered table-striped" style={{marginTop:"10px"}}>
                     <thead>
-                        <tr>
+                        <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
                         <th scope="col">User Name</th>
                         <th scope="col">Milage</th>
-                        <th scope="col">Kilograms Transpored</th>
+                        <th scope="col">Moving Time</th>
+                        <th scope="col">Kg Transpored</th>
+                        <th scope="col">Addition Boxex</th>
 
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr style={{background:"white"}}>
                         <th scope="row">1</th>
-                        <td ><a href="/overview/3443" className="text-primary">Anybody</a></td>
-                        <td>14</td>
-                        <td>34:00</td>
+                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">WhatEver </a></td>
+                        <td>14 Km</td>
+                        <td>2hr 12min</td>
+                        <td>11Kg</td>
+                        <td>4</td>
                         </tr>
 
-                        <tr>
-                        <th scope="row">2</th>
-                        <td ><a href="/overview/3443" className="text-primary">Anybody</a></td>
-                        <td>14</td>
-                        <td>34:00</td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Anyone </a></td>
+                        <td>14 Km</td>
+                        <td>2hr 12min</td>
+                        <td>11Kg</td>
+                        <td>4</td>
                         </tr>
 
-
-                        <tr>
-                        <th scope="row">3</th>
-                        <td ><a href="/overview/3443" className="text-primary">Anybody</a></td>
-                        <td>14</td>
-                        <td>34:00</td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Who Cares </a></td>
+                        <td>14 Km</td>
+                        <td>2hr 12min</td>
+                        <td>11Kg</td>
+                        <td>4</td>
                         </tr>
 
-
-                        <tr>
-                        <th scope="row">4</th>
-                        <td ><a href="/overview/3443" className="text-primary">Anybody</a></td>
-                        <td>14</td>
-                        <td>34:00</td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Does Not Matter </a></td>
+                        <td>14 Km</td>
+                        <td>2hr 12min</td>
+                        <td>11Kg</td>
+                        <td>4</td>
                         </tr>
                     </tbody>
 
@@ -67,14 +81,17 @@ class Walk extends Component {
                         <tr>
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">232</th>
-                        <th scope="col" className="text-primary">34</th>
+                        <th scope="col" className="text-primary">14 Km</th>
+                        <th scope="col" className="text-primary">2hr 12min</th>
+                        <th scope="col" className="text-primary">11kgs</th>
+                        <th scope="col" className="text-primary">4</th>
                         </tr>
                     </thead>
 
                     </table>
            </div>
         )
+
     }
 }
 

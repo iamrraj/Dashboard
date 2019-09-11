@@ -27,11 +27,11 @@ const BaseLayout = () => (
           <Route path="/electricbike"  component={ElectricBike} />
           <Route path="/classicbike"  component={ClassicBike} />
           <Route path="/walk"  component={Walk} />
-          <Route path="/overview/:id"  component={Edetails} />
+          <Route path="/overvie/:id"  component={Edetails} />
           <Route path="/overview/4343"  component={Cdetails} />
           <Route path="/overview/3443"  component={Details} />
           <Route path="/user"  component={user} />
-          <Route path="/overview/name"  component={Udetails} />
+          <Route path="/overview/lol"  component={Udetails} />
           <Route path="/login"  component={Login} />
           <Route path="/notification"  component={Notification} />
           <Route path="/report"  component={Report} />

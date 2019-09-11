@@ -31,78 +31,121 @@ export class user extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
+
+                <form >
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                From 
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
+
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                To
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
                   
 
-                <h3 className="text-center" style={{marginTop:"10px"}}> User Details: &nbsp;<strong> POSTMAN NAME</strong> </h3>
+                {/* <h3 className="text-center" style={{marginTop:"10px"}}> User Details: &nbsp;<strong> POSTMAN NAME</strong> </h3> */}
 
                     <table class="table table-striped table-bordered" style={{marginTop:"10px"}}>
                     <thead>
-                        <tr>
+                        <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Distribution Type</th>
-                        <th scope="col">Milage</th>
-                        <th scope="col">Weight Boxes</th>
-                        <th scope="col">Additional Pickup</th>
-                        <th scope="col">Map</th>
-                        <th scope="col">Intract</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Traveled by walk</th>
+                        <th scope="col">Distributed by Wal</th>
+                        <th scope="col">Traveld By CB</th>
+                        <th scope="col">Distributed by CB</th>
+                        <th scope="col">Traveld By EB</th>
+                        <th scope="col">Distributed by EB</th>
+                        <th scope="col">Total Milage</th>
+                        <th scope="col">Total Weight Transported</th>
                         
 
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr style={{background:"white"}}>
                         <th scope="row">1</th>
-                        <td ><a href="/overview/name" className="text-primary">09-09-2019</a></td>
-                        <td>Post</td>
-                        <td>13</td>
-                        <td>2 Kgs</td>
-                        <td>2</td>
-                        <td><a href="# "><i className="fa fa-map"></i></a></td>
-                        <td><a href="# " data-toggle="modal" data-target="#exampleModal"><i className="fa fa-envelope"></i></a> &nbsp; <a href="# "><i className="fa fa-mobile"></i></a></td>
+                        <td ><a href="/overview/lol" style={{color:"#13B760"}}  class="font-weight-bold">Anybody</a></td>
+                        <td>45 Km</td>
+                        <td>13 Kg</td>
+                        <td>156 Km</td>
+                        <td>340 Kg</td>
+                        <td>440 Km</td>
+                        <td>120 Kg</td>
+                        <td>1233 Km</td>
+                        <td>223 Kg</td>
+                    
                         </tr>
 
 
-                        <tr>
-                        <th scope="row">2</th>
-                        <td ><a href="/overview/name" className="text-primary">07-09-2019</a></td>
-                        <td>Parcel</td>
-                        <td>33</td>
-                        <td>1.5 Kgs</td>
-                        <td>0</td>
-                        <td><a href="# "><i className="fa fa-map"></i></a></td>
-                        <td><a href="# " data-toggle="modal" data-target="#exampleModal"><i className="fa fa-envelope"></i></a> &nbsp; <a href="# "><i className="fa fa-mobile"></i></a></td>
-                        
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">Anyone</a></td>
+                        <td>45 Km</td>
+                        <td>13 Kg</td>
+                        <td>156 Km</td>
+                        <td>340 Kg</td>
+                        <td>440 Km</td>
+                        <td>120 Kg</td>
+                        <td>1233 Km</td>
+                        <td>223 Kg</td>
+                        {/* <td><a href="# " data-toggle="modal" data-target="#exampleModal"><i className="fa fa-envelope"></i></a> &nbsp; <a href="# "><i className="fa fa-mobile"></i></a></td> */}
                         </tr>
 
 
-
-                        <tr>
-                        <th scope="row">3</th>
-                        <td ><a href="/overview/name" className="text-primary">08-09-2019</a></td>
-                        <td>Letter</td>
-                        <td>11</td>
-                        <td>0.5 Kgs</td>
-                        <td>2</td>
-                        <td><a href="# "><i className="fa fa-map"></i></a></td>
-                        <td><a href="# " data-toggle="modal" data-target="#exampleModal"><i className="fa fa-envelope"></i></a> &nbsp; <a href="# "><abbr title="+48722750363"><i className="fa fa-mobile"></i></abbr></a></td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">Whatever</a></td>
+                        <td>45 Km</td>
+                        <td>13 Kg</td>
+                        <td>156 Km</td>
+                        <td>340 Kg</td>
+                        <td>440 Km</td>
+                        <td>120 Kg</td>
+                        <td>1233 Km</td>
+                        <td>223 Kg</td>
                         </tr>
 
+
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">WhoCares</a></td>
+                        <td>45 Km</td>
+                        <td>13 Kg</td>
+                        <td>156 Km</td>
+                        <td>340 Kg</td>
+                        <td>440 Km</td>
+                        <td>120 Kg</td>
+                        <td>1233 Km</td>
+                        <td>223 Kg</td>
+                        </tr>
                        
                     </tbody>
-
                     <thead>
                         <tr>
                         
                         <th scope="col"></th>
-                        <th scope="col"></th>
                         <th scope="col" className="font-weight-bold">Summery</th>
-                        <th scope="col" className="text-primary">57</th>
-                        <th scope="col" className="text-primary">4</th>
-                        <th scope="col" className="text-primary">4</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col">45 Km</th>
+                        <th scope="col" className="text-primary">13 Kg</th>
+                        <th scope="col" className="text-primary">156 km</th>
+                        <th scope="col" className="text-primary">340 kg</th>
+                        <th scope="col">440 km</th>
+                        <th scope="col">120 Kg</th>
+                        <th scope="col">1233 Km</th>
+                        <th scope="col">223 Kgs</th>
                         
                         </tr>
                     </thead>

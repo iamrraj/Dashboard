@@ -4,94 +4,99 @@ class ClassicBike extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                    <center>
-                        <form className="col-sm-3">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Select Date</option>
-                                <option value="2019-08">2019-08</option>
-                                <option value="2019-07">2019-07</option>
-                                <option value="2019-06">2019-06</option>
-                                <option value="2019-05">2019-05</option>
-                                <option value="2019-04">2019-04</option>
-                                <option value="2019-03">2019-03</option>
-                            </select>
-                        </form>
-                    </center>
+                <form >
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                From 
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
 
-                <h3 className="text-center" style={{marginTop:"20px"}}> Classic Bike All List </h3>
+                        <div className="col-sm-4">
+                            <div class="form-group">
+                                To
+                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                            
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <h3 className="text-center" style={{marginTop:"20px"}}> All List Of ClassicBike </h3>
 
                     <table class="table table-striped table-bordered" >
                     <thead>
-                        <tr>
+                        <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
-                        <th scope="col">Bike Id</th>
+                        <th scope="col">Bike Id and User</th>
                         <th scope="col">Milage</th>
                         <th scope="col">Moving Time</th>
                         <th scope="col">Avgerage Speed</th>
                         <th scope="col">Kilograms Transpored</th>
                         <th scope="col">Safe Co2</th>
-                        <th scope="col">No Of User</th>
+                        <th scope="col">Additional Boxex</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr style={{background:"white"}}>
                         <th scope="row">1</th>
-                        <td ><a href="/overview/4343" className="text-primary">463643</a></td>
+                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
+                        <td>45 Km</td>
+                        <th >4h 11min</th>
+                        <td>14 Km/hr</td>
+                        <td>67Kg</td>
+                        <td>190 Mg </td>
                         <td>14</td>
-                        <td>34:00</td>
-                        <th >12</th>
-                        <td>34</td>
-                        <td>676 </td>
-                        <td>4</td>
                         </tr>
 
-                        <tr>
-                        <th scope="row">2</th>
-                        <td ><a href="/overview/4343" className="text-primary">525255</a></td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
+                        <td>45 Km</td>
+                        <th >4h 11min</th>
+                        <td>14 Km/hr</td>
+                        <td>67Kg</td>
+                        <td>190 Mg </td>
                         <td>14</td>
-                        <td>34:00</td>
-                        <th >12</th>
-                        <td>34</td>
-                        <td>676 </td>
-                        <td>4</td>
-                        </tr>
-
-
-                        <tr>
-                        <th scope="row">3</th>
-                        <td ><a href="/overview/4343" className="text-primary">525225</a></td>
-                        <td>14</td>
-                        <td>34:00</td>
-                        <th >12</th>
-                        <td>34</td>
-                        <td>676 </td>
-                        <td>4</td>
                         </tr>
 
 
-                        <tr>
-                        <th scope="row">4</th>
-                        <td ><a href="/overview/4343" className="text-primary">325223</a></td>
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
+                        <td>45 Km</td>
+                        <th >4h 11min</th>
+                        <td>14 Km/hr</td>
+                        <td>67Kg</td>
+                        <td>190 Mg </td>
                         <td>14</td>
-                        <td>34:00</td>
-                        <th >12</th>
-                        <td>34</td>
-                        <td>676 </td>
-                        <td>4</td>
                         </tr>
+
+                        <tr style={{background:"white"}}>
+                        <th scope="row">1</th>
+                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
+                        <td>45 Km</td>
+                        <th >4h 11min</th>
+                        <td>14 Km/hr</td>
+                        <td>67Kg</td>
+                        <td>190 Mg </td>
+                        <td>14</td>
+                        </tr>                
                     </tbody>
 
                     <thead>
                         <tr>
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">232</th>
-                        <th scope="col" className="text-primary">4545</th>
-                        <th scope="col" className="text-primary">5353</th>
-                        <th scope="col" className="text-primary">4311</th>
-                        <th scope="col" className="text-primary">32</th>
-                        <th scope="col" className="text-primary">34</th>
+                        <th scope="col" className="text-primary">45 Km</th>
+                        <th scope="col" className="text-primary">4h 11min</th>
+                        <th scope="col" className="text-primary">14 km/hr</th>
+                        <th scope="col" className="text-primary">67 Kg</th>
+                        <th scope="col" className="text-primary">190 Mg</th>
+                        <th scope="col" className="text-primary">14</th>
                         </tr>
                     </thead>
 

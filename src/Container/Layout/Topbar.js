@@ -54,7 +54,7 @@ class Topbar extends Component {
                    <li class="nav-item dropdown  active">
                       <a class="nav-link dropdown-toggle font-weight-bolder" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
                         Notification 
-                            <p class='cadge '>21</p>
+                            <p class='cadge '>2</p>
                        
                       </a>
                       <div class="dropdown-menu noti " aria-labelledby="navbarDropdown">
