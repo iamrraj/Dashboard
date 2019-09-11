@@ -3,14 +3,14 @@ import Swal from "sweetalert2";
 import Cookies from 'universal-cookie';
 
 export class Login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      email:"",
-      password:"",
-      submitted:false
-    }
 
+    this.state = {
+      email: "",
+      password: "",
+      submitted: false
+    };
     this.cookies = new Cookies()
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +36,7 @@ export class Login extends Component {
 
   async fetchUserData() {
     Swal.fire({
-      title: "Login In Process",
+      title: "Logging in Process",
       showCancelButton: false,
       showConfirmButton: false,
       onBeforeOpen: () => {
@@ -54,7 +54,7 @@ export class Login extends Component {
     };
 
     const request = await fetch(
-      "http://tardis-back.herokuapp.com/auth/sign_in",
+      "https://tardis-back.herokuapp.com/auth/sign_in",
       requestData
     );
     const response = await request
@@ -73,7 +73,7 @@ export class Login extends Component {
 
     if (!error) {
       Swal.fire({
-        title: "Logigging",
+        title: "Loggedin",
         type: "success",
         showConfirmButton: false,
         timer: 1000
@@ -84,14 +84,12 @@ export class Login extends Component {
       });
     } else {
       Swal.fire({
-        title: "Login Error",
+        title: "Logging Error",
         type: "error",
-        text: "You Entered Incorrect Email Or Password"
+        text: "Your entered Wrong Email or Password"
       });
     }
   }
-
-
 
     render() {
         return (
@@ -139,7 +137,7 @@ export class Login extends Component {
         
                         <input type="submit" value="Login"  onClick={this.handleSubmit} class="btn btn-secondary btn-block"  />
                         <br></br>
-                        <p>New User ?<a href="# " > Register here</a></p>
+                        
                       </form>
                     </div>
                   </div>

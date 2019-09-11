@@ -40,24 +40,21 @@ class Dashboard extends Component {
            
                 <div className="row">
                     <div className="col-sm-5">
-                        <Datee/>
+                       Hello <strong>UserName,</strong>
+                       <Datee/>
                     </div>
                     <div className="col-sm-3">
                         <form>
-                        <select class="form-control"  name="startDate" id="exampleFormControlSelect1"  selected={ this.state.startDate }
-                                onChange={ this.handleChange }>
-                            <option>Select Date</option>
-                            <option value="2019-08">2019-08</option>
-                            <option value="2019-07">2019-07</option>
-                            <option value="2019-06">2019-06</option>
-                            <option value="2019-05">2019-05</option>
-                            <option value="2019-04">2019-04</option>
-                            <option value="2019-03">2019-03</option>
-                        </select>
+                        <div class="form-group">
+                        
+                            <input type="date" name="from"  class="form-control datepicker"  />
+                                  
+                         </div>
                         </form>
                     </div>
                 </div>
 
+<div style={{background:"white", padding:"15px"}}>
             <h4 className="text-center font-weight-bolder">Summary</h4>
 
                 <div class="row">
@@ -65,7 +62,7 @@ class Dashboard extends Component {
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9" }}>
                             <div className="row container">
                                 <div className="col-sm-5 ">
-                                    <i className="fa fa-tree text-center " style={{color:"#74EA79",fontSize:"60px",marginTop:"25px"}} ></i>
+                                    <i className="fa fa-tree text-center " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
                                 </div>
                                 <div className="col-sm-7">
                                     <h5><strong>84638 </strong></h5>
@@ -79,11 +76,11 @@ class Dashboard extends Component {
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                             <div className="row container">
                                 <div className="col-sm-5 ">
-                                    <i className="fa fa-weight-hanging  " style={{color:"#74EA79",fontSize:"60px",marginTop:"25px"}} ></i>
+                                    <i className="fa fa-weight-hanging  " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
                                 </div>
                                 <div className="col-sm-7">
                                     <h5><strong>84638 </strong></h5>
-                                    <p>Total Weight</p>
+                                    <p>Total Weight Of Boxex</p>
                                 </div>
                             </div>  
                         </div>
@@ -93,10 +90,10 @@ class Dashboard extends Component {
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                             <div className="row container">
                                 <div className="col-sm-5 ">
-                                    <i className="fa fa-tree  " style={{color:"#74EA79",fontSize:"60px",marginTop:"25px"}} ></i>
+                                    <i className="fa fa-tree  " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
                                 </div>
                                 <div className="col-sm-7">
-                                    <h5><strong>84638 </strong></h5>
+                                    <h5><strong>845 Mg </strong></h5>
                                     <p>Total Safe Co2</p>
                                 </div>
                             </div>  
@@ -116,11 +113,11 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#577858",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>26 Kgs </strong></h4>
-                                        <p>ToTal Weight Of Boxex</p>
+                                        <p>Total Weight Of Boxex</p>
                                     </div>
                                 </div>  
                             </div>
@@ -131,7 +128,7 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#577858",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>234Kgs </strong></h4>
@@ -146,11 +143,11 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#577858",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>432Kgs </strong></h4>
-                                        <p>Total Weight Boxes</p>
+                                        <p>Total Weight Of Boxes</p>
                                     </div>
                                 </div>  
                             </div>
@@ -168,7 +165,7 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-walking  " style={{color:"#74EA79",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-walking  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>84638 </strong></h4>
@@ -182,7 +179,7 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-bicycle  " style={{color:"#74EA79",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-bicycle  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>84638 </strong></h4>
@@ -196,7 +193,7 @@ class Dashboard extends Component {
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-bicycle  " style={{color:"#74EA79",fontSize:"80px",marginTop:"15px"}} ></i>
+                                        <i className="fa fa-bicycle  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
                                     </div>
                                     <div className="col-sm-6">
                                         <h4><strong>84638 </strong></h4>
@@ -205,6 +202,7 @@ class Dashboard extends Component {
                                 </div>  
                             </div>
                     </div>
+                </div>
                 </div>
              {/* End Here Col-6 */}
         </div>

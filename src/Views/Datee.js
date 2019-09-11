@@ -21,7 +21,7 @@ export class Datee extends Component {
         const { date } = this.state;
         return (
             <div>
-                <p style={{fontSize:"15px"}}>Hello, <strong>{date}</strong></p>
+                <p style={{fontSize:"15px"}}>{date}</p>
             </div>
         )
     }
