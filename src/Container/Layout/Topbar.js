@@ -55,7 +55,7 @@ class Topbar extends Component {
                 </ul>
                 <ul className="navbar-nav">
                     <li className="nav-item  active" >
-                      <a className="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}> UserName</a>
+                      <a className="nav-link font-weight-bolder" href="# "  style={{color: "#212226"}}> UserName</a>
                     </li>
 
                    {/* For Notification */}

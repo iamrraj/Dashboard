@@ -205,6 +205,9 @@ tr{
 a:hover{
   text-decoration: none;
 }
+th{
+  color: rgba(33, 34, 38, 1.0)
+}
 
 
 
