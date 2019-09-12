@@ -41,8 +41,8 @@ class Walk extends Component {
                     </div>
                 </form>
 
-                <h3 className="text-center" style={{marginTop:"10px"}}> Walk All List </h3>
-
+                {/* <h3 className="text-center" style={{marginTop:"10px"}}> Walk All List </h3> */}
+<div className="bg-white"  style={{padding:"15px"}}>
                     <table class="table table-bordered table-striped" style={{marginTop:"10px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
@@ -106,6 +106,7 @@ class Walk extends Component {
                     </thead>
 
                     </table>
+                    </div>
            </div>
         )
 

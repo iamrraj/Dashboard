@@ -43,8 +43,8 @@ class ElectricBike extends Component {
                     </div>
                 </form>
 
-                <h3 className="text-center" style={{marginTop:"20px"}}>All Electric Bike list </h3>
-
+                {/* <h3 className="text-center" style={{marginTop:"20px"}}>All Electric Bike list </h3> */}
+                <div className="bg-white"  style={{padding:"15px"}}>
                     <table class="table  table-bordered" style={{marginTop:"10px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
@@ -89,7 +89,7 @@ class ElectricBike extends Component {
                         </tr>
                     </thead>
                     </table>
-
+</div>
 
                 
             </div>
