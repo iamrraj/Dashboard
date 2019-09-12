@@ -55,7 +55,7 @@ export class user extends Component {
                   
 
                 {/* <h3 className="text-center" style={{marginTop:"10px"}}> User Details: &nbsp;<strong> POSTMAN NAME</strong> </h3> */}
-                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
                     <table class="table " style={{marginTop:"20px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>

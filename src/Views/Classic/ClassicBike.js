@@ -25,7 +25,7 @@ class ClassicBike extends Component {
                 </form>
 
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}> All List Of ClassicBike </h3> */}
-                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
                     <table class="table " style={{marginTop:"20px"}} >
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>

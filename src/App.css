@@ -171,13 +171,13 @@ h4{
   background: white;
 }
 .rrr:hover{
-  border: 1px solid rgba(19, 183, 96, 1.0);
+  border: 2px solid #CCEFDC;
   border-bottom: 0 white;
   background: white;
   color: #000;
 }
 .l:hover{
-  border: 1px solid rgba(19, 183, 96, 1.0);
+  border: 2px solid #CCEFDC;
   border-bottom: 0 white;
   background: white;
   color: #000;
