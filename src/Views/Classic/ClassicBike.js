@@ -89,7 +89,7 @@ class ClassicBike extends Component {
 
                     <thead>
                         <tr>
-                        <th scope="col"></th>
+                        <tr style={{background:"#F5FAF3"}}>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
                         <th scope="col" className="text-primary">45 Km</th>
                         <th scope="col" className="text-primary">4h 11min</th>
