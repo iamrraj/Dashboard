@@ -95,8 +95,8 @@ class Walk extends Component {
                     </tbody>
 
                     <thead>
-                        <tr>
                         <tr style={{background:"#F5FAF3"}}>
+                        <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
                         <th scope="col" className="text-primary">14 Km</th>
                         <th scope="col" className="text-primary">2hr 12min</th>
