@@ -198,8 +198,14 @@ h4{
 }
 
 tr{
-  border-top: 2px solid #CCEFDC
+  border-top: 2px solid #CCEFDC;
+  margin: 12px 12px 12px 12px;
+  
 }
+a:hover{
+  text-decoration: none;
+}
+
 
 
 

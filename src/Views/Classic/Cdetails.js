@@ -1,95 +1,86 @@
 import React, { Component } from 'react'
-import { MDBDataTable } from 'mdbreact';
+
 
 
 export class Cdetails extends Component {
     render() {
-        const data = {
-            columns: [
-            {
-                label: 'Id',
-                field: 'id',
-                sort: 'asc',
-                width: 150
-                },
-              {
-                label: 'Date',
-                field: 'date',
-                sort: 'asc',
-                width: 150
-              },
-              {
-                label: 'UserName(Postman)',
-                field: 'name',
-                sort: 'asc',
-                width: 270
-              },
-              {
-                label: 'Milage',
-                field: 'milage',
-                sort: 'asc',
-                width: 200
-              },
-              {
-                label: 'Total Time',
-                field: 'time',
-                sort: 'asc',
-                width: 150
-              },
-              {
-                label: 'Average Speed',
-                field: 'average',
-                sort: 'asc',
-                width: 100
-              },
-              
-            ],
-            rows: [
-              {
-                id: '1',
-                date: '24-02-2019',
-                name: 'Anybody',
-                milage: '15',
-                time: '45 min',
-                average: '09'
-              },
-              {
-                id: '2',
-                date: '29-02-2019',
-                name: 'Anybody',
-                milage: '12',
-                time: '55 min',
-                average: '13'
-              },
-              {
-                id: '3',
-                date: '02-02-2019',
-                name: 'Anybody',
-                milage: '13',
-                time: '15 min',
-                average: '15'
-              },
-              {
-                id: '4',
-                date: '11-02-2019',
-                name: 'Anybody',
-                milage: '12',
-                time: '23 min',
-                average: '14'
-              }
-              
-            ]
-          };        
+       
         return (
         <div className="container" >
         
-        <h1 className="text-center" style={{marginTop:"10px"}}>Classic Bike  Details <stron>66767</stron></h1>
-            <MDBDataTable
-            striped
-            bordered
-            hover
-            data={data}
-          />
+        <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
+          <a href="/classicbike" style={{color:"black", fontSize:"16px"}}> <i class="fa fa-arrow-left fa-1x" aria-hidden="true" style={{color:"#CCEFDC",height:"20px"}}></i>  CB (Anna Joly)</a>
+                    <table class="table " style={{marginTop:"20px"}} >
+                    <thead>
+                        <tr style={{background:"#CCEFDC"}}>
+                        <th scope="col">Id</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Milage</th>
+                        <th scope="col">Moving Time</th>
+                        <th scope="col">Average Speed</th>
+                        <th scope="col">KG Transported</th>
+                        <th scope="col">Additional Boxex</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                        <th scope="row">1</th>
+                        <td >12-09-2019 </td>
+                        <td>45 Km</td>
+                        <td>3h 45min</td>
+                        <td>14 km/hr</td>
+                        <td>67Kg</td>
+                        <td>14</td>
+                        </tr>
+
+                        <tr >
+                        <th scope="row">3</th>
+                        <td >12-09-2019 </td>
+                        <td>45 Km</td>
+                        <td>3h 45min</td>
+                        <td>14 km/hr</td>
+                        <td>67Kg</td>
+                        <td>14</td>
+                        </tr>
+
+                        <tr >
+                        <th scope="row">3</th>
+                        <td >12-09-2019 </td>
+                        <td>45 Km</td>
+                        <td>3h 45min</td>
+                        <td>14 km/hr</td>
+                        <td>67Kg</td>
+                        <td>14</td>
+                        </tr>
+
+                        <tr >
+                        <th scope="row">4</th>
+                        <td >12-09-2019 </td>
+                        <td>45 Km</td>
+                        <td>3h 45min</td>
+                        <td>14 km/hr</td>
+                        <td>67Kg</td>
+                        <td>14</td>
+                        </tr>
+
+                    </tbody>
+
+                    <thead>
+                        <tr className="thead">
+                        <th scope="col"></th>
+                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
+                        <th scope="col" className="text-primary">45 Km</th>
+                        <th scope="col" className="text-primary">3h 45min</th>
+                        <th scope="col" className="text-primary">14 km/hr</th>
+                        <th scope="col" className="text-primary">67 Kg</th>
+                        <th scope="col" className="text-primary">14</th>
+                        </tr>
+                    </thead>
+
+                    </table>
+                </div>
+
         </div>
         )
     }
