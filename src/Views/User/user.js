@@ -55,8 +55,8 @@ export class user extends Component {
                   
 
                 {/* <h3 className="text-center" style={{marginTop:"10px"}}> User Details: &nbsp;<strong> POSTMAN NAME</strong> </h3> */}
-
-                    <table class="table table-striped table-bordered" style={{marginTop:"10px"}}>
+                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                    <table class="table " style={{marginTop:"20px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -75,7 +75,7 @@ export class user extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/lol" style={{color:"#13B760"}}  class="font-weight-bold">Anybody</a></td>
                         <td>45 Km</td>
@@ -134,7 +134,7 @@ export class user extends Component {
                        
                     </tbody>
                     <thead>
-                        <tr>
+                        <tr className="thead">
                         
                         <th scope="col"></th>
                         <th scope="col" className="font-weight-bold">Summery</th>
@@ -151,9 +151,9 @@ export class user extends Component {
                     </thead>
 
                     </table>
+                </div>
 
-
-                    {/* <!-- Modal --> */}
+                    {/* <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -178,11 +178,11 @@ export class user extends Component {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            {/* <button type="button" class="btn btn-primary" onClick={() => { this.handleReply("swingingChair49@usa.pl") }} >Save changes</button> */}
+                            <button type="button" class="btn btn-primary" onClick={() => { this.handleReply("swingingChair49@usa.pl") }} >Save changes</button>
                         </div>
                         </div>
                     </div>
-                    </div>
+                    </div> */}
 
 
 

@@ -44,8 +44,8 @@ class ElectricBike extends Component {
                 </form>
 
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}>All Electric Bike list </h3> */}
-                <div className="bg-white"  style={{padding:"15px"}}>
-                    <table class="table  table-bordered" style={{marginTop:"10px"}}>
+                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                    <table class="table  " style={{marginTop:"20px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -62,7 +62,7 @@ class ElectricBike extends Component {
                     </thead>
                 {this.state.movies.map( c =>
                     <tbody key={c.id} >
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row" >{c.genre_ids}</th>
                         <td  ><a href={'overvie/'+ c.id} className="font-weight-bold" style={{color:"#13B760"}}>{c.id}</a></td>
                         <td>{c.vote_average}</td>
@@ -75,8 +75,8 @@ class ElectricBike extends Component {
                         </tr>   
                     </tbody>
                 )}
-                    <thead>
-                        <tr style={{background:"#F5FAF3"}}>
+                    <thead className="thead">
+                        <tr >
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
                         <th scope="col" className="text-primary">232</th>

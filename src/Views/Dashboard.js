@@ -55,7 +55,7 @@ class Dashboard extends Component {
                     <div className="col-sm-5">
                         <div class="form-group">
                             From 
-                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px"}} />
+                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"170px",color:"#13B760"}} />
                         
                         </div>
                     </div>
@@ -63,10 +63,12 @@ class Dashboard extends Component {
                     <div className="col-sm-4">
                         <div class="form-group">
                             To
-                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px"}} />
+                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"170px",color:"#13B760"}} />
                         
                         </div>
                     </div>
+
+                    
                 </div>
                 </form>
             </div>
@@ -79,13 +81,13 @@ class Dashboard extends Component {
 
                 <div class="row">
                 <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <div style={{boxShadow: "0 9px 17px 8px #E5E8E9" }}>
-                            <div className="row container">
+                        <div className="box">
+                            <div className="row container n">
                                 <div className="col-sm-5  ">
                                 <img src={map} alt="map" className="rectangle" />
                                 </div>
                                 <div className="col-sm-7">
-                                    <h5>1236 Km </h5>
+                                    <h5>936 Km </h5>
                                     <p id="p">Total Milage <br /></p>
                                 </div>
                             </div>  
@@ -93,9 +95,9 @@ class Dashboard extends Component {
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                            <div className="row container">
-                                <div className="col-sm-5 container ">
+                        <div className="box">
+                            <div className="row container n">
+                                <div className="col-sm-5  ">
                                 <img src={weight} alt="weight" className="rectangle" />
                                 </div>
                                 <div className="col-sm-7">
@@ -107,8 +109,8 @@ class Dashboard extends Component {
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                            <div className="row container">
+                        <div className="box">
+                            <div className="row container n">
                                 <div className="col-sm-5 container ">
                                 <img src={leaf} alt="leaf" className="rectangle" />
                                 </div>
@@ -130,12 +132,12 @@ class Dashboard extends Component {
                 <div className="row" style={{marginTop:"35px"}}>
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <h4>WALK DISTRIBUTION</h4>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                                <div className="row container">
-                                    <div className="col-sm-6 ">
+                            <div className="box">
+                                <div className="row container r">
+                                    <div className="col-sm-5 ">
                                        <img src={walk} alt="walk" className="rectangle" />
                                     </div>
-                                    <div className="col-sm-6">
+                                    <div className="col-sm-7">
                                         <h5>13 Km </h5>
                                         <p id="p">Traveled By <br />Walk</p>
                                     </div>
@@ -145,8 +147,8 @@ class Dashboard extends Component {
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <h4>ELECTRIC BICYCLE</h4>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                                <div className="row container">
+                            <div className="box">
+                                <div className="row container r" >
                                     <div className="col-sm-5 ">
                                     <img src={electric} alt="electric" className="rectangle" />
                                     </div>
@@ -160,8 +162,8 @@ class Dashboard extends Component {
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <h4>CLASSIC BIKE</h4>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                                <div className="row container">
+                            <div className="box">
+                                <div className="row container r">
                                     <div className="col-sm-5 ">
                                         <img src={classic} alt="classic" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
                                     </div>
@@ -182,12 +184,12 @@ class Dashboard extends Component {
                
 <div className="row" style={{marginTop:"30px"}}>
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9",}}>
-                                <div className="row container">
-                                    <div className="col-sm-6 ">
+                            <div className="box">
+                                <div className="row container r">
+                                    <div className="col-sm-5 ">
                                     <img src={walk} alt="walk" className="rectangle" />
                                     </div>
-                                    <div className="col-sm-6">
+                                    <div className="col-sm-7">
                                         <h5>34 Kg </h5>
                                         <p id="p">Distributed by <br /> walk</p>
                                     </div>
@@ -196,8 +198,8 @@ class Dashboard extends Component {
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                                <div className="row container">
+                            <div className="box">
+                                <div className="row container r">
                                     <div className="col-sm-5 ">
                                     <img src={electric} alt="walk" className="rectangle" />
                                     </div>
@@ -210,8 +212,8 @@ class Dashboard extends Component {
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
-                                <div className="row container">
+                            <div className="box">
+                                <div className="row container r">
                                     <div className="col-sm-5 ">
                                     <img src={classic} alt="walk" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
                                     </div>

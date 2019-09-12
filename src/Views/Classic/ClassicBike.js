@@ -25,8 +25,8 @@ class ClassicBike extends Component {
                 </form>
 
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}> All List Of ClassicBike </h3> */}
-                <div className="bg-white"  style={{padding:"15px"}}>
-                    <table class="table table-striped table-bordered" >
+                <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                    <table class="table " style={{marginTop:"20px"}} >
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -41,7 +41,7 @@ class ClassicBike extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
                         <td>45 Km</td>
@@ -52,7 +52,7 @@ class ClassicBike extends Component {
                         <td>14</td>
                         </tr>
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
                         <td>45 Km</td>
@@ -64,7 +64,7 @@ class ClassicBike extends Component {
                         </tr>
 
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
                         <td>45 Km</td>
@@ -75,7 +75,7 @@ class ClassicBike extends Component {
                         <td>14</td>
                         </tr>
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
                         <td>45 Km</td>
@@ -88,7 +88,7 @@ class ClassicBike extends Component {
                     </tbody>
 
                     <thead>
-                        <tr style={{background:"#F5FAF3"}}>
+                        <tr className="thead">
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
                         <th scope="col" className="text-primary">45 Km</th>

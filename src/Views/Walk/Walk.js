@@ -42,10 +42,10 @@ class Walk extends Component {
                 </form>
 
                 {/* <h3 className="text-center" style={{marginTop:"10px"}}> Walk All List </h3> */}
-<div className="bg-white"  style={{padding:"15px"}}>
-                    <table class="table table-bordered table-striped" style={{marginTop:"10px"}}>
-                    <thead>
-                        <tr style={{background:"#CCEFDC"}}>
+<div className="bg-white"  style={{padding:"15px",borderTop: "2px solid rgba(19, 183, 96, 1.0)"}}>
+                    <table class="table " style={{marginTop:"20px"}}>
+                    <thead style={{background:"#CCEFDC"}}>
+                        <tr >
                         <th scope="col">Id</th>
                         <th scope="col">User Name</th>
                         <th scope="col">Milage</th>
@@ -57,7 +57,7 @@ class Walk extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style={{background:"white"}}>
+                        <tr>
                         <th scope="row">1</th>
                         <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">WhatEver </a></td>
                         <td>14 Km</td>
@@ -66,7 +66,7 @@ class Walk extends Component {
                         <td>4</td>
                         </tr>
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Anyone </a></td>
                         <td>14 Km</td>
@@ -75,7 +75,7 @@ class Walk extends Component {
                         <td>4</td>
                         </tr>
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Who Cares </a></td>
                         <td>14 Km</td>
@@ -84,7 +84,7 @@ class Walk extends Component {
                         <td>4</td>
                         </tr>
 
-                        <tr style={{background:"white"}}>
+                        <tr >
                         <th scope="row">1</th>
                         <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Does Not Matter </a></td>
                         <td>14 Km</td>
@@ -95,7 +95,7 @@ class Walk extends Component {
                     </tbody>
 
                     <thead>
-                        <tr style={{background:"#F5FAF3"}}>
+                        <tr className="thead" >
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
                         <th scope="col" className="text-primary">14 Km</th>

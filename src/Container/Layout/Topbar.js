@@ -98,9 +98,9 @@ class Topbar extends Component {
               </div>
           </nav>
 
-          <nav className="navbar navbar-expand-lg navbar-dark " >
-              <a className="navbar-brand" href="/" style={{color:"rgba(19, 183, 96, 1.0)", background:"white", padding:"10px"}}> DASHBOARD</a>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#nnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <nav className="navbar navbar-expand-lg navbar-dark container " >
+              <a className="navbar-brand rrr" href="/" style={{color:"rgba(19, 183, 96, 1.0)"}}> DASHBOARD</a>
+              <button className="navbar-toggler" style={{background:"#13B760"}} type="button" data-toggle="collapse" data-target="#nnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="nnavbarSupportedContent">

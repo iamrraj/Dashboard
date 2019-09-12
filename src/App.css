@@ -73,14 +73,18 @@
   
 }
 
+/* Dashboard Section */
 .noti{
   width: 270px;
   color:#212226;
 }
 
+/* Reort Button */
 .btn-outline-success {
   width:100px;
 }
+
+/* Dashboard Section */
 
 .head{
   color:rgba(19, 183, 96, 1.0);
@@ -132,6 +136,13 @@ h4{
   max-width: 900px;
 }
 
+.n{
+  padding-bottom: 30px;
+}
+.r{
+  padding-bottom: 15px;
+}
+
 .l{
   font-family         : "Rubik", Helvetica, Arial, serif;
   font-weight         : 500;
@@ -143,11 +154,29 @@ h4{
   line-height         : 15.0px;
   background: white;
   margin-right: 10px;
-  padding: 5px;
+  padding: 15px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   
 
 }
-.l:hover:focus-visible{
+
+.rrr{
+  font-family         : "Rubik", Helvetica, Arial, serif;
+  color               : rgba(19, 183, 96, 1.0);
+  margin-right: 10px;
+  padding: 20px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background: white;
+}
+.rrr:hover{
+  border: 1px solid rgba(19, 183, 96, 1.0);
+  border-bottom: 0 white;
+  background: white;
+  color: #000;
+}
+.l:hover{
   border: 1px solid rgba(19, 183, 96, 1.0);
   border-bottom: 0 white;
   background: white;
@@ -156,6 +185,22 @@ h4{
 .ll{
   color               : rgba(19, 183, 96, 1.0);
 }
+
+.box{
+  box-shadow: 0px 5px 5px 4px #E5E8E9;  
+  /* "0 9px 17px 8px #E5E8E9"  */
+}
+
+.thead{
+  border-top: 2px solid rgba(19, 183, 96, 1.0);
+  background: #F5FAF3;
+  
+}
+
+tr{
+  border-top: 2px solid #CCEFDC
+}
+
 
 
 
