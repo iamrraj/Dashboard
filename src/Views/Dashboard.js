@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import Datee from './Datee'
+import walk from '../img/walk.png'
+import map from '../img/map.png'
+import leaf from '../img/leaf.png'
+import weight from '../img/weight.png'
+import classic from '../img/lol.png'
+import electric from '../img/electric.png'
 
 
 class Dashboard extends Component {
@@ -67,19 +73,20 @@ class Dashboard extends Component {
                    
                 </div>
 
-<div style={{background:"white", padding:"15px"}}>
+<div style={{background:"white", padding:"25px"}} >
+<div className="cont">
             <h4 className="text-center font-weight-bolder">Summary</h4>
 
                 <div class="row">
                 <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9" }}>
                             <div className="row container">
-                                <div className="col-sm-5 ">
-                                    <i className="fa fa-tree text-center " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
+                                <div className="col-sm-5  ">
+                                <img src={map} alt="map" className="rectangle" />
                                 </div>
                                 <div className="col-sm-7">
-                                    <h5><strong>84638 </strong></h5>
-                                    <p><a href="# " className="text-dark">Total Milage</a></p>
+                                    <h5>1236 Km </h5>
+                                    <p id="p">Total Milage <br /></p>
                                 </div>
                             </div>  
                         </div>
@@ -88,12 +95,12 @@ class Dashboard extends Component {
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                             <div className="row container">
-                                <div className="col-sm-5 ">
-                                    <i className="fa fa-weight-hanging  " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
+                                <div className="col-sm-5 container ">
+                                <img src={weight} alt="weight" className="rectangle" />
                                 </div>
                                 <div className="col-sm-7">
-                                    <h5><strong>84638 </strong></h5>
-                                    <p>Total Weight Of Boxex</p>
+                                    <h5>346 Kgs</h5>
+                                    <p id="p">Total boxes weight <br /></p>
                                 </div>
                             </div>  
                         </div>
@@ -102,12 +109,12 @@ class Dashboard extends Component {
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                             <div className="row container">
-                                <div className="col-sm-5 ">
-                                    <i className="fa fa-tree  " style={{color:"#13B760",fontSize:"60px",marginTop:"25px"}} ></i>
+                                <div className="col-sm-5 container ">
+                                <img src={leaf} alt="leaf" className="rectangle" />
                                 </div>
                                 <div className="col-sm-7">
-                                    <h5><strong>845 Mg </strong></h5>
-                                    <p>Total Safe Co2</p>
+                                    <h5>845 Mg </h5>
+                                    <p id="p">Total Save Co2 <br /></p>
                                 </div>
                             </div>  
                         </div>
@@ -118,49 +125,49 @@ class Dashboard extends Component {
 
                
 
-                <h4 className="text-center font-weight-bolder">Distribution Type</h4>
+                {/* <h4 className="text-center font-weight-bolder" style={{marginTop:"35px"}}>Distribution Type</h4> */}
 
-                <div className="row" style={{marginTop:"15px"}}>
+                <div className="row" style={{marginTop:"35px"}}>
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>Walk</h4>
+                        <h4>WALK DISTRIBUTION</h4>
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                       <img src={walk} alt="walk" className="rectangle" />
                                     </div>
                                     <div className="col-sm-6">
-                                        <h4><strong>26 Kgs </strong></h4>
-                                        <p>Total Weight Of Boxex</p>
+                                        <h5>13 Km </h5>
+                                        <p id="p">Traveled By <br />Walk</p>
                                     </div>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>Electric Bicycle</h4>
+                        <h4>ELECTRIC BICYCLE</h4>
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
-                                    <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                    <div className="col-sm-5 ">
+                                    <img src={electric} alt="electric" className="rectangle" />
                                     </div>
-                                    <div className="col-sm-6">
-                                        <h4><strong>234Kgs </strong></h4>
-                                        <p>Total Weight Of Boxes</p>
+                                    <div className="col-sm-7">
+                                        <h5>456 Kms</h5>
+                                        <p id="p">Traveled By electric bicycle</p>
                                     </div>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>Classic Bicycle</h4>
+                        <h4>CLASSIC BIKE</h4>
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
-                                    <div className="col-sm-6 ">
-                                        <i className="fa fa-boxes  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                    <div className="col-sm-5 ">
+                                        <img src={classic} alt="classic" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
                                     </div>
-                                    <div className="col-sm-6">
-                                        <h4><strong>432Kgs </strong></h4>
-                                        <p>Total Weight Of Boxes</p>
+                                    <div className="col-sm-7">
+                                        <h5>178 Kms </h5>
+                                        <p id="p">Traveled By classic  bicycle</p>
                                     </div>
                                 </div>  
                             </div>
@@ -175,14 +182,14 @@ class Dashboard extends Component {
                
 <div className="row" style={{marginTop:"30px"}}>
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
+                            <div style={{boxShadow: "0 9px 17px 8px #E5E8E9",}}>
                                 <div className="row container">
                                     <div className="col-sm-6 ">
-                                        <i className="fa fa-walking  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                    <img src={walk} alt="walk" className="rectangle" />
                                     </div>
                                     <div className="col-sm-6">
-                                        <h4><strong>84638 </strong></h4>
-                                        <p>ToTal Milage</p>
+                                        <h5>34 Kg </h5>
+                                        <p id="p">Distributed by <br /> walk</p>
                                     </div>
                                 </div>  
                             </div>
@@ -191,12 +198,12 @@ class Dashboard extends Component {
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
-                                    <div className="col-sm-6 ">
-                                        <i className="fa fa-bicycle  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                    <div className="col-sm-5 ">
+                                    <img src={electric} alt="walk" className="rectangle" />
                                     </div>
-                                    <div className="col-sm-6">
-                                        <h4><strong>84638 </strong></h4>
-                                        <p>Total Milage</p>
+                                    <div className="col-sm-7">
+                                        <h5>234 Kgs </h5>
+                                        <p id="p">Distributed by electric bicycle</p>
                                     </div>
                                 </div>  
                             </div>
@@ -205,12 +212,12 @@ class Dashboard extends Component {
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                             <div style={{boxShadow: "0 9px 17px 8px #E5E8E9"}}>
                                 <div className="row container">
-                                    <div className="col-sm-6 ">
-                                        <i className="fa fa-bicycle  " style={{color:"#13B760",fontSize:"80px",marginTop:"15px"}} ></i>
+                                    <div className="col-sm-5 ">
+                                    <img src={classic} alt="walk" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
                                     </div>
-                                    <div className="col-sm-6">
-                                        <h4><strong>84638 </strong></h4>
-                                        <p>Total Milage</p>
+                                    <div className="col-sm-7">
+                                        <h5>67 Kgs </h5>
+                                        <p id="p">Distributed By classic bike</p>
                                     </div>
                                 </div>  
                             </div>
@@ -218,6 +225,7 @@ class Dashboard extends Component {
                 </div>
                 </div>
              {/* End Here Col-6 */}
+        </div>
         </div>
            
         )

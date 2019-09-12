@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import Logout from '../Logout'
+import head from '../../img/head.png'
 
 class Topbar extends Component {
   constructor(props){
     super(props);
     this.state={
       text : "Choose UserName",
+      value: props.value,
     }
+  }
+
+  handleChange(event){
+    this.setState({
+      value: event.target.value
+    });
   }
 
   walk = () =>{
@@ -37,28 +45,28 @@ class Topbar extends Component {
     render() {
         return (
           <div> 
-          <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-              <a class="navbar-brand" href="/" style={{color: "#212226"}}>Logo</a>
-              <button class="navbar-toggler" style={{background:"#13B760"}} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-white">
+              <a className="navbar-brand" href="/" style={{color: "#212226"}}><img src={head} alt="logo" style={{height:"40px"}}></img> &nbsp; <span className= "head">SOFT BIKE</span></a>
+              <button className="navbar-toggler" style={{background:"#13B760"}} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
                 </ul>
                 <ul className="navbar-nav">
-                    <li class="nav-item  active" >
-                      <a class="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}>< i className="fas fa-user"></i> UserName</a>
+                    <li className="nav-item  active" >
+                      <a className="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}> UserName</a>
                     </li>
 
                    {/* For Notification */}
-                   <li class="nav-item dropdown  active">
-                      <a class="nav-link dropdown-toggle font-weight-bolder" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
+                   <li className="nav-item dropdown  active">
+                      <a className="nav-link dropdown-toggle font-weight-bolder" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
                         Notification 
-                            <p class='cadge '>2</p>
+                            <p className='cadge '>2</p>
                        
                       </a>
-                      <div class="dropdown-menu noti " aria-labelledby="navbarDropdown">
-                      <table class="table">
+                      <div className="dropdown-menu noti " aria-labelledby="navbarDropdown">
+                      <table className="table">
                           <tbody>
                             <tr>
                               {/* <th scope="row">1</th> */}
@@ -80,8 +88,8 @@ class Topbar extends Component {
                       </div>
                     </li>
                   {/* End For Notificatioj */}
-                    <li class="nav-item  active">
-                      <a class="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}>< i className="fas fa-file" ></i> Report</a>
+                    <li className="nav-item  active">
+                      <a className="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}> Report</a>
                     </li>
                    
                    <Logout />
@@ -90,24 +98,24 @@ class Topbar extends Component {
               </div>
           </nav>
 
-          <nav class="navbar navbar-expand-lg navbar-dark bg-info" >
-              <a class="navbar-brand" href="/"><i class="fa fa-desktop" ></i> DASHBOARD</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+          <nav className="navbar navbar-expand-lg navbar-dark " >
+              <a className="navbar-brand" href="/" style={{color:"rgba(19, 183, 96, 1.0)", background:"white", padding:"10px"}}> DASHBOARD</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#nnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="nnavbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item  active">
-                      <a class="nav-link font-weight-bold" href="/walk"> <i class="fa fa-walking"></i> WALK</a>
+              <div className="collapse navbar-collapse" id="nnavbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item  l" >
+                      <a className="nav-link font-weight-bold" href="/walk" style={{color:"rgba(19, 183, 96, 1.0)"}}>  WALK</a>
                     </li>
-                    <li class="nav-item  active">
-                      <a class="nav-link font-weight-bold" href="/electricbike"><i class="fa fa-bicycle"></i> ELECTRIC BIKE </a>
+                    <li className="nav-item   l" >
+                      <a className="nav-link font-weight-bold ll" href="/electricbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> ELECTRIC BIKE </a>
                     </li>
-                    <li class="nav-item  active">
-                      <a class="nav-link font-weight-bold " href="/classicbike"><i class="fa fa-bicycle"></i> CLASSIC BIKE</a>
+                    <li className="nav-item   l" >
+                      <a className="nav-link font-weight-bold ll " href="/classicbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> CLASSIC BIKE</a>
                     </li>
-                    <li class="nav-item  active">
-                      <a class="nav-link font-weight-bold" href="/user"><i class="fa fa-user"></i> USER</a>
+                    <li className="nav-item   l" >
+                      <a className="nav-link font-weight-bold ll" href="/user" style={{color:"rgba(19, 183, 96, 1.0)"}}> USER</a>
                     </li>
                 </ul>
                
@@ -117,46 +125,46 @@ class Topbar extends Component {
 
 
 {/* <!-- Modal --> */}
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Report Page</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Report Page</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                         <form >
                           <div className="row">
                               <div className="col-sm-6">
-                                  <div class="form-group">
+                                  <div className="form-group">
                                       From 
-                                      <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                                      <input type="date" name="from"  className="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
                                   
                                   </div>
                               </div>
 
                               <div className="col-sm-6">
-                                  <div class="form-group">
+                                  <div className="form-group">
                                       To
-                                      <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px", color:"#13B760"}} />
+                                      <input type="date" name="to"  className="form-control datepicker" style={{ width:"150px", color:"#13B760"}} />
                                   
                                   </div>
                               </div>
                           </div>
 
                           <p>Choose the Distribution Type</p>
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-outline-success active" onClick={this.walk}>Walk</button>
-                            <button type="button" class="btn btn-outline-success" onClick={this.electric}>EB</button>
-                            <button type="button" class="btn btn-outline-success" onClick={this.classic}>CB</button>
-                            <button type="button" class="btn btn-outline-success" onClick={this.user}>User</button>
+                          <div className="btn-group">
+                            <button type="button" className="btn btn-outline-success active" onClick={this.walk}>Walk</button>
+                            <button type="button" className="btn btn-outline-success" onClick={this.electric}>EB</button>
+                            <button type="button" className="btn btn-outline-success" onClick={this.classic}>CB</button>
+                            <button type="button" className="btn btn-outline-success" onClick={this.user}>User</button>
                           </div> 
 
-                          <div class="form-group" style={{marginTop:"20px"}}>
+                          <div className="form-group" style={{marginTop:"20px"}}>
                               <label for="exampleFormControlSelect2">{this.state.text}</label>
-                              <select multiple class="form-control" id="exampleFormControlSelect2" style={{width:"200px", color:"#13B760"}}>
+                              <select multiple className="form-control" id="exampleFormControlSelect2" style={{width:"200px", color:"#13B760"}} value={this.state.value} name={this.props.name} onChange={this.handleChange.bind(this)}>
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -165,7 +173,7 @@ class Topbar extends Component {
                           </select>
                           </div>
 
-                          <center><button class="btn btn-success" style={{width:"200px"}} ><i className="fas fa-file"> </i> Get Report</button></center>
+                          <center><a href="/report" className="btn btn-success" style={{width:"200px"}} ><i className="fas fa-file"> </i> Get Report</a></center>
                           </form>
                         </div>
                         {/* <div class="modal-footer">
@@ -184,3 +192,31 @@ class Topbar extends Component {
 }
 
 export default Topbar;
+
+
+
+// render() {
+//   const dictionary = [
+//     { value: 'grapefruit', label: 'Grapefruit' },
+//     { value: 'lime', label: 'Lime' },
+//     { value: 'coconut', label: 'Coconut' },
+//     { value: 'mango', label: 'Mango' }
+//   ];
+
+//   return (
+//       <label>
+//         <select
+//           className="widefat"
+//           value={this.state.value}
+//           name={this.props.name}
+//           onChange={this.handleChange}
+//         >
+//           {dictionary.map(
+//             // Iterating over every entry of the dictionary and converting each
+//             // one of them into an `option` JSX element
+//             ({ value, label }) => <option key={value} value={value}>{label}</option>
+//           )}
+//         </select>
+//       </label>
+//   );
+// }

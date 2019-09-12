@@ -79,7 +79,7 @@ export default class Logout extends Component {
             //     {dictionaryContainer.getText('header', 'logout')}
             // </NavDropdown.Item>
             <li>
-                <a class="nav-link font-weight-bolder" href="# " data-toggle="modal" onClick={this.Logout} style={{color: "#212226"}}>< i className="fas fa-sign-out-alt"></i> Logout </a> 
+                <a class="nav-link font-weight-bolder" href="# " data-toggle="modal" onClick={this.Logout} style={{color: "#212226"}}> Logout </a> 
             </li>
         );
     }

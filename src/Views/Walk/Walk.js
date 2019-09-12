@@ -1,15 +1,31 @@
 import React, { Component } from 'react'
 
 class Walk extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            value: props.value,
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+    }
+    handleSubmit(event){
+        // this.setState({ value: event.target.value});
+        event.preventDefault();
+    }
+
+    // handleChange(event) {
+    //     this.setState({ value: event.target.value});
+    // }
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                <form >
+                <form onSubmit={this.handleSubmit} >
                     <div className="row">
                         <div className="col-sm-4">
                             <div class="form-group">
                                 From 
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                                <input type="date" name="from"  class="form-control datepicker" value={this.state.value} style={{ width:"150px",color:"#13B760"}} />
                             
                             </div>
                         </div>
@@ -17,10 +33,11 @@ class Walk extends Component {
                         <div className="col-sm-4">
                             <div class="form-group">
                                 To
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
+                                <input type="date" name="to"  class="form-control datepicker" value={this.state.value} style={{ width:"150px",color:"#13B760"}} />
                             
                             </div>
                         </div>
+                        {/* <input type="submit" /> */}
                     </div>
                 </form>
 

@@ -78,8 +78,83 @@
   color:#212226;
 }
 
-.nav-item .navlink {
-  color: #212226;
+.btn-outline-success {
+  width:100px;
+}
+
+.head{
+  color:rgba(19, 183, 96, 1.0);
+  font-family:  Helvetica, Arial, serif;
+  line-height  : 23.0px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+#p{
+  font-weight : 400;
+  font-family : "Roboto", Helvetica, Arial, serif;
+  opacity : 0.7;
+  font-size : 14.0px;
+  line-height         : 20.0px;
+  font-style          : normal;
+}
+h5{
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 900;
+  font-style          : normal;
+  font-size           : 24.0px;
+  color               : rgba(19, 183, 96, 1.0);
+  text-align          : left;
+  line-height         : 28.0px;
+  background-color    : rgba(255,255,255,0.0);
+
+
+}
+
+h4{
+  opacity             : 0.8;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 18.0px;
+  color               : rgba(33, 34, 38, 1.0);
+  text-align          : left;
+  line-height         : 19.0px;
+}
+.rectangle{
+  margin-top: 30px;
+  margin-left: 18px;
+  opacity: 0.7;
+  height: 60px;
+}
+
+.cont{
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.l{
+  font-family         : "Rubik", Helvetica, Arial, serif;
+  font-weight         : 500;
+  font-style          : normal;
+  font-size           : 13.0px;
+
+  text-align          : left;
+  letter-spacing      : -0.11px;
+  line-height         : 15.0px;
+  background: white;
+  margin-right: 10px;
+  padding: 5px;
+  
+
+}
+.l:hover:focus-visible{
+  border: 1px solid rgba(19, 183, 96, 1.0);
+  border-bottom: 0 white;
+  background: white;
+  color: #000;
+}
+.ll{
+  color               : rgba(19, 183, 96, 1.0);
 }
 
 
