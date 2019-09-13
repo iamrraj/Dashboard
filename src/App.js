@@ -8,6 +8,7 @@ import ElectricBike from './Views/Electric/ElectricBike'
 import ClassicBike from './Views/Classic/ClassicBike'
 import Walk from './Views/Walk/Walk'
 import Edetails from './Views/Electric/Edetails'
+import DetailE from './Views/Electric/DetailE'
 import Cdetails from './Views/Classic/Cdetails'
 import Details from './Views/Walk/Details'
 import user from './Views/User/user'
@@ -27,8 +28,9 @@ const BaseLayout = () => (
           <Route path="/electricbike"  component={ElectricBike} />
           <Route path="/classicbike"  component={ClassicBike} />
           <Route path="/walk"  component={Walk} />
-          <Route path="/overvie/:id"  component={Edetails} />
+          <Route path="/overview/e"  component={Edetails} />
           <Route path="/overview/4343"  component={Cdetails} />
+          <Route path="/overview/365"  component={DetailE} />
           <Route path="/overview/3443"  component={Details} />
           <Route path="/user"  component={user} />
           <Route path="/overview/lol"  component={Udetails} />
