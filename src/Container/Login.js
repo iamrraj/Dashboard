@@ -54,7 +54,7 @@ export class Login extends Component {
     };
 
     const request = await fetch(
-      "https://tardis-back.herokuapp.com/auth/sign_in",
+      "http://localhost:8001/token-auth/",
       requestData
     );
     const response = await request

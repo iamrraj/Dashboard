@@ -62,7 +62,7 @@ class Topbar extends Component {
                    <li className="nav-item dropdown  active">
                       <a className="nav-link dropdown-toggle font-weight-bolder" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
                         Notification 
-                            <p className='cadge '>2</p>
+                        <span class="badge badge-danger">4</span>
                        
                       </a>
                       <div className="dropdown-menu noti " aria-labelledby="navbarDropdown">
@@ -72,6 +72,9 @@ class Topbar extends Component {
                               {/* <th scope="row">1</th> */}
                               <td>
                                   <a href="# " style={{fontWeight:"bold", color:"#212226"}}>There will be some details hjdfgjdfsdf hkhfjdf yueyrue ueyr</a><br></br>
+                                  {/* <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button> */}
                                   <span style={{fontSize:"13px",opacity:"0.6"}}>2 hours Ago </span>
                               </td>
                             </tr>
