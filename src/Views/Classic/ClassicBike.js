@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 
 class ClassicBike extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            movies:[],
+        }
+    }
+
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://softbike.herokuapp.com/api/cbike`);
+            const movies = await res.json();
+            console.log(movies)
+            this.setState({
+                movies: movies
+            });
+        }catch(e){
+            console.log(e);
+        }
+    }
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
@@ -26,7 +45,7 @@ class ClassicBike extends Component {
 
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}> All List Of ClassicBike </h3> */}
                 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
-                    <table class="table " style={{marginTop:"20px"}} >
+                    <table class="table table-hover" style={{marginTop:"20px"}} >
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -40,52 +59,20 @@ class ClassicBike extends Component {
 
                         </tr>
                     </thead>
-                    <tbody>
+                {this.state.movies.map( c => 
+                    <tbody key={c.pk}>
                         <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        </tr>
-
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">CB(Anna Joly)</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        </tr>                
+                        <td>{c.pk}</td>
+                        <td ><a href={'coverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.bikeid}</a></td>
+                        <td>{c.mileage} Km</td>
+                        <td>{c.movingtime}</td>
+                        <td>{c.averagespeed} Km/hr</td>
+                        <td>{c.kgtrasported}Kg</td>
+                        <td>{c.co2} Mg </td>
+                        <td>{c.additionalbox}</td>
+                        </tr>      
                     </tbody>
+                )}
 
                     <thead>
                         <tr className="thead">

@@ -32,7 +32,13 @@
   }
 }
 
+.table td{
+  padding: 15px;
+}
 
+.table th{
+  padding: 15px;
+}
 
 
 @media only screen and (max-width: 768px) {
@@ -64,8 +70,6 @@
   position: absolute;
   background: red;
   border-radius: 50%;
-
-  
 }
 
 /* Dashboard Section */

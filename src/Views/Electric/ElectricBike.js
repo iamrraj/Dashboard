@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 
 class ElectricBike extends Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state ={
-    //         movies:[],
-    //     }
-    // }
+    constructor(props){
+        super(props);
+        this.state ={
+            movies:[],
+        }
+    }
 
-    // async componentDidMount(){
-    //     try{
-    //         const res = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=222e7bb2f5b52cf29c95ea61cc204128&language=en-US`);
-    //         const movies = await res.json();
-    //         console.log(movies);
-    //         this.setState({
-    //             movies: movies.results
-    //         });
-    //     } catch(e){
-    //         console.log(e);
-    //     }
-    // }
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://softbike.herokuapp.com/api/ebike`);
+            const movies = await res.json();
+            // console.log(movies);
+            this.setState({
+                movies: movies
+            });
+        } catch(e){
+            console.log(e);
+        }
+    }
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
@@ -45,7 +45,7 @@ class ElectricBike extends Component {
 
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}>All Electric Bike list </h3> */}
                 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
-                    <table class="table  " style={{marginTop:"20px"}}>
+                    <table class="table table-hover table-lg " style={{marginTop:"20px"}}>
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -60,72 +60,24 @@ class ElectricBike extends Component {
 
                         </tr>
                     </thead>
-     
-                    <tbody  >
-                        <tr >
-                        <th scope="row" >1</th>
-                        <td ><a href="/overview/e" style={{color:"#13B760"}} class="font-weight-bold">RE01</a></td>
-                        <td>45 Km</td>
-                        <td>5h 56min</td>
-                        <th >14 km/hr</th>
-                        <td>67 Kg</td>
-                        <td>190 mg </td>
-                        <td>12</td>
-                        <td>5</td>
-                        </tr>   
+            {/* 
+             */}
 
-
-                        <tr >
-                        <th scope="row" >2</th>
-                        <td  ><a href="/overview/e"className="font-weight-bold" style={{color:"#13B760"}}>RE01</a></td>
-                        <td>45 Km</td>
-                        <td>5h 56min</td>
-                        <th >14 km/hr</th>
-                        <td>67 Kg</td>
-                        <td>190 mg </td>
-                        <td>12</td>
-                        <td>5</td>
-                        </tr>   
-
-
-                        <tr >
-                        <th scope="row" >3</th>
-                        <td  ><a href="/overview/e" className="font-weight-bold" style={{color:"#13B760"}}>RE01</a></td>
-                        <td>45 Km</td>
-                        <td>5h 56min</td>
-                        <th >14 km/hr</th>
-                        <td>67 Kg</td>
-                        <td>190 mg </td>
-                        <td>12</td>
-                        <td>5</td>
-                        </tr>   
-
-
-                        <tr >
-                        <th scope="row" >4</th>
-                        <td  ><a href="/overview/e" className="font-weight-bold" style={{color:"#13B760"}}>RE01</a></td>
-                        <td>45 Km</td>
-                        <td>5h 56min</td>
-                        <th >14 km/hr</th>
-                        <td>67 Kg</td>
-                        <td>190 mg </td>
-                        <td>12</td>
-                        <td>5</td>
-                        </tr>   
-
-
-                        <tr >
-                        <th scope="row" >5</th>
-                        <td  ><a href="overview/electric" className="font-weight-bold" style={{color:"#13B760"}}>RE01</a></td>
-                        <td>45 Km</td>
-                        <td>5h 56min</td>
-                        <th >14 km/hr</th>
-                        <td>67 Kg</td>
-                        <td>190 mg </td>
-                        <td>12</td>
-                        <td>5</td>
-                        </tr>   
+                {this.state.movies.map( c => 
+                    <tbody key={c.id} >
+                        <tr>
+                        <td  >{c.pk}</td>
+                        <td ><a href={'eoverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.bikeid}</a></td>
+                        <td>{c.mileage} Km</td>
+                        <td>{c.movingtime}</td>
+                        <td >{c.averagespeed} km/hr</td>
+                        <td>{c.kgtrasported} Kg</td>
+                        <td>{c.co2} mg </td>
+                        <td>{c.additionalbox}</td>
+                        <td>{c.nouser}</td>
+                        </tr> 
                     </tbody>
+                )}
 
                     <thead className="thead">
                         <tr >
