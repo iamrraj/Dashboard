@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import Summery from './Summery'
+import DateForm from '../Electric/DateForm'
 
 class Walk extends Component {
     constructor(props){
         super(props);
         this.state={
             value: props.value,
+            walk:[],
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.handleChange = this.handleChange.bind(this);
@@ -14,32 +17,43 @@ class Walk extends Component {
         event.preventDefault();
     }
 
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://localhost:8000/api/walk`);
+            const walk = await res.json();
+            this.setState({
+                walk: walk
+            });
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    // Get Data from filter date
+    getData = async(e) =>{
+        try{
+            const from = e.target.elements.from.value;
+            const to = e.target.elements.to.value;
+            e.preventDefault();   
+            const res = await fetch(`http://localhost:8000/api/walk?fromm__gte=${from}&too_lte=${to}`);
+            const walk = await res.json();
+            console.log(walk);
+            this.setState({
+                walk: walk
+        });
+        } catch(e){
+            console.log(e);
+        }
+    }
+
+
     // handleChange(event) {
     //     this.setState({ value: event.target.value});
     // }
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                <form onSubmit={this.handleSubmit} >
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                From 
-                                <input type="date" name="from"  class="form-control datepicker" value={this.state.value} style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                To
-                                <input type="date" name="to"  class="form-control datepicker" value={this.state.value} style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-                        {/* <input type="submit" /> */}
-                    </div>
-                </form>
+                <DateForm  loaddata={this.getData}/>
 
                 {/* <h3 className="text-center" style={{marginTop:"10px"}}> Walk All List </h3> */}
 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
@@ -56,55 +70,19 @@ class Walk extends Component {
 
                         </tr>
                     </thead>
-                    <tbody>
+                {this.state.walk.map(c=>  
+                    <tbody key={c.pk}>
                         <tr>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">WhatEver </a></td>
-                        <td>14 Km</td>
-                        <td>2hr 12min</td>
-                        <td>11Kg</td>
-                        <td>4</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Anyone </a></td>
-                        <td>14 Km</td>
-                        <td>2hr 12min</td>
-                        <td>11Kg</td>
-                        <td>4</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Who Cares </a></td>
-                        <td>14 Km</td>
-                        <td>2hr 12min</td>
-                        <td>11Kg</td>
-                        <td>4</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/3443" style={{color:"#13B760"}} class="font-weight-bold">Does Not Matter </a></td>
-                        <td>14 Km</td>
-                        <td>2hr 12min</td>
-                        <td>11Kg</td>
-                        <td>4</td>
+                        <th scope="row">{c.pk}</th>
+                        <td ><a href={'woverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.username} </a></td>
+                        <td>{c.milage} Km</td>
+                        <td>{c.movingtime}</td>
+                        <td>{c.kgtransported} Kgs</td>
+                        <td>{c.additionalbox}</td>
                         </tr>
                     </tbody>
-
-                    <thead>
-                        <tr className="thead" >
-                        <th scope="col"></th>
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">14 Km</th>
-                        <th scope="col" className="text-primary">2hr 12min</th>
-                        <th scope="col" className="text-primary">11kgs</th>
-                        <th scope="col" className="text-primary">4</th>
-                        </tr>
-                    </thead>
-
+                )}
+                <Summery />
                     </table>
                     </div>
            </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Summery from './Summery'
+import DateForm from './DateForm'
 
 class ElectricBike extends Component {
     constructor(props){
@@ -8,9 +10,26 @@ class ElectricBike extends Component {
         }
     }
 
+    // Get Data from filter date
+    getData = async(e) =>{
+        try{
+            const from = e.target.elements.from.value;
+            const to = e.target.elements.to.value;
+            e.preventDefault();   
+            const res = await fetch(`http://localhost:8000/api/ebike?fromm__gte=${from}&too_lte=${to}`);
+            const movies = await res.json();
+            console.log(movies);
+            this.setState({
+                movies: movies
+        });
+        } catch(e){
+            console.log(e);
+        }
+    }
+
     async componentDidMount(){
         try{
-            const res = await fetch(`http://softbike.herokuapp.com/api/ebike`);
+            const res = await fetch(`http://localhost:8000/api/ebike`);
             const movies = await res.json();
             // console.log(movies);
             this.setState({
@@ -23,27 +42,8 @@ class ElectricBike extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                <form >
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                From 
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                To
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                {/* <h3 className="text-center" style={{marginTop:"20px"}}>All Electric Bike list </h3> */}
+               <DateForm loaddata={this.getData}/>
+               
                 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
                     <table class="table table-hover table-lg " style={{marginTop:"20px"}}>
                     <thead>
@@ -57,7 +57,6 @@ class ElectricBike extends Component {
                         <th scope="col">CO2 Saved</th>
                         <th scope="col">Additional Boxes</th>
                         <th scope="col">No Of User</th>
-
                         </tr>
                     </thead>
             {/* 
@@ -66,9 +65,9 @@ class ElectricBike extends Component {
                 {this.state.movies.map( c => 
                     <tbody key={c.id} >
                         <tr>
-                        <td  >{c.pk}</td>
+                        <td>{c.pk}</td>
                         <td ><a href={'eoverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.bikeid}</a></td>
-                        <td>{c.mileage} Km</td>
+                        <td>{c.milage} Km</td>
                         <td>{c.movingtime}</td>
                         <td >{c.averagespeed} km/hr</td>
                         <td>{c.kgtrasported} Kg</td>
@@ -78,25 +77,9 @@ class ElectricBike extends Component {
                         </tr> 
                     </tbody>
                 )}
-
-                    <thead className="thead">
-                        <tr >
-                        <th scope="col"></th>
-                        
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">45 Km</th>
-                        <th scope="col" className="text-primary">5h 56min</th>
-                        <th scope="col" className="text-primary">14 km/hr</th>
-                        <th scope="col" className="text-primary">67 kg</th>
-                        <th scope="col" className="text-primary">190 mg</th>
-                        <th scope="col" className="text-primary">12</th>
-                        <th scope="col" className="text-primary">5</th>
-                        </tr>
-                    </thead>
+                <Summery />
                     </table>
-</div>
-
-                
+            </div>        
             </div>
         )
     }

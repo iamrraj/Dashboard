@@ -34,7 +34,10 @@
 
 .table td{
   padding: 15px;
+  font-weight: 500;
+  opacity: 0.9;
 }
+
 
 .table th{
   padding: 15px;
@@ -74,7 +77,7 @@
 
 /* Dashboard Section */
 .noti{
-  width: 240px;
+  width: 280px;
   color:#212226;
   position: absolute;
 }
@@ -82,8 +85,15 @@
 /* Reort Button */
 .btn-outline-success {
   width:100px;
+  /* background: rgba(19, 183, 96, 1.0); */
 }
-
+.btn-outline-success:hover{
+  background: rgba(19, 183, 96, 1.0); 
+}
+.leaflet-container {
+  height: 400px;
+  width: 800px;
+}
 /* Dashboard Section */
 
 .head{
@@ -93,37 +103,9 @@
   font-size: 16px;
   font-weight: bolder;
 }
-#p{
-  font-weight : 400;
-  font-family : "Roboto", Helvetica, Arial, serif;
-  opacity : 0.7;
-  font-size : 14.0px;
-  line-height         : 20.0px;
-  font-style          : normal;
-}
-h5{
-  font-family         : "Roboto", Helvetica, Arial, serif;
-  font-weight         : 900;
-  font-style          : normal;
-  font-size           : 24.0px;
-  color               : rgba(19, 183, 96, 1.0);
-  text-align          : left;
-  line-height         : 28.0px;
-  background-color    : rgba(255,255,255,0.0);
 
 
-}
 
-h4{
-  opacity             : 0.8;
-  font-family         : "Roboto", Helvetica, Arial, serif;
-  font-weight         : 700;
-  font-style          : normal;
-  font-size           : 18.0px;
-  color               : rgba(33, 34, 38, 1.0);
-  text-align          : left;
-  line-height         : 19.0px;
-}
 .rectangle{
   margin-top: 30px;
   margin-left: 18px;
@@ -136,9 +118,7 @@ h4{
   max-width: 900px;
 }
 
-.n{
-  padding-bottom: 30px;
-}
+
 .r{
   padding-bottom: 15px;
 }
@@ -154,11 +134,17 @@ h4{
   line-height         : 15.0px;
   background: white;
   margin-right: 10px;
-  padding: 15px;
+  padding: 12px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border: 2px solid #CCEFDC;
   border-bottom: 0 white;
+  font-weight: bolder;
+  width: 130px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.8;
+  
   
 
 }
@@ -167,12 +153,17 @@ h4{
   font-family         : "Rubik", Helvetica, Arial, serif;
   color               : rgba(19, 183, 96, 1.0);
   margin-right: 10px;
-  padding: 20px;
+  padding: 17px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   background: white;
   border: 2px solid #CCEFDC;
   border-bottom: 0 white;
+  font-size: 15px;
+  font-weight: bolder;
+  width: 140px;
+  text-align: center;
+  opacity: 0.8;
 }
 /* .rrr:hover{
   border: 2px solid #CCEFDC;
@@ -191,30 +182,206 @@ h4{
 }
 
 .box{
-  box-shadow: 0px 5px 5px 4px #E5E8E9;  
+  box-shadow: 0px 10px 13px -7px #C0C0C0;
+  /* -webkit-box-shadow: 0 8px 6px 1px #C0C0C0;;
+	   -moz-box-shadow: 0 8px 6px 1px #C0C0C0;;
+	        box-shadow: 0 8px 6px 1px #C0C0C0;; */
+  width: 240px;
+  margin-top: 15px;
+  border-radius: 7px;
+
+  
+  
   /* "0 9px 17px 8px #E5E8E9"  */
 }
 
 .thead{
   border-top: 2px solid rgba(19, 183, 96, 1.0);
   background: #F5FAF3;
+  border-bottom: 2px solid white;
   
 }
 
 tr{
   border-top: 2px solid #CCEFDC;
   margin: 12px 12px 12px 12px;
+  /* text-align: center; */
+}
+
+.th{
+  font-size: 14px;
+  font-weight: bolder;
   
+}
+.su{
+  border-bottom: none;
 }
 a:hover{
   text-decoration: none;
 }
 th{
-  color: rgba(33, 34, 38, 1.0)
+  color: rgba(33, 34, 38, 1.0);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+#span{
+  margin-left:89px;
+  font-size:10px;
+  position:absolute;
+  top:185px;
+  color:rgba(19, 183, 96, 1.0)
 }
 
 
 
+/* Login Page */
+
+/* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
+.login-block{
+    /* background: #DE6262;  
+background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
+background: linear-gradient(to bottom, #FFB88C, #DE6262); */
+/* float:left;
+width:100%; */
+margin: 0 auto;
+max-width: 900px;
+padding : 50px 0;
+
+
+}
+
+.id{
+  background:#fff;
+}
+.d-block{
+  height: 555px;
+
+
+}
+.banner-sec{
+  margin-left: -15px;
+}
+
+
+
+.log{
+  font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  font-size:24px;
+  margin-top:60px;
+  margin-bottom:15px;
+}
+ /* .containe{background:#fff; }  */
+/* .carousel-inner{border-radius:0 10px 10px 0;} */
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+/* .login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #DE6262;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto} */
+/* .btn-login{background: #DE6262; color:#fff; font-weight:600;} */
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h2{color:#fff; font-weight:600;}
+.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}
+
+.form-control{
+  border: 2px solid white;
+  border-bottom: 1px solid rgba(19, 183, 96, 1.0);
+  box-sizing: border-box;
+  color: black;
+}
+/* For input */
+.form-control:hover{
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-bottom: 1px solid rgba(19, 183, 96, 1.0);
+}
+
+
+
+/* For nav button */
+.a{
+  opacity: 0.8;
+}
+
+/* For Dashboard */
+
+.imag{
+  
+  height: 42px;
+  opacity: 0.6;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+}
+
+.n{
+  padding-bottom: 10px;
+}
+
+#p{
+  font-weight : 400;
+  font-family : "Roboto", Helvetica, Arial, serif;
+  opacity : 0.4;
+  font-size : 15.0px;
+  line-height         : 20.0px;
+  font-style          : normal;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: bolder;
+  
+
+  
+}
+h5{
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  /* font-weight         : 900; */
+  font-style          : normal;
+  font-size           : 24.0px;
+  color               : rgba(19, 183, 96, 1.0);
+  text-align          : left;
+  line-height         : 28.0px;
+  background-color    : rgba(255,255,255,0.0);
+  margin-bottom: 0px;
+  text-align: center;
+}
+h4{
+  
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  font-weight         : 700;
+  font-style          : normal;
+  font-size           : 18.0px;
+  color               : rgba(33, 34, 38, 1.0);
+  line-height         : 19.0px;
+  
+  
+}
+.w{
+  text-align: center;
+  margin-right: 15px;
+  opacity             : 0.5;
+  font-family         : "Roboto", Helvetica, Arial, serif;
+  
+}
+
+
+.btn-block{
+  width: 100%;
+}
+
+/* Export Button */
+.bb{
+  width: 200px;
+  padding: 10px;
+  background: rgba(19, 183, 96, 1.0);
+}
 
 
 

@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import ReactToExcel from 'react-html-table-to-excel'
 
 class Report extends Component {
     render() {
         return (
-            <div className="container" style={{marginTop:"90px", background:"white", padding:"15px"}}>
+            <div className="container" style={{marginTop:"90px", background:"white", padding:"15px"}} >
+    
                 <h5 className="font-weight-bold" style={{marginTop:"10px"}}> ELECTRIC BIKE DISTRIBUTION </h5>
                 <p>from 23-09-2019 to 23-10-2019</p>
 
-                <table class="table  table-bordered" >
+                <table class="table " id="table-to-xls" >
                     <thead>
                         <tr style={{background:"#CCEFDC"}}>
                         <th scope="col">Id</th>
@@ -75,7 +77,7 @@ class Report extends Component {
 
                     </tbody>
 
-                    <thead>
+                    <thead className="thead" >
                         <tr>
                         <th scope="col"></th>
                         <th scope="col" className="text-dark"><strong>Summery</strong></th>
@@ -89,9 +91,17 @@ class Report extends Component {
                         </tr>
                     </thead>
                     </table>
+                    <center>
+                    <ReactToExcel
+                        className="btn btn-success btn-lg bb"
+                        table="table-to-xls"
+                        filename ="excelFile"
+                        sheet="sheet 1"
+                        buttonText ="Export CSV"
+                    />
+                    </center>
+              </div>
 
-              <center> <a href="# " className="btn btn-success btn-lg" style={{width:"200px"}} > Export CSV </a></center>
-            </div>
         )
     }
 }

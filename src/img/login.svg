@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="877px" height="1024px" viewBox="0 0 877 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="877" height="1024"></rect>
+        <linearGradient x1="100%" y1="55.5849481%" x2="-31.1820617%" y2="23.7029799%" id="linearGradient-3">
+            <stop stop-color="#3D50A1" offset="0%"></stop>
+            <stop stop-color="#27BE5E" offset="60.1294227%"></stop>
+            <stop stop-color="#FDEF73" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="📊Soft_bike_Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login_screen_a" transform="translate(-563.000000, 0.000000)">
+            <g id="Background" transform="translate(563.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#D8D8D8" xlink:href="#path-1"></use>
+                <g id="Group-2" mask="url(#mask-2)">
+                    <g transform="translate(-500.000000, -234.000000)">
+                        <rect id="Rectangle" fill="url(#linearGradient-3)" x="0" y="220.135077" width="1387" height="1054"></rect>
+                        <path d="M1387,625.135077 C862.152,725.135077 969.202936,1061.31088 507,1194.03252 C198.864709,1282.51361 134.080684,1375.88113 312.647924,1474.13508 L1593.16399,1345.52814 C1805.62,798.599431 1736.89867,558.46841 1387,625.135077 Z" id="Path-2" fill="url(#linearGradient-4)" style="mix-blend-mode: overlay;" opacity="0.398670015"></path>
+                        <path d="M1278.6244,165.704285 C753.7764,319.449363 860.827336,836.303121 398.6244,1040.3561 C90.4891092,1176.39142 25.705084,1319.93939 204.272324,1471 L1484.78839,1273.27316 C1697.2444,432.397191 1628.52307,63.2075659 1278.6244,165.704285 Z" id="Path-2" fill="url(#linearGradient-5)" style="mix-blend-mode: overlay;" opacity="0.398670015" transform="translate(855.593155, 810.000000) rotate(-3.000000) translate(-855.593155, -810.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

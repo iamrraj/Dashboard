@@ -45,7 +45,7 @@ class Topbar extends Component {
     render() {
         return (
           <div> 
-          <nav className="navbar navbar-expand-lg navbar-dark bg-white">
+          <nav className="navbar navbar-expand-lg navbar-dark bg-white" >
               <a className="navbar-brand" href="/" style={{color: "#212226"}}><img src={head} alt="logo" style={{height:"40px"}}></img> &nbsp; <span className= "head">SOFT BIKE</span></a>
               <button className="navbar-toggler" style={{background:"#13B760"}} type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -53,46 +53,45 @@ class Topbar extends Component {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                 </ul>
-                <ul className="navbar-nav">
+                <ul className="navbar-nav" style={{marginRight:"70px"}}>
                     <li className="nav-item  active" >
                       <a className="nav-link font-weight-bolder" href="# "  style={{color: "#212226"}}> UserName</a>
                     </li>
 
                    {/* For Notification */}
-                   <li className="nav-item dropdown  active">
-                      <a className="nav-link dropdown-toggle font-weight-bolder" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
+                   <li className="nav-item dropdown  ">
+                      <a className="nav-link dropdown-toggle a" href="# " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#212226"}}>
                         Notification 
                         <span class="badge badge-danger">4</span>
                        
                       </a>
                       <div className="dropdown-menu noti " aria-labelledby="navbarDropdown">
-                      <table className="table">
+                      <table className="table tabl table-striped ">
+                        <h6 className="container font-weight-bolder">NOTIFICATION  <span aria-hidden="true" className="pull-right" style={{opacity:"0.5"}}>&times;</span></h6>
+                        
                           <tbody>
                             <tr>
-                              {/* <th scope="row">1</th> */}
                               <td>
-                                  <a href="# " style={{fontWeight:"bold", color:"#212226"}}>There will be some details hjdfgjdfsdf hkhfjdf yueyrue ueyr</a><br></br>
-                                  {/* <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button> */}
+                                  <a href="# " style={{fontWeight:"bold", color:"#212226"}}>Notificatio From The User on <strong style={{color:"rgba(19, 183, 96, 1.0"}}>EB01</strong> </a><br></br>
                                   <span style={{fontSize:"13px",opacity:"0.6"}}>2 hours Ago </span>
                               </td>
                             </tr>
 
                             <tr>
-                              {/* <th scope="row">1</th> */}
                               <td>
-                                 <a href="# " style={{fontWeight:"bold",color:"#212226"}}>There will be some details hjdfgjdfsdf hkhfjdf yueyrue ueyr</a><br></br>
+                              <a href="# " style={{fontWeight:"bold", color:"#212226"}}>Notificatio From The User on <strong style={{color:"rgba(19, 183, 96, 1.0"}}>EB02</strong> </a><br></br>
                                   <span style={{fontSize:"13px",opacity:"0.6"}}>2 hours Ago </span>
                               </td>
                             </tr>
                           </tbody>
+<hr></hr>
+                          <center><a href="# " className="head "> See All</a></center>
                       </table>
                       </div>
                     </li>
                   {/* End For Notificatioj */}
-                    <li className="nav-item  active">
-                      <a className="nav-link font-weight-bolder" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}> Report</a>
+                    <li className="nav-item  ">
+                      <a className="nav-link a" href="# " data-toggle="modal" data-target="#exampleModal" style={{color: "#212226"}}> Report</a>
                     </li>
                    
                    <Logout />
@@ -102,23 +101,23 @@ class Topbar extends Component {
           </nav>
 
           <nav className="navbar navbar-expand-lg navbar-dark container " >
-              <a className="navbar-brand rrr" href="/" style={{color:"rgba(19, 183, 96, 1.0)"}}> DASHBOARD</a>
+              <a className="navbar-brand rrr" href="/" style={{color:"rgba(19, 183, 96, 1.0)"}}> Dashboard</a>
               <button className="navbar-toggler" style={{background:"#13B760"}} type="button" data-toggle="collapse" data-target="#nnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="nnavbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item  l" >
-                      <a className="nav-link font-weight-bold" href="/walk" style={{color:"rgba(19, 183, 96, 1.0)"}}>  WALK</a>
+                      <a className="nav-link font-weight-bold" href="/walk" style={{color:"rgba(19, 183, 96, 1.0)"}}>  Walk</a>
                     </li>
                     <li className="nav-item   l" >
-                      <a className="nav-link font-weight-bold ll" href="/electricbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> ELECTRIC BIKE </a>
+                      <a className="nav-link font-weight-bold ll" href="/electricbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> Electric Bike </a>
                     </li>
                     <li className="nav-item   l" >
-                      <a className="nav-link font-weight-bold ll " href="/classicbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> CLASSIC BIKE</a>
+                      <a className="nav-link font-weight-bold ll " href="/classicbike" style={{color:"rgba(19, 183, 96, 1.0)"}}> Classic Bike</a>
                     </li>
                     <li className="nav-item   l" >
-                      <a className="nav-link font-weight-bold ll" href="/user" style={{color:"rgba(19, 183, 96, 1.0)"}}> USER</a>
+                      <a className="nav-link font-weight-bold ll" href="/user" style={{color:"rgba(19, 183, 96, 1.0)"}}> User</a>
                     </li>
                 </ul>
                
@@ -132,7 +131,7 @@ class Topbar extends Component {
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Report Page</h5>
+                            <h6 className="modal-title" id="exampleModalLabel"> Report  </h6>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -159,24 +158,25 @@ class Topbar extends Component {
 
                           <p>Choose the Distribution Type</p>
                           <div className="btn-group">
-                            <button type="button" className="btn btn-outline-success active" onClick={this.walk}>Walk</button>
-                            <button type="button" className="btn btn-outline-success" onClick={this.electric}>EB</button>
-                            <button type="button" className="btn btn-outline-success" onClick={this.classic}>CB</button>
-                            <button type="button" className="btn btn-outline-success" onClick={this.user}>User</button>
+                            <button type="button" className="btn btn-outline-success  active" onClick={this.walk} style={{background:"rgba(19, 183, 96, 1.0)"}}>Walk</button>
+                            <button type="button" className="btn btn-outline-success " onClick={this.electric}>EB</button>
+                            <button type="button" className="btn btn-outline-success " onClick={this.classic}>CB</button>
+                            <button type="button" className="btn btn-outline-success " onClick={this.user}>User</button>
                           </div> 
 
                           <div className="form-group" style={{marginTop:"20px"}}>
                               <label for="exampleFormControlSelect2">{this.state.text}</label>
-                              <select multiple className="form-control" id="exampleFormControlSelect2" style={{width:"200px", color:"#13B760"}} value={this.state.value} name={this.props.name} onChange={this.handleChange.bind(this)}>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                              {/* value={this.state.value} name={this.props.name} onChange={this.handleChange.bind(this)} */}
+                              <select multiple className="form-control" id="exampleFormControlSelect2" style={{width:"200px", color:"rgba(19, 183, 96, 1.0)"}} >  
+                                <option>Electric Bike</option>
+                                <option>Classic Bike</option>
+                                <option>Walk</option>
+                                <option>User</option>
+                                <option>User 1</option>
                           </select>
                           </div>
 
-                          <center><a href="/report" className="btn btn-success" style={{width:"200px"}} ><i className="fas fa-file"> </i> Get Report</a></center>
+                          <center><a href="/report" className="btn btn-success" style={{width:"200px",background:"rgba(19, 183, 96, 1.0)"}} >Get Report</a></center>
                           </form>
                         </div>
                         {/* <div class="modal-footer">

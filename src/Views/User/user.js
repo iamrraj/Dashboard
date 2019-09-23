@@ -1,58 +1,54 @@
 import React, { Component } from 'react'
-import Swal from 'sweetalert2';
+import Summery from './summery'
+import DateForm from '../Electric/DateForm'
+
 
 export class user extends Component {
-
-    constructor(props) {
+    constructor(props){
         super(props);
-        
-        
-        // this.state = {
-        //   random: this.handleClick(),
-        //   random1: this.handleClick(), random2: this.handleClick()
-        // };
-        this.handleReply = this.handleReply.bind(this)
-      }
+        this.state={
+            value: props.value,
+            user:[],
+        };
 
-    async handleReply(lala) {
-        const { value: text } = await Swal.fire({
-          input: 'textarea',
-          inputPlaceholder: 'Type your message here...',
-          showCancelButton: true,
-          confirmButtonText: '➤ Send ',
-        })
-    
-        if (text) {
-          Swal.fire("Message sent to  " + lala)
+    }
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://localhost:8000/api/user`);
+            const user = await res.json();
+            console.log(user)
+            this.setState({
+                user: user
+            });
+        }catch(e){
+            console.log(e)
         }
-      }
-    
+    }
+
+    // Get Data from filter date
+    getData = async(e) =>{
+        try{
+            const from = e.target.elements.from.value;
+            const to = e.target.elements.to.value;
+            e.preventDefault();   
+            const res = await fetch(`http://localhost:8000/api/user?fromm__gte=${from}&too_lte=${to}`);
+            const user= await res.json();
+            console.log(user);
+            this.setState({
+                user: user
+        });
+        } catch(e){
+            console.log(e);
+        }
+    }
+
+
+   
 
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-
-                <form >
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                From 
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                To
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                  
+                <DateForm loaddata={this.getData}/>
 
                 {/* <h3 className="text-center" style={{marginTop:"10px"}}> User Details: &nbsp;<strong> POSTMAN NAME</strong> </h3> */}
                 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
@@ -69,123 +65,44 @@ export class user extends Component {
                         <th scope="col">Distributed by EB</th>
                         <th scope="col">Total Milage</th>
                         <th scope="col">Total Weight Transported</th>
-                        
-
-
                         </tr>
                     </thead>
-                    <tbody>
+                {this.state.user.map(c=>
+                    <tbody key={c.pk}>
                         <tr >
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/lol" style={{color:"#13B760"}}  class="font-weight-bold">Anybody</a></td>
-                        <td>45 Km</td>
-                        <td>13 Kg</td>
-                        <td>156 Km</td>
-                        <td>340 Kg</td>
-                        <td>440 Km</td>
-                        <td>120 Kg</td>
-                        <td>1233 Km</td>
-                        <td>223 Kg</td>
-                    
+                        <th scope="row">{c.pk}</th>
+                        <td ><a href={'uoverview/'+ c.pk} style={{color:"#13B760"}}  class="font-weight-bold">{c.user}</a></td>
+                        <td>{c.trwalk} Km</td>
+                        <td>{c.Dtwalk} Kg</td>
+                        <td>{c.trclassic} Km</td>
+                        <td>{c.Dtclassic} Kg</td>
+                        <td>{c.trelectric} Km</td>
+                        <td>{c.Dtelectric} Kg</td>
+                        <td>{c.totalMilage} Km</td>
+                        <td>{c.totalweight} Kg</td>
                         </tr>
-
-
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">Anyone</a></td>
-                        <td>45 Km</td>
-                        <td>13 Kg</td>
-                        <td>156 Km</td>
-                        <td>340 Kg</td>
-                        <td>440 Km</td>
-                        <td>120 Kg</td>
-                        <td>1233 Km</td>
-                        <td>223 Kg</td>
-                        {/* <td><a href="# " data-toggle="modal" data-target="#exampleModal"><i className="fa fa-envelope"></i></a> &nbsp; <a href="# "><i className="fa fa-mobile"></i></a></td> */}
-                        </tr>
-
-
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">Whatever</a></td>
-                        <td>45 Km</td>
-                        <td>13 Kg</td>
-                        <td>156 Km</td>
-                        <td>340 Kg</td>
-                        <td>440 Km</td>
-                        <td>120 Kg</td>
-                        <td>1233 Km</td>
-                        <td>223 Kg</td>
-                        </tr>
-
-
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/lol" style={{color:"#13B760"}} class="font-weight-bold">WhoCares</a></td>
-                        <td>45 Km</td>
-                        <td>13 Kg</td>
-                        <td>156 Km</td>
-                        <td>340 Kg</td>
-                        <td>440 Km</td>
-                        <td>120 Kg</td>
-                        <td>1233 Km</td>
-                        <td>223 Kg</td>
-                        </tr>
-                       
                     </tbody>
-                    <thead>
-                        <tr className="thead">
-                        
-                        <th scope="col"></th>
-                        <th scope="col" className="font-weight-bold">Summery</th>
-                        <th scope="col">45 Km</th>
-                        <th scope="col" className="text-primary">13 Kg</th>
-                        <th scope="col" className="text-primary">156 km</th>
-                        <th scope="col" className="text-primary">340 kg</th>
-                        <th scope="col">440 km</th>
-                        <th scope="col">120 Kg</th>
-                        <th scope="col">1233 Km</th>
-                        <th scope="col">223 Kgs</th>
-                        
-                        </tr>
-                    </thead>
+                )}
+                <Summery />
+                 {/* <thead>
+                    <tr className="thead">
+                    <th scope="col"></th>
+                    <th scope="col" className="font-weight-bold">Summery</th>
+                    <th scope="col">12 Km</th>
+                    <th scope="col" className="text-primary">13 Kg</th>
+                    <th scope="col" className="text-primary">34 km</th>
+                    <th scope="col" className="text-primary">234 kg</th>
+                    <th scope="col">45 km</th>
+                    <th scope="col">123 Kg</th>
+                    <th scope="col">13 Km</th>
+                    <th scope="col">453 Kgs</th>
+                    </tr>
+                </thead> */}
+                
+                
 
                     </table>
                 </div>
-
-                    {/* <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Send Message To <strong>POSTMAN NAME</strong></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Subject </label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type Here Subject" />
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput2">Message</label>
-                                <textarea class="form-control" row="15" id="formGroupExampleInput2" placeholder="Type Your Message" ></textarea>
-                            </div>
-                            <button className="btn btn-primary"> ➤ Send Message</button>
-                        </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onClick={() => { this.handleReply("swingingChair49@usa.pl") }} >Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div> */}
-
-
-
            </div>
         )
     }

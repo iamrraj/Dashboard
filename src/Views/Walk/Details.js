@@ -1,8 +1,30 @@
 import React, { Component } from 'react'
+import DeatilSummery from './DeatilSummery'
 
 
 export class Details extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            walk:null,
+        }
+    }
+
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://localhost:8000/api/walk/${this.props.match.params.pk}`)
+            const walk = await res.json();
+            console.log(walk);
+            this.setState({
+                walk
+            });
+        }catch(e){
+            console.log(e);
+        }
+    }
     render() {      
+        const { walk } = this.state;
+        if (walk === null) return <p>Loading ....</p>;
         return (
         <div className="container" >
         
@@ -17,59 +39,22 @@ export class Details extends Component {
                         <th scope="col">Moving Time</th>
                         <th scope="col">KG Transported</th>
                         <th scope="col">Additional Boxex</th>
-
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr >
-                        <th scope="row">1</th>
-                        <td >12-09-2019 </td>
-                        <td>45 Km</td>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>14</td>
+                {walk.items.map(item => ( 
+                    <tbody >
+                        <tr>
+                        <td >{item.id}</td>
+                        <td >{item.date} </td>
+                        <td>{item.milage} Km</td>
+                        <td>{item.movingtime}</td>
+                        <td>{item.kgtransported} Kg</td>
+                        <td>{item.additionalbox}</td>
                         </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td >12-09-2019 </td>
-                        <td>45 Km</td>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>14</td>
-                        </tr>
-
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td >12-09-2019 </td>
-                        <td>45 Km</td>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>14</td>
-                        </tr>
-
-                        <tr >
-                        <th scope="row">1</th>
-                        <td >12-09-2019 </td>
-                        <td>45 Km</td>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>14</td>
-                        </tr>
-
                     </tbody>
+                ))}
 
-                    <thead>
-                        <tr className="thead">
-                        <th scope="col"></th>
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">4h 11min</th>
-                        <th scope="col" className="text-primary">14 km/hr</th>
-                        <th scope="col" className="text-primary">67 Kg</th>
-                        <th scope="col" className="text-primary">14</th>
-                        </tr>
-                    </thead>
+                <DeatilSummery/>
 
                     </table>
                 </div>

@@ -6,13 +6,15 @@ import leaf from '../img/leaf.png'
 import weight from '../img/weight.png'
 import classic from '../img/lol.png'
 import electric from '../img/electric.png'
+import DateForm from './Electric/DateForm'
 
 
 class Dashboard extends Component {
     constructor(props){
         super(props);
         this.state={
-            startDate:this.props.value
+            startDate:this.props.value,
+            dash:[],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -30,14 +32,22 @@ class Dashboard extends Component {
         let main = this.state.startDate
         console.log(main.format('L'));
     }
-    
 
-  
-    
-    // handleDate(date){
-    //     this.setState({date});
-    // }
-    
+
+    async componentDidMount(){
+        try{
+            const res = await fetch(`http://localhost:8000/dapi/dashboard`);
+            const dash = await res.json();
+            console.log(dash)
+            this.setState({
+                dash: dash
+            });
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+
 
     render() {
         
@@ -45,79 +55,52 @@ class Dashboard extends Component {
             <div className="container" style={{marginTop:"20px"}}>
            
                 <div className="row">
-                    <div className="col-sm-3">
+                    <div className="col-sm-3" style={{marginTop:"12px"}}>
                        Hello <strong>UserName,</strong>
                        <Datee/>
                     </div>
             <div className="col-sm-8">
-                <form>
-                <div className="row">
-                    <div className="col-sm-5">
-                        <div class="form-group">
-                            From 
-                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"170px",color:"#13B760"}} />
-                        
-                        </div>
-                    </div>
-
-                    <div className="col-sm-4">
-                        <div class="form-group">
-                            To
-                            <input type="date" name="from"  class="form-control datepicker" style={{ width:"170px",color:"#13B760"}} />
-                        
-                        </div>
-                    </div>
-
-                    
-                </div>
-                </form>
+                       <DateForm/>
             </div>
                    
                 </div>
 
 <div style={{background:"white", padding:"25px"}} >
+
+{this.state.dash.map(c=>
 <div className="cont">
-            <h4 className="text-center font-weight-bolder">Summary</h4>
+            <h4 className="text-center font-weight-bolder">SUMMERY</h4>
 
                 <div class="row">
                 <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div className="box">
-                            <div className="row container n">
-                                <div className="col-sm-5  ">
-                                <img src={map} alt="map" className="rectangle" />
-                                </div>
-                                <div className="col-sm-7">
-                                    <h5>936 Km </h5>
-                                    <p id="p">Total Milage <br /></p>
-                                </div>
+                            <div className="n">  
+                            <br></br>
+                                <img src={map} alt="map" className="imag" />
+                                    <h5>{ c.total_milage }  Km </h5>
+                                    <p id="p">Total Milage</p>
                             </div>  
                         </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div className="box">
-                            <div className="row container n">
-                                <div className="col-sm-5  ">
-                                <img src={weight} alt="weight" className="rectangle" />
-                                </div>
-                                <div className="col-sm-7">
-                                    <h5>346 Kgs</h5>
+                            <div className=" n">
+                            <br></br>
+                                <img src={weight} alt="weight" className="imag" />
+                                    <h5>{c.total_weight} Kgs</h5>
                                     <p id="p">Total boxes weight <br /></p>
-                                </div>
                             </div>  
                         </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                         <div className="box">
-                            <div className="row container n">
-                                <div className="col-sm-5 container ">
-                                <img src={leaf} alt="leaf" className="rectangle" />
-                                </div>
-                                <div className="col-sm-7">
+                            <div className=" n">
+                            <br></br>
+                                <img src={leaf} alt="leaf" className="imag" />
                                     <h5>845 Mg </h5>
                                     <p id="p">Total Save Co2 <br /></p>
-                                </div>
                             </div>  
                         </div>
                     </div>
@@ -125,52 +108,43 @@ class Dashboard extends Component {
                 </div>
                 {/* <!-- end row --> */}
 
-               
+               <br></br>
 
-                {/* <h4 className="text-center font-weight-bolder" style={{marginTop:"35px"}}>Distribution Type</h4> */}
+               <h4 className="text-center font-weight-bolder" style={{marginTop:"45px"}}>DISTRIBUTION TYPE</h4> 
 
-                <div className="row" style={{marginTop:"35px"}}>
+                <div className="row" >
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>WALK DISTRIBUTION</h4>
+                        <h4 className="text-center w">Walk</h4>
                             <div className="box">
-                                <div className="row container r">
-                                    <div className="col-sm-5 ">
-                                       <img src={walk} alt="walk" className="rectangle" />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>13 Km </h5>
-                                        <p id="p">Traveled By <br />Walk</p>
-                                    </div>
+                                <div className=" r">
+                                <br></br>
+                                       <img src={walk} alt="walk" className="imag" />
+                                        <h5>{c.total_travel_walk} Km </h5>
+                                        <p id="p">Traveled By Walk</p>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>ELECTRIC BICYCLE</h4>
+                        <h4 className="text-center w">Electric Bicycle</h4>
                             <div className="box">
-                                <div className="row container r" >
-                                    <div className="col-sm-5 ">
-                                    <img src={electric} alt="electric" className="rectangle" />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>456 Kms</h5>
+                                <div className=" r" >
+                                <br></br>
+                                    <img src={electric} alt="electric" className="imag" />
+                                        <h5>{c.total_travel_electric} Kms</h5>
                                         <p id="p">Traveled By electric bicycle</p>
-                                    </div>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
-                        <h4>CLASSIC BIKE</h4>
+                        <h4 className="text-center w">Classic Bike</h4>
                             <div className="box">
-                                <div className="row container r">
-                                    <div className="col-sm-5 ">
-                                        <img src={classic} alt="classic" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>178 Kms </h5>
+                                <div className=" r">
+                                <br></br>
+                                        <img src={classic} alt="classic" className="imag" style={{height:"30px", marginTop:"15px"}} />
+                                        <h5>{c.total_travel_classic} Kms </h5>
                                         <p id="p">Traveled By classic  bicycle</p>
-                                    </div>
                                 </div>  
                             </div>
                     </div>
@@ -185,49 +159,42 @@ class Dashboard extends Component {
 <div className="row" style={{marginTop:"30px"}}>
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                             <div className="box">
-                                <div className="row container r">
-                                    <div className="col-sm-5 ">
-                                    <img src={walk} alt="walk" className="rectangle" />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>34 Kg </h5>
-                                        <p id="p">Distributed by <br /> walk</p>
-                                    </div>
+                                <div className=" r">
+                                <br></br>
+                                    <img src={walk} alt="walk" className="imag" />
+                                        <h5>{c.total_distribute_walk} Kgs </h5>
+                                        <p id="p">Distributed by  walk</p>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                             <div className="box">
-                                <div className="row container r">
-                                    <div className="col-sm-5 ">
-                                    <img src={electric} alt="walk" className="rectangle" />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>234 Kgs </h5>
+                                <div className=" r">
+                                <br></br>
+                                    <img src={electric} alt="walk" className="imag" />
+                                        <h5>{c.total_distribute_electric}  Kgs </h5>
                                         <p id="p">Distributed by electric bicycle</p>
-                                    </div>
                                 </div>  
                             </div>
                     </div>
 
                     <div className="col-sm-4" style={{ marginTop:"5px"}}>
                             <div className="box">
-                                <div className="row container r">
-                                    <div className="col-sm-5 ">
-                                    <img src={classic} alt="walk" className="rectangle" style={{height:"40px", marginTop:"45px"}} />
-                                    </div>
-                                    <div className="col-sm-7">
-                                        <h5>67 Kgs </h5>
+                                <div className=" r">
+                                <br></br>
+                                    <img src={classic} alt="walk" className="imag" style={{height:"30px", marginTop:"15px"}} />
+                                        <h5>{c.total_distribute_classic} Kgs </h5>
                                         <p id="p">Distributed By classic bike</p>
-                                    </div>
                                 </div>  
                             </div>
                     </div>
                 </div>
                 </div>
-             {/* End Here Col-6 */}
+            //  {/* End Here Col-6 */}
+        )}
         </div>
+       
         </div>
            
         )

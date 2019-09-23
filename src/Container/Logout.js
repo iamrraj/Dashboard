@@ -31,7 +31,7 @@ export default class Logout extends Component {
             headers: { 'Access-Token': token, 'Client': client, 'Uid': uid, 'Expiry': expiry }
         };
         const request = await fetch(
-            "http://tardis-back.herokuapp.com/auth/sign_out",
+            "https://tardis-back.herokuapp.com/auth/sign_out",
             requestData
         );
         const response = await request.json();
@@ -39,7 +39,7 @@ export default class Logout extends Component {
 
         if (response.success === true) {
             Swal.fire({
-                title: "Logged Out",
+                title: "Logggedout",
                 type: "success"
             }).then(logout => {
                 if (logout.value) {
@@ -47,7 +47,7 @@ export default class Logout extends Component {
                     this.cookies.remove("Client");
                     this.cookies.remove("Uid");
                     this.cookies.remove("Expiry");
-                    window.location.href = "/login";
+                    window.location.href = "/";
                 }
             });
         } else {
@@ -61,10 +61,10 @@ export default class Logout extends Component {
 
     Logout() {
         Swal.fire({
-            title: "Do You Want to Logout?",
+            title: "Do you want to logout?",
             type: "question",
             showCancelButton: true,
-            cancelButtonText: "NO",
+            cancelButtonText: "No",
             confirmButtonText: "Yes"
         }).then(result => {
             if (result.value) {
@@ -79,7 +79,7 @@ export default class Logout extends Component {
             //     {dictionaryContainer.getText('header', 'logout')}
             // </NavDropdown.Item>
             <li>
-                <a class="nav-link font-weight-bolder" href="# " data-toggle="modal" onClick={this.Logout} style={{color: "#212226"}}> Logout </a> 
+                <a class="nav-link a" href="# " data-toggle="modal" onClick={this.Logout} style={{color: "#212226"}}> Logout </a> 
             </li>
         );
     }

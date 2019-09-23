@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DeatilSummery from './DeatilSummery'
 
 // import axios from 'axios'
 
@@ -33,14 +34,14 @@ export class Edetails extends Component {
 
     async componentDidMount(){
         try {
-        const res = await fetch(`http://softbike.herokuapp.com/api/ebike/${this.props.match.params.pk}`);
+        const res = await fetch(`http://localhost:8000/api/ebike/${this.props.match.params.pk}`);
         const movie = await res.json();
         // console.log(movie);
         this.setState({
             movie,
         });
         } catch (e) {
-        console.log(e);
+            console.log(e);
         }
     }
 
@@ -87,20 +88,7 @@ export class Edetails extends Component {
                         </tr>
                     </tbody>
             ))}
-
-                    <thead>
-                        <tr className="thead">
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">45 Km</th>
-                        <th scope="col" className="text-primary">3h 45min</th>
-                        <th scope="col" className="text-primary">14 km/hr</th>
-                        <th scope="col" className="text-primary">67 Kg</th>
-                        <th scope="col" className="text-primary">14</th>
-                        </tr>
-                    </thead>
-
+                    <DeatilSummery/>
                     </table>
                 </div>
         </div>

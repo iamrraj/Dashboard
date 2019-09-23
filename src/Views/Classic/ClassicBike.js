@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Summery from './Summery'
+import DateForm from '../Electric/DateForm'
 
 class ClassicBike extends Component {
     constructor(props){
@@ -8,9 +10,27 @@ class ClassicBike extends Component {
         }
     }
 
+    // Get Data from filter date
+    getData = async(e) =>{
+        try{
+            const from = e.target.elements.from.value;
+            const to = e.target.elements.to.value;
+            e.preventDefault();   
+            const res = await fetch(`http://localhost:8000/api/cbike?fromm__gte=${from}&too_lte=${to}`);
+            const movies = await res.json();
+            console.log(movies);
+            this.setState({
+                movies: movies
+        });
+        } catch(e){
+            console.log(e);
+        }
+    }
+
+
     async componentDidMount(){
         try{
-            const res = await fetch(`http://softbike.herokuapp.com/api/cbike`);
+            const res = await fetch(`http://localhost:8000/api/cbike`);
             const movies = await res.json();
             console.log(movies)
             this.setState({
@@ -23,26 +43,7 @@ class ClassicBike extends Component {
     render() {
         return (
             <div className="container" style={{marginTop:"20px"}}>
-                <form >
-                    <div className="row">
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                From 
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-
-                        <div className="col-sm-4">
-                            <div class="form-group">
-                                To
-                                <input type="date" name="from"  class="form-control datepicker" style={{ width:"150px",color:"#13B760"}} />
-                            
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
+               <DateForm loaddata={this.getData}/>
                 {/* <h3 className="text-center" style={{marginTop:"20px"}}> All List Of ClassicBike </h3> */}
                 <div className="bg-white"  style={{padding:"15px",borderTop: "2px solid #CCEFDC"}}>
                     <table class="table table-hover" style={{marginTop:"20px"}} >
@@ -63,34 +64,19 @@ class ClassicBike extends Component {
                     <tbody key={c.pk}>
                         <tr >
                         <td>{c.pk}</td>
-                        <td ><a href={'coverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.bikeid}</a></td>
-                        <td>{c.mileage} Km</td>
+                        <td  ><a href={'coverview/'+ c.pk} style={{color:"#13B760"}} class="font-weight-bold">{c.bikeid}</a></td>
+                        <td>{c.milage} Km</td>
                         <td>{c.movingtime}</td>
                         <td>{c.averagespeed} Km/hr</td>
-                        <td>{c.kgtrasported}Kg</td>
+                        <td>{c.kgtrasported} Kg</td>
                         <td>{c.co2} Mg </td>
                         <td>{c.additionalbox}</td>
                         </tr>      
                     </tbody>
                 )}
-
-                    <thead>
-                        <tr className="thead">
-                        <th scope="col"></th>
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">45 Km</th>
-                        <th scope="col" className="text-primary">4h 11min</th>
-                        <th scope="col" className="text-primary">14 km/hr</th>
-                        <th scope="col" className="text-primary">67 Kg</th>
-                        <th scope="col" className="text-primary">190 Mg</th>
-                        <th scope="col" className="text-primary">14</th>
-                        </tr>
-                    </thead>
-
+                <Summery />
                     </table>
-</div>
-
-                
+            </div>      
             </div>
         )
     }
