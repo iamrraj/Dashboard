@@ -11,19 +11,21 @@ export class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      submitted: false
+      submitted: false,
+      response: null
     };
     this.cookies = new Cookies();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value
+  handleChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState(prevstate => {
+      const newState = { ...prevstate };
+      newState[name] = value;
+      return newState;
     });
   }
 
@@ -60,6 +62,10 @@ export class Login extends Component {
       requestData
     );
     const response = await request;
+    // console.log(`>> POST request: ${JSON.stringify(request)}`);
+    // const response = await reques
+    // const { response } = this.state;
+    console.log(`>> POST response: ${JSON.stringify(response)}`);
 
     this.cookies.set("Access-Token", response.headers.get("Access-Token"));
     this.cookies.set("Client", response.headers.get("Client"));
@@ -68,7 +74,7 @@ export class Login extends Component {
 
     var error = true;
 
-    if (response.success === undefined) {
+    if (response.ok) {
       error = false;
     } else {
       error = true;
@@ -82,19 +88,19 @@ export class Login extends Component {
         timer: 1000
       }).then(login => {
         if (login.dismiss === Swal.DismissReason.timer) {
-          // window.sessionStorage.setItem('isLoggedIn', true)
+          window.sessionStorage.setItem("isLoggedIn", true);
           window.location.href = "/";
         }
       });
     } else {
       Swal.fire({
+        timer: 1000,
         title: "Logging Error",
         type: "error",
         text: "Your entered Wrong Email or Password"
       });
     }
   }
-
   render() {
     return (
       <section class="login-block ">
