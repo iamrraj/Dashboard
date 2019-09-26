@@ -1,3 +1,16 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,500"); */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css?family=Roboto:400,700,500")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "GTWalsheimProUltraBold";
+  src: url("./fonts/GT-Walsheim-Pro-Ultra-Bold.ttf") format("truetype");
+}
+
 .App {
   text-align: center;
 }
@@ -23,6 +36,13 @@
   color: #61dafb;
 }
 
+.headdd {
+  color: rgba(19, 183, 96, 1);
+  font-family: "GTWalsheimProUltraBold";
+  line-height: 23px;
+  font-size: 17px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -32,20 +52,22 @@
   }
 }
 
-.table td{
+.table td {
   padding: 15px;
   font-weight: 500;
   opacity: 0.9;
 }
 
-
-.table th{
+.table th {
   padding: 15px;
 }
 
+.fa-sort {
+  opacity: 0.5;
+}
 
 @media only screen and (max-width: 768px) {
-  #idd{
+  #idd {
     margin-top: 50px;
   }
 }
@@ -54,16 +76,28 @@
   margin-top: 120px;
   max-width: 600px;
   height: 320px;
-  border: 1px solid #9C9C9C;
-  background-image: linear-gradient(to bottom, #aec1c3, #a9b5b7, #bcc5c6, #cfd5d5, #e3e5e5);
+  border: 1px solid #9c9c9c;
+  background-image: linear-gradient(
+    to bottom,
+    #aec1c3,
+    #a9b5b7,
+    #bcc5c6,
+    #cfd5d5,
+    #e3e5e5
+  );
 }
 #login .container #login-row #login-column .login-box #login-form {
   padding: 20px;
 }
-#login .container #login-row #login-column .login-box #login-form #register-link {
+#login
+  .container
+  #login-row
+  #login-column
+  .login-box
+  #login-form
+  #register-link {
   margin-top: -85px;
 }
-
 
 .badge-wrapper {
   position: relative;
@@ -76,92 +110,71 @@
 }
 
 /* Dashboard Section */
-.noti{
+.noti {
   width: 280px;
-  color:#212226;
+  color: #212226;
   position: absolute;
 }
 
-/* Reort Button */
-.btn-outline-success {
-  width:100px;
-  /* background: rgba(19, 183, 96, 1.0); */
-}
-.btn-outline-success:hover{
-  background: rgba(19, 183, 96, 1.0); 
-}
 .leaflet-container {
   height: 400px;
   width: 800px;
 }
 /* Dashboard Section */
 
-.head{
-  color:rgba(19, 183, 96, 1.0);
-  font-family:  Helvetica, Arial, serif;
-  line-height  : 23.0px;
+.head {
+  color: rgba(19, 183, 96, 1);
+  font-family: Helvetica, Arial, serif;
+  line-height: 23px;
   font-size: 16px;
   font-weight: bolder;
 }
 
-
-
-.rectangle{
-  margin-top: 30px;
-  margin-left: 18px;
-  opacity: 0.7;
-  height: 60px;
-}
-
-.cont{
+.cont {
   margin: 0 auto;
   max-width: 900px;
 }
 
-
-.r{
+.r {
   padding-bottom: 15px;
 }
 
-.l{
-  font-family         : "Rubik", Helvetica, Arial, serif;
-  font-weight         : 500;
-  font-style          : normal;
-  font-size           : 13.0px;
+.l {
+  font-family: "Rubik", Helvetica, Arial, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
 
-  text-align          : left;
-  letter-spacing      : -0.11px;
-  line-height         : 15.0px;
+  text-align: left;
+  letter-spacing: -0.11px;
+  line-height: 15px;
   background: white;
   margin-right: 10px;
   padding: 12px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  border: 2px solid #CCEFDC;
+  border: 2px solid #ccefdc;
   border-bottom: 0 white;
   font-weight: bolder;
-  width: 130px;
+  width: 200px;
   font-size: 14px;
   text-align: center;
   opacity: 0.8;
-  
-  
-
 }
 
-.rrr{
-  font-family         : "Rubik", Helvetica, Arial, serif;
-  color               : rgba(19, 183, 96, 1.0);
+.rrr {
+  font-family: "Rubik", Helvetica, Arial, serif;
+  color: rgba(19, 183, 96, 1);
   margin-right: 10px;
-  padding: 17px;
+  padding: 23px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   background: white;
-  border: 2px solid #CCEFDC;
+  border: 2px solid #ccefdc;
   border-bottom: 0 white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bolder;
-  width: 140px;
+  width: 220px;
   text-align: center;
   opacity: 0.8;
 }
@@ -177,12 +190,12 @@
   background: white;
   color: #000;
 } */
-.ll{
-  color               : rgba(19, 183, 96, 1.0);
+.ll {
+  color: rgba(19, 183, 96, 1);
 }
 
-.box{
-  box-shadow: 0px 10px 13px -7px #C0C0C0;
+.box {
+  box-shadow: 0px 4px 15px -7px #c0c0c0;
   /* -webkit-box-shadow: 0 8px 6px 1px #C0C0C0;;
 	   -moz-box-shadow: 0 8px 6px 1px #C0C0C0;;
 	        box-shadow: 0 8px 6px 1px #C0C0C0;; */
@@ -190,198 +203,279 @@
   margin-top: 15px;
   border-radius: 7px;
 
-  
-  
   /* "0 9px 17px 8px #E5E8E9"  */
 }
-
-.thead{
-  border-top: 2px solid rgba(19, 183, 96, 1.0);
-  background: #F5FAF3;
-  border-bottom: 2px solid white;
-  
+table {
+  width: 100%;
 }
 
-tr{
-  border-top: 2px solid #CCEFDC;
+.thead {
+  border-top: 2px solid rgba(19, 183, 96, 1);
+  background: #f5faf3;
+
+  position: relative;
+  font-weight: bolder;
+}
+
+tr {
+  border-top: 2px solid #ccefdc;
+  position: relative;
   margin: 12px 12px 12px 12px;
   /* text-align: center; */
 }
-
-.th{
-  font-size: 14px;
-  font-weight: bolder;
-  
+thead {
+  border-bottom: 5px solid #fff;
 }
-.su{
+tbody {
+  position: relative;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #f5faf3;
+}
+.th {
+  font-size: 14px;
+}
+.su {
   border-bottom: none;
 }
-a:hover{
+a:hover {
   text-decoration: none;
 }
-th{
-  color: rgba(33, 34, 38, 1.0);
-  font-size: 13px;
+.thead1 th {
+  font-family: "Roboto", Helvetica, Arial, serif;
+  color: rgba(33, 34, 38, 1);
+  opacity: 0.7;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
-#span{
-  margin-left:89px;
-  font-size:10px;
-  position:absolute;
-  top:185px;
-  color:rgba(19, 183, 96, 1.0)
+.t {
+  position: relative;
+  margin-top: 100px;
 }
 
-
+#span {
+  margin-left: 101px;
+  font-size: 10px;
+  position: absolute;
+  top: 275px;
+  color: rgba(19, 183, 96, 1);
+}
 
 /* Login Page */
 
 /* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
-.login-block{
-    /* background: #DE6262;  
+.login-block {
+  /* background: #DE6262;  
 background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
 background: linear-gradient(to bottom, #FFB88C, #DE6262); */
-/* float:left;
+  /* float:left;
 width:100%; */
-margin: 0 auto;
-max-width: 900px;
-padding : 50px 0;
-
-
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 50px 0;
 }
 
-.id{
-  background:#fff;
+.id {
+  background: #fff;
 }
-.d-block{
+.d-block {
   height: 555px;
-
-
 }
-.banner-sec{
+.banner-sec {
   margin-left: -15px;
 }
 
+.log {
+  /* src: url("./fonts/GT-Walsheim-Pro-Ultra-Bold.ttf") format("truetype");
+  font-family: Impact, "GTWalsheimProUltraBold", Helvetica, Arial, serif; */
+  font-family: "GTWalsheimProUltraBold";
 
-
-.log{
-  font-family : Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing: 2px;
-  font-weight: bolder;
-  font-size:24px;
-  margin-top:60px;
-  margin-bottom:15px;
+  font-size: 26px;
+  margin-top: 60px;
+  color: rgba(33, 34, 38, 1);
+  line-height: 46px;
+  margin-bottom: 15px;
 }
- /* .containe{background:#fff; }  */
-/* .carousel-inner{border-radius:0 10px 10px 0;} */
-.carousel-caption{text-align:left; left:5%;}
-.login-sec{padding: 50px 30px; position:relative;}
-.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
-.login-sec .copy-text i{color:#FEB58A;}
-.login-sec .copy-text a{color:#E36262;}
+.headd {
+  color: rgba(19, 183, 96, 1);
+  font-family: "GTWalsheimProUltraBold";
+  font-size: 17px;
+  line-height: 23px;
+}
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+}
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+.login-sec .copy-text {
+  position: absolute;
+  width: 80%;
+  bottom: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+.login-sec .copy-text i {
+  color: #feb58a;
+}
+.login-sec .copy-text a {
+  color: #e36262;
+}
 /* .login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #DE6262;}
 .login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto} */
 /* .btn-login{background: #DE6262; color:#fff; font-weight:600;} */
-.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
-.banner-text h2{color:#fff; font-weight:600;}
-.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
-.banner-text p{color:#fff;}
+.banner-text {
+  width: 70%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 20px;
+}
+.banner-text h2 {
+  color: #fff;
+  font-weight: 600;
+}
+.banner-text h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.banner-text p {
+  color: #fff;
+}
 
-.form-control{
+.form-control {
   border: 2px solid white;
-  border-bottom: 1px solid rgba(19, 183, 96, 1.0);
+  border-bottom: 1px solid rgba(19, 183, 96, 1);
   box-sizing: border-box;
   color: black;
 }
 /* For input */
-.form-control:hover{
+.form-control:hover {
   box-sizing: border-box;
   border: 2px solid white;
-  border-bottom: 1px solid rgba(19, 183, 96, 1.0);
+  border-bottom: 1px solid rgba(19, 183, 96, 1);
 }
 
-
-
 /* For nav button */
-.a{
-  opacity: 0.8;
+.a {
+  opacity: 0.6;
 }
 
 /* For Dashboard */
 
-.imag{
-  
-  height: 42px;
+.imag {
+  height: 38px;
   opacity: 0.6;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
-  
 }
 
-.n{
+.n {
   padding-bottom: 10px;
 }
 
-#p{
-  font-weight : 400;
-  font-family : "Roboto", Helvetica, Arial, serif;
-  opacity : 0.4;
-  font-size : 15.0px;
-  line-height         : 20.0px;
-  font-style          : normal;
+#p {
+  font-family: "Roboto", Helvetica, Arial, serif;
+  opacity: 0.8;
+  color: rgba(133, 133, 135, 1);
+  font-size: 14px;
+  line-height: 11px;
+  font-style: normal;
   text-align: center;
-  letter-spacing: 0.5px;
-  font-weight: bolder;
-  
-
-  
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  margin-top: 10px;
 }
-h5{
-  font-family         : "Roboto", Helvetica, Arial, serif;
+h5 {
+  font-family: "Roboto", Helvetica, Arial, serif;
   /* font-weight         : 900; */
-  font-style          : normal;
-  font-size           : 24.0px;
-  color               : rgba(19, 183, 96, 1.0);
-  text-align          : left;
-  line-height         : 28.0px;
-  background-color    : rgba(255,255,255,0.0);
+  font-style: normal;
+  font-size: 24px;
+  color: rgba(19, 183, 96, 1);
+  text-align: left;
+  line-height: 28px;
+  background-color: rgba(255, 255, 255, 0);
   margin-bottom: 0px;
   text-align: center;
 }
-h4{
-  
-  font-family         : "Roboto", Helvetica, Arial, serif;
-  font-weight         : 700;
-  font-style          : normal;
-  font-size           : 18.0px;
-  color               : rgba(33, 34, 38, 1.0);
-  line-height         : 19.0px;
-  
-  
+h4 {
+  font-family: "Roboto", Helvetica, Arial, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  color: rgba(33, 34, 38, 1);
+  line-height: 19px;
 }
-.w{
+.w {
   text-align: center;
-  margin-right: 15px;
-  opacity             : 0.5;
-  font-family         : "Roboto", Helvetica, Arial, serif;
-  
+  margin-right: 40px;
+  opacity: 0.4;
+  font-family: "Roboto", Helvetica, Arial, serif;
 }
 
+.ww {
+  text-align: center;
+  margin-right: 35px;
+  opacity: 0.4;
+  font-family: "Roboto", Helvetica, Arial, serif;
+}
 
-.btn-block{
+.www {
+  text-align: center;
+  margin-right: 40px;
+  opacity: 0.4;
+  font-family: "Roboto", Helvetica, Arial, serif;
+}
+
+.btn-block {
   width: 100%;
 }
 
 /* Export Button */
-.bb{
+.bb {
   width: 200px;
   padding: 10px;
-  background: rgba(19, 183, 96, 1.0);
+  background: rgba(19, 183, 96, 1);
 }
 
+/* Report Section */
+#rep {
+  font-size: 22px;
+  margin-top: 0px;
+  font-weight: bolder;
+  font-family: "Roboto", Helvetica, Arial, serif;
+}
+#cut {
+  font-size: 20px;
+}
+.modal-header {
+  border: none;
+}
 
+/* Reort Button */
+.btn-outline-success {
+  width: 111px;
+  /* background: rgba(19, 183, 96, 1.0); */
+}
+.btn-outline-success:hover {
+  background: rgba(19, 183, 96, 1);
+}
 
+.arrow {
+  margin-left: 130px;
+  bottom: 33%;
+  position: absolute;
+  color: rgba(19, 183, 96, 1);
+}

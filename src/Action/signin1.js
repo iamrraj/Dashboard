@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 const URL = "https://1nimmg3p7f.execute-api.us-east-1.amazonaws.com/prod/aboveline_jr_test_service";
 var $ = require("jquery");
 
@@ -33,8 +34,8 @@ class signin1 extends Component {
           .catch(function (error) {
             console.log(error);
           });
-        this.refs.user.value = "",
-          this.refs.pass.value = ""
+            this.refs.user.value = "",
+            this.refs.pass.value = ""
       }
 
     handleChangeUsername(text) {

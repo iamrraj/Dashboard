@@ -5,8 +5,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import { renderInput } from '../utils/redux-form-fields';
-import { signin } from '../actions/Authentication';
+// import { renderInput } from './redux-form-fields';
+import { signin } from './Auth';
 
 class Signin extends Component {
   componentDidMount() {
@@ -31,13 +31,13 @@ class Signin extends Component {
         <div className="column">
           <form onSubmit={handleSubmit(this.formSubmit.bind(this))}>
             <Field
-              component={renderInput}
+             
               type="text"
               name="username"
               label="Username"
             />
             <Field
-              component={renderInput}
+              
               type="password"
               name="password"
               label="Paassword"

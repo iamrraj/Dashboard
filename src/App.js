@@ -17,6 +17,7 @@ import Login from './Container/Login'
 import Notification from './Views/Page/Notification'
 import Report from './Views/Page/Report'
 import Cookies from "universal-cookie";
+// import Signin from './Action/Signin'
 
 import './App.css';
 
@@ -96,6 +97,7 @@ class App extends Component {
           <Route path="/uoverview/:pk"  component={Udetails} />
           <Route path="/notification"  component={Notification} />
           <Route path="/report"  component={Report} />
+          {/* <Route path="/signin" component={Signin} /> */}
           </Switch>
       </BrowserRouter>
 
