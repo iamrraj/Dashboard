@@ -14,7 +14,7 @@ class DateForm extends Component {
                 class="form-control datepicker"
                 style={{ width: "150px" }}
               />
-              <i class="fas fa-angle-down  arrow"></i>
+              {/* <i class="fas fa-angle-down  arrow"></i> */}
             </div>
           </div>
 
@@ -24,10 +24,11 @@ class DateForm extends Component {
               <input
                 type="date"
                 name="to"
+                placeholder="Select Date"
                 class="form-control datepicker"
                 style={{ width: "150px" }}
               />
-              <i class="fas fa-angle-down  arrow"></i>
+              {/* <i class="fas fa-angle-down  arrow"></i> */}
             </div>
           </div>
           <button

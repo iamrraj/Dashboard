@@ -18,7 +18,7 @@ export class Cdetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/cdbike?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/data/?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -33,7 +33,7 @@ export class Cdetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/cbike/${this.props.match.params.pk}`
+        `http://localhost:8000/api/1/deliveries/classic/${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       console.log(movie);
@@ -73,9 +73,15 @@ export class Cdetails extends Component {
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Lp</th>
-                <th scope="col">Data</th>
-                <th scope="col">Dystans</th>
+                <th scope="col" className="t">
+                  Lp
+                </th>
+                <th scope="col" className="t">
+                  Data
+                </th>
+                <th scope="col" className="t">
+                  Dystans
+                </th>
                 {/* <th scope="col" style={{ width: "140px" }}>
                   
                 </th> */}
@@ -87,11 +93,11 @@ export class Cdetails extends Component {
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
             </thead>
-            {movie.items.map(item => (
+            {movie.detail.map(item => (
               <tbody>
                 <tr>
                   <th scope="row">{item.id}</th>
-                  <td>{item.date} </td>
+                  <td>{item.timestamp} </td>
                   <td>{item.milage} Km</td>
                   {/* <td>{item.movingtime}</td> */}
                   <td>{item.averagespeed} km/hr</td>
@@ -104,7 +110,40 @@ export class Cdetails extends Component {
               </tbody>
             ))}
 
-            <DeatilSummery />
+            <thead>
+              <tr className="thead">
+                <th scope="col"></th>
+                <th scope="col" className="text-dark th">
+                  <strong>Summery</strong>
+                </th>
+                <th
+                  scope="col"
+                  className="text-dark th"
+                  style={{ width: "100px" }}
+                >
+                  {movie.summery.total_milage} Km
+                </th>
+
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_averagespeed} Km/hr
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_letter}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_ship_weight} kgs
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_pack}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_kg} kgs
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_boxes}
+                </th>
+              </tr>
+            </thead>
           </table>
         </div>
       </div>

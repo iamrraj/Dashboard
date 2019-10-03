@@ -10,7 +10,9 @@ class Summery extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/sduser`);
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/dashboard/`
+      );
       const dash = await res.json();
       // console.log(dash)
       this.setState({
@@ -31,28 +33,28 @@ class Summery extends Component {
               SUMMERY
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_travel_walk} Km
+              {c.total_walk_milage} Km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_distribute_walk} Kg
+              {c.total_walk_kg} Kg
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_travel_classic} km
+              {c.total_classic_milage} km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_distribute_classic} kg
+              {c.total_classic_kg} kg
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_travel_electric} km
+              {c.total_electric_milage} km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_distribute_electric} Kg
+              {c.total_electric_kg} Kg
             </th>
             <th scope="col" className="text-dark th">
               {c.total_milage} Km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_weight} Kgs
+              {c.total_kg} Kgs
             </th>
           </tr>
         ))}

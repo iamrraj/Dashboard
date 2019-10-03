@@ -10,7 +10,9 @@ export default class Summery extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/scbike`);
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/classic/summery`
+      );
       const dash = await res.json();
       // console.log(dash)
       this.setState({

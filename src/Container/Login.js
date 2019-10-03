@@ -12,7 +12,8 @@ export class Login extends Component {
       email: "",
       password: "",
       submitted: false,
-      response: null
+      response: null,
+      logged_in: localStorage.getItem("token") ? true : false
     };
     this.cookies = new Cookies();
     this.handleChange = this.handleChange.bind(this);
@@ -82,7 +83,7 @@ export class Login extends Component {
 
     if (!error) {
       Swal.fire({
-        title: "Loggedin",
+        title: "Logged in",
         type: "success",
         showConfirmButton: false,
         timer: 1000

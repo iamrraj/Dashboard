@@ -34,9 +34,30 @@ class Dashboard extends Component {
     console.log(main.format("L"));
   }
 
+  // Get Data from filter date
+  getData = async e => {
+    try {
+      const from = e.target.elements.from.value;
+      const to = e.target.elements.to.value;
+      e.preventDefault();
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/dashboard1/?too__lte=${to}&fromm__gte=${from}`
+      );
+      const dash = await res.json();
+      console.log(dash);
+      this.setState({
+        dash: dash.results
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/dapi/dashboard`);
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/dashboard/`
+      );
       const dash = await res.json();
       console.log(dash);
       this.setState({
@@ -57,6 +78,7 @@ class Dashboard extends Component {
           </div>
           <div className="col-sm-8">
             <DateForm />
+            {/* loaddata={this.getData} */}
           </div>
         </div>
         <Topbar1 />
@@ -92,7 +114,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={weight} alt="weight" className="imag" />
-                        <h5>{c.total_weight} Kgs</h5>
+                        <h5>{c.total_kg} Kgs</h5>
                         <p id="p">
                           Przetransportowana masa<br></br> przesylek
                         </p>
@@ -105,7 +127,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={leaf} alt="leaf" className="imag" />
-                        <h5>845 Mg </h5>
+                        <h5>{c.total_co2} Mg </h5>
                         <p id="p">Zaoszczędzone CO2</p>
                       </div>
                     </div>
@@ -129,7 +151,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_travel_walk} Km </h5>
+                        <h5>{c.total_walk_milage} Km </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -141,7 +163,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="electric" className="imag" />
-                        <h5>{c.total_travel_electric} Kms</h5>
+                        <h5>{c.total_electric_milage} Kms</h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -158,7 +180,7 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_travel_classic} Kms </h5>
+                        <h5>{c.total_classic_milage} Kms </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -174,7 +196,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_distribute_walk} Kgs </h5>
+                        <h5>{c.total_walk_kg} Kgs </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -185,7 +207,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="walk" className="imag" />
-                        <h5>{c.total_distribute_electric} Kgs </h5>
+                        <h5>{c.total_electric_kg} Kgs </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -201,7 +223,7 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_distribute_classic} Kgs </h5>
+                        <h5>{c.total_classic_kg} Kgs </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>

@@ -4,41 +4,23 @@ export class Report extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "Choose UserName",
-      value: props.value
+      movies: []
     };
   }
 
-  handleChange(event) {
-    this.setState({
-      value: event.target.value
-    });
+  // Get Data From Backend
+  async componentDidMount() {
+    try {
+      const res = await fetch(`http://localhost:8000/api/1/deliveries/user1/`);
+      const movies = await res.json();
+      // console.log(report);
+      this.setState({
+        movies: movies.results
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
-
-  walk = () => {
-    this.setState({
-      text: "Choose UserName"
-    });
-  };
-
-  electric = () => {
-    this.setState({
-      text: "Choose The Bike ID"
-    });
-  };
-
-  classic = () => {
-    this.setState({
-      text: "Bike Id"
-    });
-  };
-
-  user = () => {
-    this.setState({
-      text: "Choose UserName Of User"
-    });
-  };
-
   render() {
     return (
       <div
@@ -75,7 +57,7 @@ export class Report extends Component {
               </button>
             </div>
             <div className="modal-body ">
-              <form>
+              <form onSubmit={this.props.loaddata}>
                 <div className="row">
                   <div className="col-sm-7">
                     <div className="form-group">
@@ -102,57 +84,175 @@ export class Report extends Component {
                   </div>
                 </div>
 
-                <p>Choose the Distribution Type</p>
-                <div className="btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-outline-success  active"
-                    onClick={this.walk}
-                    style={{ background: "rgba(19, 183, 96, 1.0)" }}
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active btn-outline-success"
+                      id="pills-home-tab"
+                      data-toggle="pill"
+                      href="#pills-home"
+                      role="tab"
+                      aria-controls="pills-home"
+                      aria-selected="true"
+                    >
+                      User
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link btn-outline-success"
+                      id="pills-profile-tab"
+                      data-toggle="pill"
+                      href="#pills-profile"
+                      role="tab"
+                      aria-controls="pills-profile"
+                      aria-selected="false"
+                    >
+                      Electric
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link btn-outline-success"
+                      id="pills-contact-tab"
+                      data-toggle="pill"
+                      href="#pills-contact"
+                      role="tab"
+                      aria-controls="pills-contact"
+                      aria-selected="false"
+                    >
+                      Classic
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link btn-outline-success"
+                      id="pills-walk-tab"
+                      data-toggle="pill"
+                      href="#pills-walk"
+                      role="tab"
+                      aria-controls="pills-contact"
+                      aria-selected="false"
+                    >
+                      Walk
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="pills-home"
+                    role="tabpanel"
+                    aria-labelledby="pills-home-tab"
                   >
-                    Walk
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-success "
-                    onClick={this.electric}
+                    <label>Select User</label>
+                    <select
+                      multiple
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      name="idd"
+                    >
+                      {this.state.movies.map(c => (
+                        <option value={c.user}>{c.user1}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-profile"
+                    role="tabpanel"
+                    aria-labelledby="pills-profile-tab"
                   >
-                    EB
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-success "
-                    onClick={this.classic}
+                    <label>Select Electric Bike</label>
+                    <select
+                      multiple
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      name="idd"
+                    >
+                      <option>Electric</option>
+                      <option>Electric</option>
+                      <option>Electric</option>
+                    </select>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-contact"
+                    role="tabpanel"
+                    aria-labelledby="pills-contact-tab"
                   >
-                    CB
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-outline-success "
-                    onClick={this.user}
+                    <label>Select Classic Bike</label>
+                    <select
+                      multiple
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      name="idd"
+                    >
+                      <option>Classic</option>
+                      <option>Classic</option>
+                      <option>Classic</option>
+                    </select>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-walk"
+                    role="tabpanel"
+                    aria-labelledby="pills-walk-tab"
                   >
-                    User
-                  </button>
+                    <label>Select Walk</label>
+                    <select
+                      multiple
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      name="idd"
+                    >
+                      <option>Walk</option>
+                      <option>Walk</option>
+                      <option>Walk</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div className="form-group" style={{ marginTop: "20px" }}>
-                  <label for="exampleFormControlSelect2">
-                    {this.state.text}
-                  </label>
-                  {/* value={this.state.value} name={this.props.name} onChange={this.handleChange.bind(this)} */}
-                  <select
-                    multiple
-                    className="form-control btn-block"
-                    id="exampleFormControlSelect2 btn-block"
-                    style={{ width: "200px", color: "rgba(19, 183, 96, 1.0)" }}
-                  >
-                    <option>Electric Bike</option>
-                    <option>Classic Bike</option>
-                    <option>Walk</option>
-                    <option>User</option>
-                    <option>User 1</option>
-                  </select>
-                </div>
+                <select
+                  // multiple
+                  className="form-control btn-block"
+                  id="exampleFormControlSelect2 btn-block"
+                  style={{
+                    width: "200px",
+                    color: "rgba(19, 183, 96, 1.0)"
+                  }}
+                  name="modee"
+                >
+                  <option value="">None</option>
+                  <option value="foot">Foot</option>
+                  <option value="bike">Classic Bike</option>
+                  <option value="electric-bike">Electric Bike</option>
+                </select>
+
+                {/* <button
+                  type="submit"
+                  value="Get Data"
+                  className="btn btn-login"
+                  style={{ height: "40px", marginTop: "13px" }}
+                >
+                  Report
+                </button> */}
 
                 <center>
                   <a
@@ -172,10 +272,6 @@ export class Report extends Component {
                 </center>
               </form>
             </div>
-            {/* <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                           
-                        </div> */}
           </div>
         </div>
       </div>

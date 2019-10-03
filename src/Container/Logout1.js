@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Swal from "sweetalert2";
+
+import Cookies from "universal-cookie";
 
 class Logout1 extends Component {
   constructor(props) {
@@ -8,11 +11,13 @@ class Logout1 extends Component {
       logged_in: localStorage.getItem("token") ? true : false,
       username: ""
     };
+    this.handle_logout = this.Logout.bind(this);
+    this.cookies = new Cookies();
   }
 
-  handle_logout = () => {
-    localStorage.removeItem("token");
-    this.setState({ logged_in: false, username: "" });
+  handle_logout () => {
+    // localStorage.removeItem("token");
+    // this.setState({ logged_in: false, username: "" });
   };
   render() {
     return (

@@ -13,7 +13,7 @@ export class user extends Component {
   }
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/user`);
+      const res = await fetch(`http://localhost:8000/api/1/deliveries/user/`);
       const user = await res.json();
       console.log(user);
       this.setState({
@@ -31,7 +31,7 @@ export class user extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/user?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/user/?too__lte=${to}&fromm__gte=${from}`
       );
       const user = await res.json();
       console.log(user);
@@ -57,8 +57,12 @@ export class user extends Component {
           <table class="table table-hover" style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Lp </th>
-                <th scope="col">Uzytkownik</th>
+                <th scope="col" className="t">
+                  Lp{" "}
+                </th>
+                <th scope="col" className="t">
+                  Uzytkownik
+                </th>
                 <th scope="col">Dystans pieszo</th>
                 <th scope="col">Przeniesiona masa przesyłek</th>
                 <th scope="col">Dystans rowerem klasycznym</th>
@@ -72,24 +76,34 @@ export class user extends Component {
             {this.state.user.map(c => (
               <tbody key={c.pk}>
                 <tr>
-                  <th scope="row">{c.pk}</th>
+                  <th scope="row">{c.id}</th>
                   <td>
                     <a
-                      href={"uoverview/" + c.pk}
+                      href={"uoverview/" + c.id}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
                       {c.user}
                     </a>
                   </td>
-                  <td>{c.trwalk} Km</td>
-                  <td>{c.Dtwalk} Kg</td>
-                  <td>{c.trclassic} Km</td>
-                  <td>{c.Dtclassic} Kg</td>
-                  <td>{c.trelectric} Km</td>
-                  <td>{c.Dtelectric} Kg</td>
-                  <td>{c.totalMilage} Km</td>
-                  <td>{c.totalweight} Kg</td>
+                  <td>
+                    {c.total_walk_milage ? `${c.total_walk_milage}` : 0} Km
+                  </td>
+                  <td>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} Kg</td>
+                  <td>
+                    {c.total_classic_milage ? `${c.total_classic_milage}` : 0}{" "}
+                    Km
+                  </td>
+                  <td>{c.total_classic_kg ? `${c.total_classic_kg}` : 0} Kg</td>
+                  <td>
+                    {c.total_electric_milage ? `${c.total_electric_milage}` : 0}{" "}
+                    Km
+                  </td>
+                  <td>
+                    {c.total_electric_kg ? `${c.total_electric_kg}` : 0} Kg
+                  </td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
                 </tr>
               </tbody>
             ))}

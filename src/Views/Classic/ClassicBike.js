@@ -18,7 +18,7 @@ class ClassicBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/cbike?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/classic/?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -32,7 +32,9 @@ class ClassicBike extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/cbike`);
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/classic/`
+      );
       const movies = await res.json();
       console.log(movies);
       this.setState({
@@ -55,15 +57,17 @@ class ClassicBike extends Component {
           <table class="table table-hover" style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Lp</th>
+                <th scope="col" className="t">
+                  Lp
+                </th>
                 <th scope="col">Identyfikator roweru</th>
-                <th scope="col" style={{ width: "90px" }}>
+                <th scope="col" style={{ width: "90px" }} className="t">
                   Dystans
                 </th>
                 <th scope="col" style={{ width: "100px" }}>
                   Czas w ruchu
                 </th>
-                <th scope="col" style={{ width: "100px" }}>
+                <th scope="col" className="t" style={{ width: "100px" }}>
                   Średnia prędkość
                 </th>
                 <th scope="col">Llość przesylek listiwych</th>
@@ -80,27 +84,31 @@ class ClassicBike extends Component {
               </tr>
             </thead>
             {this.state.movies.map(c => (
-              <tbody key={c.pk}>
+              <tbody key={c.id}>
                 <tr className="one">
-                  <td>{c.pk}</td>
+                  <td>{c.id}</td>
                   <td>
                     <a
-                      href={"coverview/" + c.pk}
+                      href={"coverview/" + c.id}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {c.bikeid}
+                      CB-{c.user}
                     </a>
                   </td>
-                  <td>{c.milage} Km</td>
-                  <td>{c.movingtime} hr</td>
-                  <td>{c.averagespeed} Km/hr</td>
-                  <td>{c.letteritems}</td>
-                  <td>{c.shipweight} kgs</td>
-                  <td>{c.package}</td>
-                  <td>{c.kgtrasported} Kg</td>
-                  <td>{c.co2} Mg </td>
-                  <td>{c.additionalbox}</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} Km/hr
+                  </td>
+                  <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
+                  <td>
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                  </td>
+                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
+                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} Mg </td>
+                  <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                 </tr>
               </tbody>
             ))}

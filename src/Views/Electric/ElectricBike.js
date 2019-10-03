@@ -18,10 +18,10 @@ class ElectricBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/ebike?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/bikes/electric/?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
-      // console.log(movies);
+      console.log(movies);
       this.setState({
         movies: movies.results
       });
@@ -32,9 +32,9 @@ class ElectricBike extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/ebike`);
+      const res = await fetch(`http://localhost:8000/api/1/bikes/electric/`);
       const movies = await res.json();
-      // console.log(movies);
+      console.log(movies);
       this.setState({
         movies: movies.results
       });
@@ -60,9 +60,15 @@ class ElectricBike extends Component {
           >
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Lp</th>
-                <th scope="col">Identyfikator</th>
-                <th scope="col">Dystans</th>
+                <th scope="col" className="t">
+                  Lp
+                </th>
+                <th scope="col" className="t">
+                  Identyfikator
+                </th>
+                <th scope="col" className="t">
+                  Dystans
+                </th>
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
                 <th scope="col">Llość przesyłek listiwych</th>
@@ -71,7 +77,9 @@ class ElectricBike extends Component {
                 {/* Adde New in api */}
                 <th scope="col">Llość paczek</th>
                 {/* Adde New in api */}
-                <th scope="col">Masa paczek</th>
+                <th scope="col" className="t">
+                  Masa paczek
+                </th>
                 <th scope="col">Zaoszczędzone CO2</th>
                 <th scope="col">Liczba dobrań </th>
                 <th scope="col">Liczba uzytkowników</th>
@@ -81,28 +89,32 @@ class ElectricBike extends Component {
              */}
 
             {this.state.movies.map(c => (
-              <tbody key={c.id}>
+              <tbody key={c.pk}>
                 <tr>
-                  <td>{c.pk}</td>
+                  <td>{c.id}</td>
                   <td>
                     <a
-                      href={"eoverview/" + c.pk}
+                      href={"eoverview/" + c.id}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {c.bikeid}
+                      {c.label}
                     </a>
                   </td>
-                  <td>{c.milage} Km</td>
-                  <td>{c.movingtime} hr</td>
-                  <td>{c.averagespeed} km/hr</td>
-                  <td>{c.letteritems}</td>
-                  <td>{c.shipweight} kgs</td>
-                  <td>{c.package}</td>
-                  <td>{c.kgtrasported} Kg</td>
-                  <td>{c.co2} mg </td>
-                  <td>{c.additionalbox}</td>
-                  <td>{c.nouser}</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/hr
+                  </td>
+                  <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
+                  <td>
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                  </td>
+                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
+                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
+                  <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
+                  <td>{c.total_user ? `${c.total_user}` : 0}</td>
                 </tr>
               </tbody>
             ))}

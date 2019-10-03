@@ -1,109 +1,175 @@
-import React, { Component } from 'react'
-import ReactToExcel from 'react-html-table-to-excel'
+import React, { Component } from "react";
+import ReactToExcel from "react-html-table-to-excel";
 
-class Report extends Component {
-    render() {
-        return (
-            <div className="container" style={{marginTop:"90px", background:"white", padding:"15px"}} >
-    
-                <h5 className="font-weight-bold" style={{marginTop:"10px"}}> ELECTRIC BIKE DISTRIBUTION </h5>
-                <p>from 23-09-2019 to 23-10-2019</p>
+// import Report from "../../Container/Layout/Report";
+import Form from "./Form";
 
-                <table class="table " id="table-to-xls" >
-                    <thead>
-                        <tr style={{background:"#CCEFDC"}}>
-                        <th scope="col">Id</th>
-                        <th scope="col">Bike Id</th>
-                        <th scope="col">Milage</th>
-                        <th scope="col">Moving Time</th>
-                        <th scope="col">Avgerage Speed</th>
-                        <th scope="col">Kilograms Transpored</th>
-                        <th scope="col">Safe Co2</th>
-                        <th scope="col">Additional Boxex</th>
-                        <th scope="col">Number Of User</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">RE01</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        <td>4</td>
-                        </tr>
-
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">RE01</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        <td>4</td>
-                        </tr>
-
-                         <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">RE01</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        <td>4</td>
-                        </tr>
-
-
-                        <tr style={{background:"white"}}>
-                        <th scope="row">1</th>
-                        <td ><a href="/overview/4343" style={{color:"#13B760"}} class="font-weight-bold">RE01</a></td>
-                        <td>45 Km</td>
-                        <th >4h 11min</th>
-                        <td>14 Km/hr</td>
-                        <td>67Kg</td>
-                        <td>190 Mg </td>
-                        <td>14</td>
-                        <td>4</td>
-                        </tr>
-
-
-                    </tbody>
-
-                    <thead className="thead" >
-                        <tr>
-                        <th scope="col"></th>
-                        <th scope="col" className="text-dark"><strong>Summery</strong></th>
-                        <th scope="col" className="text-primary">45 Km</th>
-                        <th scope="col" className="text-primary">4h 11min</th>
-                        <th scope="col" className="text-primary">14 km/hr</th>
-                        <th scope="col" className="text-primary">67 Kg</th>
-                        <th scope="col" className="text-primary">190 Mg</th>
-                        <th scope="col" className="text-primary">14</th>
-                        <th scope="col" className="text-primary">4</th>
-                        </tr>
-                    </thead>
-                    </table>
-                    <center>
-                    <ReactToExcel
-                        className="btn btn-success btn-lg bb"
-                        table="table-to-xls"
-                        filename ="excelFile"
-                        sheet="sheet 1"
-                        buttonText ="Export CSV"
-                    />
-                    </center>
-              </div>
-
-        )
+class ReportPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: []
+    };
+  }
+  // Get Data from filter date
+  getData = async e => {
+    try {
+      const idd = e.target.elements.idd.value;
+      const modee = e.target.elements.modee.value;
+      const from = e.target.elements.from.value;
+      const to = e.target.elements.to.value;
+      e.preventDefault();
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/report/?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}`
+      );
+      const movies = await res.json();
+      console.log(movies);
+      this.setState({
+        movies: movies.results
+      });
+    } catch (e) {
+      console.log(e);
     }
+  };
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(`http://localhost:8000/api/1/deliveries/report/`);
+  //     const movies = await res.json();
+  //     console.log(movies);
+  //     this.setState({
+  //       movies: movies.results
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+  render() {
+    return (
+      <div className="container" style={{ marginTop: "30px" }}>
+        <Form loaddata={this.getData} />
+        <div
+          style={{ marginTop: "20px", background: "white", padding: "15px" }}
+        >
+          <h5 className="font-weight-bold" style={{ marginTop: "10px" }}>
+            {" "}
+            ELECTRIC BIKE DISTRIBUTION{" "}
+          </h5>
+          <p>from 23-09-2019 to 23-10-2019</p>
+
+          <table class="table table-hover table-lg " id="table-to-xls">
+            <thead>
+              <tr style={{ background: "#CCEFDC" }} className="thead1">
+                <th scope="col" className="t">
+                  Lp
+                </th>
+                <th scope="col" className="t">
+                  Identyfikator
+                </th>
+                <th scope="col" className="t">
+                  Dystans
+                </th>
+                <th scope="col">Czas w ruchu</th>
+                <th scope="col">Średnia prędkość</th>
+                <th scope="col">Llość przesyłek listiwych</th>
+                {/* Adde New in api */}
+                <th scope="col">Masa przesyłek listiwych</th>
+                {/* Adde New in api */}
+                <th scope="col">Llość paczek</th>
+                {/* Adde New in api */}
+                <th scope="col" className="t">
+                  Masa paczek
+                </th>
+                <th scope="col">Zaoszczędzone CO2</th>
+                <th scope="col">Liczba dobrań </th>
+                <th scope="col">Liczba uzytkowników</th>
+              </tr>
+            </thead>
+
+            {this.state.movies.map(c => (
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <a
+                      href="/overview/4343"
+                      style={{ color: "#13B760" }}
+                      class="font-weight-bold"
+                    >
+                      {c.user}
+                    </a>
+                  </td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} Km/hr
+                  </td>
+                  <td>{c.total_letter ? `${c.total_letter}` : 0} Kg</td>
+                  <td>
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                  </td>
+                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
+                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
+                  <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
+                  <td>{c.total_user ? `${c.total_user}` : 0}</td>
+                </tr>
+              </tbody>
+            ))}
+
+            <thead className="thead">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" className="text-dark th">
+                  <strong>Summery</strong>
+                </th>
+                <th scope="col" className="text-dark th">
+                  45 Km
+                </th>
+                <th scope="col" className="text-dark th">
+                  4h 11min
+                </th>
+                <th scope="col" className="text-dark th">
+                  14 km/hr
+                </th>
+                <th scope="col" className="text-dark th">
+                  67 Kg
+                </th>
+                <th scope="col" className="text-dark th">
+                  190 Mg
+                </th>
+                <th scope="col" className="text-dark th">
+                  14
+                </th>
+                <th scope="col" className="text-dark th">
+                  4
+                </th>
+                <th scope="col" className="text-dark th">
+                  190 Mg
+                </th>
+                <th scope="col" className="text-dark th">
+                  14
+                </th>
+                <th scope="col" className="text-dark th">
+                  4
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <center>
+            <ReactToExcel
+              className="btn btn-success btn-lg bb"
+              table="table-to-xls"
+              filename="SoftbikeReport"
+              sheet="sheet 1"
+              buttonText="Export CSV"
+            />
+          </center>
+
+          {/* <Report loaddata={this.getData} /> */}
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Report;
+export default ReportPage;

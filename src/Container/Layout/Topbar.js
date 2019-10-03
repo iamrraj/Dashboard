@@ -1,11 +1,53 @@
 import React, { Component } from "react";
 import Logout from "../Logout";
+// import Logout1 from
 
 import head from "../../img/head.png";
 import Report from "./Report";
 import Notification from "./Notification";
 
 class Topbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: [],
+      username: "",
+      logged_in: localStorage.getItem("token") ? true : false
+    };
+  }
+
+  componentDidMount() {
+    if (this.state.logged_in) {
+      fetch("http://localhost:8001/core/current_user/", {
+        headers: {
+          Authorization: `JWT ${localStorage.getItem("token")}`
+        }
+      })
+        .then(res => res.json())
+        .then(json => {
+          this.setState({ username: json.username });
+        });
+    }
+  }
+  getdata = async e => {
+    try {
+      const from = e.target.elements.from.value;
+      const to = e.target.elements.to.value;
+      const electric = e.target.elements.electric.value;
+      const user = e.target.elements.user.value;
+      e.preventDefault();
+      const res = await fetch(
+        `http://localhost:8000/api/1/deliveries/report/?too__lte=${to}&fromm__gte=${from}&electric_bike=${electric}&user=${user}`
+      );
+      const movies = await res.json();
+      console.log(movies);
+      this.setState({
+        movies: movies.results
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
   render() {
     return (
       <div>
@@ -36,7 +78,10 @@ class Topbar extends Component {
                   style={{ color: "#212226" }}
                 >
                   {" "}
-                  UserName
+                  {/* {this.state.logged_in
+                    ? `Hello, ${this.state.username}`
+                    : "Please Log In"} */}
+                  User
                 </a>
               </li>
               {/* For Notification */}
@@ -61,7 +106,7 @@ class Topbar extends Component {
         </nav>
 
         {/* <!-- Modal --> */}
-        <Report />
+        <Report loaddata={this.getData} />
       </div>
     );
   }

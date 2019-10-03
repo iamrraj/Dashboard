@@ -1,25 +1,54 @@
 import React, { Component } from "react";
-import DeatilSummery from "./DeatilSummery";
+import PropTypes from "prop-types";
 import DateForm from "../Electric/DateForm";
-import { Map, TileLayer, CircleMarker, Marker, Popup } from "react-leaflet";
+// import Leaflet from "leaflet";
+// import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
-import "leaflet/dist/leaflet.css";
-import data from "./cities";
+import {
+  Map,
+  TileLayer,
+  Marker,
+  Popup
+  // PropTypes as MapPropTypes
+} from "react-leaflet";
 
-const position = [51.505, -0.09];
+// import data from "./cities";
+
+const MyPopupMarker = ({ children, position }) => (
+  <Marker position={position}>
+    <Popup>
+      <span>{children}</span>
+    </Popup>
+  </Marker>
+);
+
+const MyMarkersList = ({ markers }) => {
+  const items = markers.map(({ key, ...props }) => (
+    <MyPopupMarker key={key} {...props} />
+  ));
+  return <div style={{ display: "none" }}>{items}</div>;
+};
+MyMarkersList.propTypes = {
+  markers: PropTypes.array.isRequired
+};
+// const position = [51.505, -0.09];
 
 class Udetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      lat: 45.6982642,
+      lng: 9.6772698,
+      zoom: 13,
+      markers: []
     };
   }
 
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/user/${this.props.match.params.pk}`
+        `http://localhost:8000/api/1/deliveries/user/${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       console.log(movie);
@@ -38,12 +67,12 @@ class Udetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/duser?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/data/?too__lte=${to}&fromm__gte=${from}`
       );
-      const user = await res.json();
-      console.log(user);
+      const movie = await res.json();
+      console.log(movie);
       this.setState({
-        user: user.results
+        movie
       });
     } catch (e) {
       console.log(e);
@@ -53,6 +82,26 @@ class Udetails extends Component {
   render() {
     const { movie } = this.state;
     if (movie === null) return <p>Loading ....</p>;
+    const center = [this.state.lat, this.state.lng];
+
+    const markers = [
+      {
+        key: "marker1",
+        position: [45.69836455, 9.6472798],
+        children: "Lampione rotto"
+      },
+      {
+        key: "marker2",
+        position: [45.6980459, 9.6872748],
+        children: "Segnalazione: tombino rotto"
+      },
+      {
+        key: "marker3",
+        position: [45.69856455, 9.6570798],
+        children: "Segnalazione: rumore di notte"
+      }
+    ];
+
     return (
       <div className="container" style={{ marginTop: "20px" }}>
         <DateForm loaddata={this.getData} />
@@ -77,50 +126,46 @@ class Udetails extends Component {
             data-target="#exampleModalCenter"
           ></i>
           <br></br>
-          <span id="span">Contact</span>
+          {/* <span id="span">Contact</span> */}
           <table class="table " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">
-                  Id &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
+                <th scope="col" className="t">
+                  Lp
                 </th>
-                <th scope="col">
-                  Date &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
+                <th scope="col" className="t" style={{ width: "130px" }}>
+                  Data
                 </th>
-                <th scope="col">
-                  Distribution Type &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
+                <th scope="col" className="t" style={{ width: "130px" }}>
+                  Typ dystrybucji
                 </th>
-                <th scope="col">
-                  Milage &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
+                <th scope="col" className="t">
+                  Dystans
                 </th>
-                <th scope="col">
-                  Moving Time &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
-                </th>
-                <th scope="col">
-                  KG Transported &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
-                </th>
-                <th scope="col">
-                  Additional Boxex &nbsp;
-                  <i class="fa fa-sort" aria-hidden="true"></i>
-                </th>
+                <th scope="col">Czas w ruchu</th>
+
+                <th scope="col">Llość przesylek listiwych</th>
+                {/* Adde New in api */}
+                <th scope="col">Masa przesylek listiwych</th>
+                {/* Adde New in api */}
+                <th scope="col">Llość paczek</th>
+                <th scope="col">Masa paczek</th>
+                <th scope="col">Liczba dobrań przesylek</th>
                 <th scope="col"></th>
               </tr>
             </thead>
-            {movie.items.map(item => (
+            {movie.results.map(item => (
               <tbody>
                 <tr>
                   <td>{item.id}</td>
-                  <td>{item.date}</td>
-                  <td>{item.dstrtype}</td>
+                  <td>{item.timestamp}</td>
+                  <td>{item.mode}</td>
                   <td>{item.milage} Km</td>
                   <td>{item.movingtime}</td>
-                  <td>{item.kgtransported} Kg</td>
+                  <td>{item.letteritems}</td>
+                  <td>{item.shipweight} Kg</td>
+                  <td>{item.package}</td>
+                  <td>{item.kgtrasported} Kg</td>
                   <td>{item.additionalbox}</td>
                   <td data-toggle="modal" data-target="#eexampleModal">
                     <i
@@ -135,7 +180,39 @@ class Udetails extends Component {
                 </tr>
               </tbody>
             ))}
-            <DeatilSummery />
+            {/* <DeatilSummery /> */}
+
+            <thead>
+              <tr className="thead">
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col" className="text-dark th">
+                  <strong>Summery</strong>
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_milage} Km
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_movingtime}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_letter}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_ship} Kg
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_package}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_kg} kgs
+                </th>
+                <th scope="col" className="text-dark th">
+                  {movie.summery.total_boxes}
+                </th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
           </table>
         </div>
 
@@ -172,93 +249,85 @@ class Udetails extends Component {
             </div>
           </div>
         </div>
+        {/* <Mapp /> */}
         {/* <!-- Modal End --> */}
-
-        {/* <!-- Modal For Map --> */}
-        <div
-          className="modal fade bd-example-modal-lg"
-          id="eexampleModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
+        <div>
+          {/* <!-- Modal For Map --> */}
           <div
-            className="modal-dialog modal-dialog-centered modal-lg"
-            role="document"
+            className="modal fade bd-example-modal-lg"
+            id="eexampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true"
           >
-            <div className="modal-content">
-              <div className="modal-header">
-                <h6 className="modal-title" id="exampleModalLabel">
-                  {" "}
-                  Map{" "}
-                </h6>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <div className="row" style={{ marginBottom: "-40px" }}>
-                  <div className="col-sm-6">
-                    <div className="form-group">
-                      User
-                      <input
-                        type="text"
-                        name="from"
-                        className="form-control datepicker"
-                        value={movie.user}
-                        style={{ width: "150px", color: "#13B760" }}
-                      />
-                    </div>
-                  </div>
-                  <form>
+            <div
+              className="modal-dialog modal-dialog-centered modal-lg"
+              role="document"
+            >
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h6 className="modal-title" id="exampleModalLabel">
+                    {" "}
+                    Map{" "}
+                  </h6>
+                  <button
+                    type="button"
+                    className="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <div className="row" style={{ marginBottom: "-40px" }}>
                     <div className="col-sm-6">
-                      <div className="form-group">
-                        To
-                        <input
-                          type="date"
-                          name="to"
-                          className="form-control datepicker"
-                          style={{ width: "150px", color: "#13B760" }}
-                        />
-                      </div>
+                      <div className="form-group">{movie.user}</div>
                     </div>
-                  </form>
+                    <form>
+                      <div className="col-sm-6">
+                        <div className="form-group">
+                          To
+                          <input
+                            type="date"
+                            name="to"
+                            className="form-control datepicker"
+                            style={{ width: "150px", color: "#13B760" }}
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <Map
+                  center={center}
+                  zoom={this.state.zoom}
+                  style={{ marginTop: "30px" }}
+                >
+                  <TileLayer
+                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                  />
+                  <MyMarkersList markers={markers} />
+                </Map>
+                <h6 className="text-center">WYNIKI DZIENNE</h6>
+                <div className="row container">
+                  <div className="col-sm-3">
+                    <p>Typ dystrybucji</p>
+                  </div>
+                  <div className="col-sm-3">
+                    <p>Dystans</p>
+                  </div>
+                  <div className="col-sm-3">
+                    <p>Czas aktywnosci</p>
+                  </div>
+                  <div className="col-sm-3">
+                    <p>Masa przesylek</p>
+                  </div>
                 </div>
               </div>
-
-              <Map
-                center={[-0.09, 51.505]}
-                zoom={19}
-                style={{ marginTop: "30px" }}
-              >
-                <TileLayer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={position}>
-                  <Popup>
-                    A pretty CSS3 popup.
-                    <br />
-                    Easily customizable.
-                  </Popup>
-                </Marker>
-                {/* {data.city.map(city => {
-                  return (
-                    <CircleMarker
-                      center={[city["coordinates"][1], city["coordinates"][0]]}
-                      radius={20 * Math.log(city["population"] / 10000000)}
-                      fillOpacity={0.5}
-                      stroke={false}
-                      <Tooltip direction="right" offset={[-8, -2]} opacity={1}>
-                        <span>{city["name"] + ": " + "Population" + " " + city["population"]}</span>
-                      </Tooltip>
-                    />
-                  );
-                })} */}
-              </Map>
             </div>
           </div>
         </div>

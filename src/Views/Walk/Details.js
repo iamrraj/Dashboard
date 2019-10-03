@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DeatilSummery from "./DeatilSummery";
+// import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
 
@@ -14,7 +14,8 @@ export class Details extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/walk/${this.props.match.params.pk}`
+        // http://localhost:8000/api/1/deliveries/${this.props.match.params.pk}/?mode=foot&user=${this.props.match.params.user}
+        `http://localhost:8000/api/1/deliveries/walk/${this.props.match.params.pk}/?mode=foot&user=1`
       );
       const walk = await res.json();
       console.log(walk);
@@ -33,7 +34,7 @@ export class Details extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/dwalk?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/data/?too__lte=${to}&fromm__gte=${from}`
       );
       const walk = await res.json();
       console.log(walk);
@@ -68,7 +69,7 @@ export class Details extends Component {
           <table class="table " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Id</th>
+                <th scope="col">Ld</th>
                 <th scope="col">Data</th>
                 <th scope="col">Dystans</th>
                 <th scope="col">Czas w ruchu</th>
@@ -79,23 +80,51 @@ export class Details extends Component {
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
             </thead>
-            {walk.items.map(item => (
+            {walk.detail.map(c => (
               <tbody>
                 <tr>
-                  <td>{item.id}</td>
-                  <td>{item.date} </td>
-                  <td>{item.milage} Km</td>
-                  <td>{item.movingtime} hr</td>
-                  <td>{item.letteritems}</td>
-                  <td>{item.shipweight} kgs</td>
-                  <td>{item.package}</td>
-                  <td>{item.kgtransported} Kg</td>
-                  <td>{item.additionalbox}</td>
+                  <td>{c.id}</td>
+                  <td>{c.timestamp} </td>
+                  <td>{c.milage} Km</td>
+                  <td>{c.movingtime} hr</td>
+                  <td>{c.letteritems}</td>
+                  <td>{c.shipweight} kgs</td>
+                  <td>{c.package}</td>
+                  <td>{c.kgtransported} Kg</td>
+                  <td>{c.additionalbox}</td>
                 </tr>
               </tbody>
             ))}
 
-            <DeatilSummery />
+            <thead>
+              <tr className="thead">
+                <th scope="col"></th>
+                <th scope="col" className="text-dark th">
+                  <strong>Summery</strong>
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_milage} Km
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_movingtime} hr
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_letter}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_ship_weight} kgs
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_pack}
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_kg} kgs
+                </th>
+                <th scope="col" className="text-dark th">
+                  {walk.summery.total_boxes}
+                </th>
+              </tr>
+            </thead>
           </table>
         </div>
       </div>

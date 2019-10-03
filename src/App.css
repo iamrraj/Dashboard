@@ -255,7 +255,7 @@ a:hover {
 
 .t {
   position: relative;
-  margin-top: 100px;
+  line-height: 40px;
 }
 
 #span {
@@ -264,6 +264,14 @@ a:hover {
   position: absolute;
   top: 275px;
   color: rgba(19, 183, 96, 1);
+}
+
+#nav-tab {
+  margin-bottom: 15px;
+  border-bottom: none;
+}
+#tabb {
+  border: 1px solid black;
 }
 
 /* Login Page */
@@ -467,6 +475,8 @@ h4 {
 /* Reort Button */
 .btn-outline-success {
   width: 111px;
+  border: 1px solid gray;
+  text-align: center;
   /* background: rgba(19, 183, 96, 1.0); */
 }
 .btn-outline-success:hover {

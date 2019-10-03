@@ -44,7 +44,7 @@ export default class Logout extends Component {
 
     if (response.success === true) {
       Swal.fire({
-        title: "Logggedout",
+        title: "Successfully Logged Out",
         type: "success"
       }).then(logout => {
         if (logout.value) {

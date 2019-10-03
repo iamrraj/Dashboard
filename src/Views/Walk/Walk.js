@@ -20,8 +20,9 @@ class Walk extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`https://softbike.herokuapp.com/api/walk`);
+      const res = await fetch(`http://localhost:8000/api/1/deliveries/walk/`);
       const walk = await res.json();
+      console.log(walk);
       this.setState({
         walk: walk.results
       });
@@ -40,7 +41,7 @@ class Walk extends Component {
         `https://softbike.herokuapp.com/api/walk?too__lte=${to}&fromm__gte=${from}`
       );
       const walk = await res.json();
-      console.log(walk);
+      // console.log(walk);
       this.setState({
         walk: walk.results
       });
@@ -71,7 +72,7 @@ class Walk extends Component {
                 <th scope="col" style={{ width: "130px" }} className="t">
                   Uźytkownik
                 </th>
-                <th scope="col" style={{ width: "100px" }}>
+                <th scope="col" style={{ width: "100px" }} className="t">
                   Dystans
                 </th>
                 <th scope="col" style={{ width: "150px" }} className="t">
@@ -101,23 +102,25 @@ class Walk extends Component {
             {this.state.walk.map(c => (
               <tbody key={c.pk}>
                 <tr>
-                  <th scope="row">{c.pk}</th>
+                  <th scope="row">{c.id}</th>
                   <td>
                     <a
-                      href={"woverview/" + c.pk}
+                      href={"woverview/" + c.id}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {c.username}{" "}
+                      {c.user}{" "}
                     </a>
                   </td>
-                  <td>{c.milage} Km</td>
-                  <td>{c.movingtime} hr</td>
-                  <td>{c.letteritems}</td>
-                  <td>{c.shipweight} kgs</td>
-                  <td>{c.package}</td>
-                  <td>{c.kgtransported} Kgs</td>
-                  <td>{c.additionalbox}</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
+                  <td>
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                  </td>
+                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kgs</td>
+                  <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                 </tr>
               </tbody>
             ))}

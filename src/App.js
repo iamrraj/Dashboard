@@ -15,9 +15,10 @@ import user from "./Views/User/user";
 import Udetails from "./Views/User/Udetails";
 import Login from "./Container/Login";
 import Notification from "./Views/Page/Notification";
-import Report from "./Views/Page/Report";
+import ReportPage from "./Views/Page/Report";
 import Cookies from "universal-cookie";
 import Loginl from "./Container/Loginl";
+import CustomMap from "./Component/CustomMap";
 // import Signin from './Action/Signin'
 
 import "./App.css";
@@ -94,8 +95,9 @@ class App extends Component {
           <Route path="/user" component={user} />
           <Route path="/uoverview/:pk" component={Udetails} />
           <Route path="/notification" component={Notification} />
-          <Route path="/report" component={Report} />
+          <Route path="/report" component={ReportPage} />
           <Route path="/login" component={Loginl} />
+          <Route path="/map" component={CustomMap} />
           {/* <Route path="/signin" component={Signin} /> */}
         </Switch>
       </BrowserRouter>
