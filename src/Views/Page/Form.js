@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Multiselect } from "react-widgets";
+
 export class Form extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +23,11 @@ export class Form extends Component {
       console.log(e);
     }
   }
+
+  result(params) {
+    console.log(params);
+  }
+
   render() {
     return (
       <form onSubmit={this.props.loaddata}>
@@ -144,6 +151,7 @@ export class Form extends Component {
               ))}
             </select>
           </div>
+
           <div
             class="tab-pane fade "
             id="pills-profile "

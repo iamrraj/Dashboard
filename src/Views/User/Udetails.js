@@ -2,37 +2,17 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import DateForm from "../Electric/DateForm";
 // import Leaflet from "leaflet";
-// import Mapp from "./Map";
+import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
-import {
-  Map,
-  TileLayer,
-  Marker,
-  Popup
-  // PropTypes as MapPropTypes
-} from "react-leaflet";
+// import {
+//   Map,
+//   TileLayer,
+//   Marker,
+//   Popup
+//   // PropTypes as MapPropTypes
+// } from "react-leaflet";
 
-// import data from "./cities";
-
-const MyPopupMarker = ({ children, position }) => (
-  <Marker position={position}>
-    <Popup>
-      <span>{children}</span>
-    </Popup>
-  </Marker>
-);
-
-const MyMarkersList = ({ markers }) => {
-  const items = markers.map(({ key, ...props }) => (
-    <MyPopupMarker key={key} {...props} />
-  ));
-  return <div style={{ display: "none" }}>{items}</div>;
-};
-MyMarkersList.propTypes = {
-  markers: PropTypes.array.isRequired
-};
-// const position = [51.505, -0.09];
-
+// // import data from "./cities";
 class Udetails extends Component {
   constructor(props) {
     super(props);
@@ -82,25 +62,6 @@ class Udetails extends Component {
   render() {
     const { movie } = this.state;
     if (movie === null) return <p>Loading ....</p>;
-    const center = [this.state.lat, this.state.lng];
-
-    const markers = [
-      {
-        key: "marker1",
-        position: [45.69836455, 9.6472798],
-        children: "Lampione rotto"
-      },
-      {
-        key: "marker2",
-        position: [45.6980459, 9.6872748],
-        children: "Segnalazione: tombino rotto"
-      },
-      {
-        key: "marker3",
-        position: [45.69856455, 9.6570798],
-        children: "Segnalazione: rumore di notte"
-      }
-    ];
 
     return (
       <div className="container" style={{ marginTop: "20px" }}>
@@ -249,88 +210,9 @@ class Udetails extends Component {
             </div>
           </div>
         </div>
-        {/* <Mapp /> */}
         {/* <!-- Modal End --> */}
-        <div>
-          {/* <!-- Modal For Map --> */}
-          <div
-            className="modal fade bd-example-modal-lg"
-            id="eexampleModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true"
-          >
-            <div
-              className="modal-dialog modal-dialog-centered modal-lg"
-              role="document"
-            >
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h6 className="modal-title" id="exampleModalLabel">
-                    {" "}
-                    Map{" "}
-                  </h6>
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <div className="row" style={{ marginBottom: "-40px" }}>
-                    <div className="col-sm-6">
-                      <div className="form-group">{movie.user}</div>
-                    </div>
-                    <form>
-                      <div className="col-sm-6">
-                        <div className="form-group">
-                          To
-                          <input
-                            type="date"
-                            name="to"
-                            className="form-control datepicker"
-                            style={{ width: "150px", color: "#13B760" }}
-                          />
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-
-                <Map
-                  center={center}
-                  zoom={this.state.zoom}
-                  style={{ marginTop: "30px" }}
-                >
-                  <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-                  />
-                  <MyMarkersList markers={markers} />
-                </Map>
-                <h6 className="text-center">WYNIKI DZIENNE</h6>
-                <div className="row container">
-                  <div className="col-sm-3">
-                    <p>Typ dystrybucji</p>
-                  </div>
-                  <div className="col-sm-3">
-                    <p>Dystans</p>
-                  </div>
-                  <div className="col-sm-3">
-                    <p>Czas aktywnosci</p>
-                  </div>
-                  <div className="col-sm-3">
-                    <p>Masa przesylek</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Mapp />
+        {/* <!-- Modal End --> */}
       </div>
     );
   }

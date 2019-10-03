@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import ReactToExcel from "react-html-table-to-excel";
-
+import Topbar1 from "../../Container/Layout/Topbar1";
 // import Report from "../../Container/Layout/Report";
-import Form from "./Form";
+// import Form from "./Form";
+import Repor from "./Repor";
 
 class ReportPage extends Component {
   constructor(props) {
@@ -46,15 +47,17 @@ class ReportPage extends Component {
   render() {
     return (
       <div className="container" style={{ marginTop: "30px" }}>
-        <Form loaddata={this.getData} />
-        <div
-          style={{ marginTop: "20px", background: "white", padding: "15px" }}
-        >
-          <h5 className="font-weight-bold" style={{ marginTop: "10px" }}>
+        <Repor loaddata={this.getData} />
+        <Topbar1 />
+        <div style={{ background: "white", padding: "15px" }}>
+          <h5
+            className="font-weight-bold"
+            style={{ marginTop: "10px", marginBottom: "10px" }}
+          >
             {" "}
-            ELECTRIC BIKE DISTRIBUTION{" "}
+            REPORT{" "}
           </h5>
-          <p>from 23-09-2019 to 23-10-2019</p>
+          {/* <p>from 23-09-2019 to 23-10-2019</p> */}
 
           <table class="table table-hover table-lg " id="table-to-xls">
             <thead>

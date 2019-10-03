@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Logout from "../Logout";
 // import Logout1 from
-
+// import Repor from "../../Views/Page/Repor";
 import head from "../../img/head.png";
-import Report from "./Report";
+// import Report from "./Report";
 import Notification from "./Notification";
 
 class Topbar extends Component {
@@ -88,9 +88,12 @@ class Topbar extends Component {
               <Notification />
               {/* End For Notificatioj */}
               <li className="nav-item  ">
+                <a href="/report">.</a>
+              </li>
+              <li className="nav-item  ">
                 <a
                   className="nav-link a"
-                  href="# "
+                  href="/report"
                   data-toggle="modal"
                   data-target="#exampleModal"
                   style={{ color: "#212226" }}
@@ -106,7 +109,7 @@ class Topbar extends Component {
         </nav>
 
         {/* <!-- Modal --> */}
-        <Report loaddata={this.getData} />
+        {/* <Repor loaddata={this.getData} /> */}
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Topbar1 from "../../Container/Layout/Topbar1";
 
 export class Report extends Component {
   constructor(props) {
@@ -157,7 +158,9 @@ export class Report extends Component {
                       name="idd"
                     >
                       {this.state.movies.map(c => (
-                        <option value={c.user}>{c.user1}</option>
+                        <option key={c.pk} value={c.user}>
+                          {c.user1}
+                        </option>
                       ))}
                     </select>
                   </div>
@@ -255,8 +258,7 @@ export class Report extends Component {
                 </button> */}
 
                 <center>
-                  <a
-                    href="/report"
+                  <button
                     className="btn btn-success active"
                     style={{
                       width: "200px",
@@ -268,7 +270,7 @@ export class Report extends Component {
                     }}
                   >
                     GET REPORT
-                  </a>
+                  </button>
                 </center>
               </form>
             </div>
