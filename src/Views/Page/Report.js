@@ -79,9 +79,7 @@ class ReportPage extends Component {
                 {/* Adde New in api */}
                 <th scope="col">Llość paczek</th>
                 {/* Adde New in api */}
-                <th scope="col" className="t">
-                  Masa paczek
-                </th>
+                <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th>
                 <th scope="col">Liczba dobrań </th>
                 <th scope="col">Liczba uzytkowników</th>

@@ -132,7 +132,7 @@ export class Edetails extends Component {
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {item.user}
+                      {item.user ? "User" : `${item.user}`}
                     </a>
                   </td>
                   <td>{item.milage} Km</td>
@@ -142,7 +142,7 @@ export class Edetails extends Component {
                   <td>{item.shipweight} kgs</td>
                   <td>{item.package}</td>
                   <td>{item.kgtrasported}Kg</td>
-                  <td>190 mg</td>
+                  <td>{item.co2} mg</td>
                   <td>{item.additionalbox}</td>
                 </tr>
               </tbody>
@@ -159,14 +159,20 @@ export class Edetails extends Component {
                   className="text-dark th"
                   style={{ width: "120px" }}
                 >
-                  {movie.summery.total_milage} Km
+                  {movie.summery.total_milage
+                    ? `${movie.summery.total_milage}`
+                    : 0}
+                  Km
                 </th>
                 <th
                   scope="col"
                   className="text-dark th"
                   style={{ width: "160px" }}
                 >
-                  {movie.summery.total_movingtime} hr
+                  {movie.summery.total_movingtime
+                    ? `${movie.summery.total_movingtime}`
+                    : 0}
+                  hr
                 </th>
 
                 <th
@@ -174,33 +180,47 @@ export class Edetails extends Component {
                   className="text-dark th"
                   style={{ width: "170px" }}
                 >
-                  {movie.summery.total_averagespeed} Km/hr
+                  {movie.summery.total_averagespeed
+                    ? `${movie.summery.total_averagespeed}`
+                    : 0}
+                  Km/hr
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_letter}
+                  {movie.summery.total_letter
+                    ? `${movie.summery.total_letter}`
+                    : 0}
                 </th>
                 <th
                   scope="col"
                   className="text-dark th"
                   style={{ width: "120px" }}
                 >
-                  {movie.summery.total_ship_weight} kgs
+                  {movie.summery.total_ship_weight
+                    ? `${movie.summery.total_ship_weight}`
+                    : 0}
+                  kgs
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_pack}
+                  {movie.summery.total_pack ? `${movie.summery.total_pack}` : 0}
                 </th>
                 <th
                   scope="col"
                   className="text-dark th"
                   style={{ width: "170px" }}
                 >
-                  {movie.summery.total_kg} kgs
+                  {movie.summery.total_kg ? `${movie.summery.total_kg}` : 0}
+                  kgs
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_co2_save}
+                  {movie.summery.total_co2_save
+                    ? `${movie.summery.total_co2_save}`
+                    : 0}{" "}
+                  Mg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_boxes}
+                  {movie.summery.total_boxes
+                    ? `${movie.summery.total_boxes}`
+                    : 0}
                 </th>
               </tr>
             </thead>

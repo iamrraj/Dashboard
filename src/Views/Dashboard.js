@@ -116,7 +116,8 @@ class Dashboard extends Component {
                         <img src={weight} alt="weight" className="imag" />
                         <h5>{c.total_kg} Kgs</h5>
                         <p id="p">
-                          Przetransportowana masa<br></br> przesylek
+                          Przetransportowana masa<br></br>
+                          przesylek
                         </p>
                       </div>
                     </div>

@@ -14,23 +14,16 @@ import Details from "./Views/Walk/Details";
 import user from "./Views/User/user";
 import Udetails from "./Views/User/Udetails";
 import Login from "./Container/Login";
+import RegisterPage from "./Container/Register";
 import Notification from "./Views/Page/Notification";
 import ReportPage from "./Views/Page/Report";
 import Cookies from "universal-cookie";
+
 // import Loginl from "./Container/Loginl";
 import CustomMap from "./Component/CustomMap";
 // import Signin from './Action/Signin'
 
 import "./App.css";
-
-// const BaseLayout = ({ children }) => (
-
-//   <div>
-//     <Topbar />
-//     {children}
-//   </div>
-
-//   )
 
 class App extends Component {
   constructor(props) {
@@ -96,6 +89,7 @@ class App extends Component {
           <Route path="/uoverview/:pk" component={Udetails} />
           <Route path="/notification" component={Notification} />
           <Route path="/report" component={ReportPage} />
+          <Route path="/register" component={RegisterPage} />
           {/* <Route path="/login" component={Loginl} /> */}
           <Route path="/map" component={CustomMap} />
           {/* <Route path="/signin" component={Signin} /> */}

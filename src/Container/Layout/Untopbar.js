@@ -25,6 +25,11 @@ class Untopbar extends Component {
           <ul class="navbar-nav mr-auto"></ul>
           <ul className="navbar-nav">
             <li class="nav-item  active">
+              <a class="nav-link text-dark" href="/register">
+                <i className="fas fa-sign-in-alt"></i> SignUp
+              </a>
+            </li>
+            <li class="nav-item  active">
               <a class="nav-link text-dark" href="/">
                 <i className="fas fa-sign-in-alt"></i> Login
               </a>

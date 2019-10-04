@@ -63,9 +63,11 @@ export class Login extends Component {
       requestData
     );
     const response = await request;
+    // const response = await request.json();
     // console.log(`>> POST request: ${JSON.stringify(request)}`);
     // const response = await reques
     // const { response } = this.state;
+    // console.log(response)
     console.log(`>> POST response: ${JSON.stringify(response)}`);
 
     this.cookies.set("Access-Token", response.headers.get("Access-Token"));
@@ -90,6 +92,7 @@ export class Login extends Component {
       }).then(login => {
         if (login.dismiss === Swal.DismissReason.timer) {
           window.sessionStorage.setItem("isLoggedIn", true);
+          // localStorage.setItem("token", login.token);
           window.location.href = "/";
         }
       });

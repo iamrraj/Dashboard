@@ -475,7 +475,7 @@ h4 {
 /* Reort Button */
 .btn-outline-success {
   width: 111px;
-  border: 1px solid gray;
+  border: 1px solid rgba(19, 183, 96, 1);
   text-align: center;
   /* background: rgba(19, 183, 96, 1.0); */
 }

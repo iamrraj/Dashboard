@@ -90,7 +90,7 @@ export class Details extends Component {
                   <td>{c.letteritems}</td>
                   <td>{c.shipweight} kgs</td>
                   <td>{c.package}</td>
-                  <td>{c.kgtransported} Kg</td>
+                  <td>{c.kgtrasported} Kg</td>
                   <td>{c.additionalbox}</td>
                 </tr>
               </tbody>
