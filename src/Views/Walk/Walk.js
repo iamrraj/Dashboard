@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Summery from "./Summery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 
 class Walk extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Walk extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`http://localhost:8000/api/1/deliveries/walk/`);
+      const res = await fetch(config.apiUrl.walk);
       const walk = await res.json();
       console.log(walk);
       this.setState({
@@ -38,7 +39,7 @@ class Walk extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `https://softbike.herokuapp.com/api/walk?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.walk}?too__lte=${to}&fromm__gte=${from}`
       );
       const walk = await res.json();
       // console.log(walk);

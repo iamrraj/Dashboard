@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 
 export class Cdetails extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export class Cdetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/data/?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -33,7 +33,7 @@ export class Cdetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/classic/${this.props.match.params.pk}/`
+        `${config.apiUrl.classic}${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       console.log(movie);
@@ -73,13 +73,13 @@ export class Cdetails extends Component {
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col" className="t">
+                <th scope="col" >
                   Lp
                 </th>
-                <th scope="col" className="t">
+                <th scope="col">
                   Data
                 </th>
-                <th scope="col" className="t">
+                <th scope="col" >
                   Dystans
                 </th>
                 {/* <th scope="col" style={{ width: "140px" }}>

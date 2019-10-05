@@ -2,29 +2,10 @@ import React, { Component } from "react";
 // import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
-
+import config from "../config";
 // import axios from 'axios'
 
 export class Edetails extends Component {
-  // constructor(props){
-  //     super(props);
-  //     this.state={
-  //         blog: null,
-  //     };
-  // }
-
-  // async componentDidMount() {
-  //     try {
-  //         const { match: { params } } = this.props;
-  //         const blog = (await axios.get(`http://localhost:8000/api/ebike/${params.pk}`)).data;
-  //         console.log(blog)
-  //         this.setState({
-  //             blog,
-  //         });
-  //     }catch (e) {
-  //         console.log(e);
-  //     }
-  //   }
   constructor(props) {
     super(props);
     this.state = {
@@ -39,7 +20,7 @@ export class Edetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/data/?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
       );
       const movie = await res.json();
       console.log(movie);
@@ -54,7 +35,7 @@ export class Edetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/1/bikes/electric/${this.props.match.params.pk}/`
+        `${config.apiUrl.electric}${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       // console.log(movie);
@@ -111,11 +92,8 @@ export class Edetails extends Component {
                 </th>
                 <th scope="col">Średnia prędkość</th>
                 <th scope="col">Llość przesylek listiwych</th>
-                {/* Adde New in api */}
                 <th scope="col">Masa przesylek listiwych</th>
-                {/* Adde New in api */}
                 <th scope="col">Llość paczek</th>
-                {/* Adde New in api */}
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th> {/* Adde New in api */}
                 <th scope="col">Liczba dobrań przesylek</th>

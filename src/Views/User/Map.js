@@ -38,20 +38,20 @@ class Mapp extends Component {
     };
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/user/${this.props.match.params.pk}`
-      );
-      const movie = await res.json();
-      console.log(movie);
-      this.setState({
-        movie
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(
+  //       `http://localhost:8000/api/1/deliveries/user/${this.props.match.params.pk}`
+  //     );
+  //     const movie = await res.json();
+  //     console.log(movie);
+  //     this.setState({
+  //       movie
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   async componentDidMount() {
     try {

@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import DateForm from "../Electric/DateForm";
-// import Leaflet from "leaflet";
+import config from "../config";
 import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
-// import {
-//   Map,
-//   TileLayer,
-//   Marker,
-//   Popup
-//   // PropTypes as MapPropTypes
-// } from "react-leaflet";
 
-// // import data from "./cities";
 class Udetails extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +19,7 @@ class Udetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/user/${this.props.match.params.pk}/`
+        `${config.apiUrl.user}${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       console.log(movie);

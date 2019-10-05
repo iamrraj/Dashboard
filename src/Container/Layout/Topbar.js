@@ -12,21 +12,20 @@ class Topbar extends Component {
     this.state = {
       movies: [],
       username: "",
-      logged_in: localStorage.getItem("token") ? true : false
+      logged_in: true
     };
   }
 
-  componentDidMount() {
-    if (this.state.logged_in) {
-      fetch("http://localhost:8001/core/current_user/", {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem("token")}`
-        }
-      })
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ username: json.username });
-        });
+  async componentDidMount() {
+    try {
+      const res = await fetch(`http://localhost:8001/core/current_user/`);
+      const username = await res.json();
+      console.log(username);
+      this.setState({
+        username
+      });
+    } catch (e) {
+      console.log(e);
     }
   }
   getdata = async e => {

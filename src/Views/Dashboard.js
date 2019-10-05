@@ -8,6 +8,7 @@ import classic from "../img/lol.png";
 import electric from "../img/electric.png";
 import DateForm from "./Electric/DateForm";
 import Topbar1 from "../Container/Layout/Topbar1";
+import config from "./config";
 // import Topbar from "../Container/Layout/Topbar";
 
 class Dashboard extends Component {
@@ -55,9 +56,7 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/dashboard/`
-      );
+      const res = await fetch(config.apiUrl.dashboard);
       const dash = await res.json();
       console.log(dash);
       this.setState({

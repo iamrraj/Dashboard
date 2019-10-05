@@ -1,106 +1,54 @@
 import React, { Component } from "react";
-import Swal from "sweetalert2";
-import Cookies from "universal-cookie";
+// import Swal from "sweetalert2";
+// import Cookies from "universal-cookie";
 import head from "../img/head.png";
 import login from "../img/login.svg";
+import axios from "axios";
+import ls from "local-storage";
 
 export class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: "",
-      password: "",
-      submitted: false,
-      response: null,
-      logged_in: localStorage.getItem("token") ? true : false
+      password: ""
     };
-    this.cookies = new Cookies();
+    this.redirect = this.redirect.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handValidation = this.handValidation.bind(this);
   }
 
-  handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
+  componentDidMount() {
+    this.redirect();
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
     });
+    console.log(this.state);
   }
-
   handleSubmit(event) {
     event.preventDefault();
+    axios({
+      method: "post",
 
-    this.setState({ submitted: true });
-    if (this.state.username && this.state.password) {
-      this.fetchUserData();
-    }
+      url: "http://localhost:8001/token-auth/",
+      data: { username: this.state.username, password: this.state.password }
+    })
+      .then(response => {
+        var ls = require("local-storage");
+        ls.set("Token", response.data["token"]);
+        this.redirect();
+      })
+      .catch(response => {
+        //handle error
+        console.log(response);
+      });
   }
-
-  async fetchUserData() {
-    Swal.fire({
-      title: "Logging in Process",
-      showCancelButton: false,
-      showConfirmButton: false,
-      onBeforeOpen: () => {
-        Swal.showLoading();
-      }
-    });
-
-    const requestData = {
-      method: "POST",
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
-      }),
-      headers: { "Content-Type": "application/json" }
-    };
-
-    const request = await fetch(
-      "http://localhost:8001/token-auth/",
-      requestData
-    );
-    const response = await request;
-    // console.log(`>> POST request: ${JSON.stringify(request)}`);
-    // const response = await reques
-    // const { response } = this.state;
-    console.log(`>> POST response: ${JSON.stringify(response)}`);
-
-    this.cookies.set("Access-Token", response.headers.get("Access-Token"));
-    this.cookies.set("Client", response.headers.get("Client"));
-    this.cookies.set("Uid", response.headers.get("Uid"));
-    this.cookies.set("Expiry", response.headers.get("Expiry"));
-
-    var error = true;
-
-    if (response.ok) {
-      error = false;
-    } else {
-      error = true;
-    }
-
-    if (!error) {
-      Swal.fire({
-        title: "Logged in",
-        type: "success",
-        showConfirmButton: false,
-        timer: 1000
-      }).then(login => {
-        if (login.dismiss === Swal.DismissReason.timer) {
-          window.localStorage.setItem("token", login.token);
-          window.sessionStorage.setItem("isLoggedIn", true);
-          window.location.href = "/";
-        }
-      });
-    } else {
-      Swal.fire({
-        timer: 1000,
-        title: "Logging Error",
-        type: "error",
-        text: "Your entered Wrong Email or Password"
-      });
+  redirect() {
+    if (ls.get("Token")) {
+      this.props.history.push("/");
     }
   }
   render() {
@@ -126,7 +74,7 @@ export class Login extends Component {
                       opacity: "0.7"
                     }}
                   >
-                    Login
+                    Username
                   </label>
                   <input
                     type="text"

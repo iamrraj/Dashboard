@@ -1,3 +1,11 @@
+## Config Api File
+
+`src/Views/config.js` is api file where all api endpoint is store so Change endpoint there
+
+## Useless Folder
+
+`src/Component` is Just folder is useless file so don't care about this folder
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

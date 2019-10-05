@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../config";
 
 class Summery extends Component {
   constructor(props) {
@@ -10,9 +11,7 @@ class Summery extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/dashboard/`
-      );
+      const res = await fetch(config.apiUrl.dashboard);
       const dash = await res.json();
       // console.log(dash)
       this.setState({

@@ -19,9 +19,8 @@ import Notification from "./Views/Page/Notification";
 import ReportPage from "./Views/Page/Report";
 import Cookies from "universal-cookie";
 
-// import Loginl from "./Container/Loginl";
-import CustomMap from "./Component/CustomMap";
-// import Signin from './Action/Signin'
+import Signin from "./Component/Signin";
+// import CustomMap from "./Component/CustomMap";
 
 import "./App.css";
 
@@ -90,9 +89,9 @@ class App extends Component {
           <Route path="/notification" component={Notification} />
           <Route path="/report" component={ReportPage} />
           <Route path="/register" component={RegisterPage} />
-          {/* <Route path="/login" component={Loginl} /> */}
-          <Route path="/map" component={CustomMap} />
-          {/* <Route path="/signin" component={Signin} /> */}
+          <Route path="/login" component={Signin} />
+          {/* <Route path="/map" component={CustomMap} /> */}
+
         </Switch>
       </BrowserRouter>
     );

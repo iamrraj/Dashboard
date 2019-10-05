@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactToExcel from "react-html-table-to-excel";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 // import Report from "../../Container/Layout/Report";
 // import Form from "./Form";
 import Repor from "./Repor";
@@ -21,7 +22,7 @@ class ReportPage extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/report/?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}`
+        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -32,18 +33,7 @@ class ReportPage extends Component {
       console.log(e);
     }
   };
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch(`http://localhost:8000/api/1/deliveries/report/`);
-  //     const movies = await res.json();
-  //     console.log(movies);
-  //     this.setState({
-  //       movies: movies.results
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
+
   render() {
     return (
       <div className="container" style={{ marginTop: "30px" }}>
@@ -57,7 +47,6 @@ class ReportPage extends Component {
             {" "}
             REPORT{" "}
           </h5>
-          {/* <p>from 23-09-2019 to 23-10-2019</p> */}
 
           <table class="table table-hover table-lg " id="table-to-xls">
             <thead>
@@ -74,11 +63,11 @@ class ReportPage extends Component {
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
                 <th scope="col">Llość przesyłek listiwych</th>
-                {/* Adde New in api */}
+
                 <th scope="col">Masa przesyłek listiwych</th>
-                {/* Adde New in api */}
+
                 <th scope="col">Llość paczek</th>
-                {/* Adde New in api */}
+
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th>
                 <th scope="col">Liczba dobrań </th>

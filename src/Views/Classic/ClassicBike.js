@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Summery from "./Summery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 
 class ClassicBike extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class ClassicBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/classic/?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.classic}?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -32,9 +33,7 @@ class ClassicBike extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/classic/`
-      );
+      const res = await fetch(config.apiUrl.classic);
       const movies = await res.json();
       console.log(movies);
       this.setState({

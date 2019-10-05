@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Summery from "./Summery";
 import DateForm from "./DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 
 class ElectricBike extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class ElectricBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/bikes/electric/?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.electric}?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -32,7 +33,7 @@ class ElectricBike extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(`http://localhost:8000/api/1/bikes/electric/`);
+      const res = await fetch(config.apiUrl.electric);
       const movies = await res.json();
       console.log(movies);
       this.setState({
@@ -72,11 +73,11 @@ class ElectricBike extends Component {
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
                 <th scope="col">Llość przesyłek listiwych</th>
-                {/* Adde New in api */}
+
                 <th scope="col">Masa przesyłek listiwych</th>
-                {/* Adde New in api */}
+
                 <th scope="col">Llość paczek</th>
-                {/* Adde New in api */}
+
                 <th scope="col" className="t">
                   Masa paczek
                 </th>
@@ -85,8 +86,6 @@ class ElectricBike extends Component {
                 <th scope="col">Liczba uzytkowników</th>
               </tr>
             </thead>
-            {/*
-             */}
 
             {this.state.movies.map(c => (
               <tbody key={c.pk}>

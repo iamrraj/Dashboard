@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../config";
 
 export class Details extends Component {
   constructor(props) {
@@ -14,8 +15,7 @@ export class Details extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        // http://localhost:8000/api/1/deliveries/${this.props.match.params.pk}/?mode=foot&user=${this.props.match.params.user}
-        `http://localhost:8000/api/1/deliveries/walk/${this.props.match.params.pk}/?mode=foot&user=1`
+        `${config.apiUrl.walk}${this.props.match.params.pk}/`
       );
       const walk = await res.json();
       console.log(walk);
