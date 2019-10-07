@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../config";
 
 export class Repor extends Component {
   constructor(props) {
@@ -11,9 +12,9 @@ export class Repor extends Component {
   // Get Data From Backend
   async componentDidMount() {
     try {
-      const res = await fetch(`http://localhost:8000/api/1/deliveries/user1/`);
+      const res = await fetch(config.apiUrl.reportModel);
       const movies = await res.json();
-      // console.log(report);
+      console.log(report);
       this.setState({
         movies: movies.results
       });

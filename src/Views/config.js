@@ -9,6 +9,7 @@ const config = {
     dashboard: `http://localhost:8000/api/1/deliveries/dashboard/`,
     user: `http://localhost:8000/api/1/deliveries/user/`,
     report: `http://localhost:8000/api/1/deliveries/report/`,
+    reportModel:`http://localhost:8000/api/1/deliveries/user1/`
     data: `http://localhost:8000/api/1/deliveries/data/`
   }
 };
