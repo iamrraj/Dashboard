@@ -1,16 +1,18 @@
+const api = `http://localhost:8000/`;
+
 const config = {
   apiUrl: {
-    electric: `http://localhost:8000/api/1/bikes/electric/`,
-    electricsummery: `http://localhost:8000/api/1/bikes/electric/summery/`,
-    classic: `http://localhost:8000/api/1/deliveries/classic/`,
-    classicSummery: `http://localhost:8000/api/1/deliveries/classic/summery`,
-    walk: `http://localhost:8000/api/1/deliveries/walk/`,
-    walksummerry: `http://localhost:8000/api/1/deliveries/walk/summery`,
-    dashboard: `http://localhost:8000/api/1/deliveries/dashboard/`,
-    user: `http://localhost:8000/api/1/deliveries/user/`,
-    report: `http://localhost:8000/api/1/deliveries/report/`,
-    reportModel:`http://localhost:8000/api/1/deliveries/user1/`
-    data: `http://localhost:8000/api/1/deliveries/data/`
+    electric: `${api}api/1/bikes/electric/`,
+    electricsummery: `${api}api/1/bikes/electric/summery/`,
+    classic: `${api}api/1/deliveries/classic/`,
+    classicSummery: `${api}api/1/deliveries/classic/summery`,
+    walk: `${api}api/1/deliveries/walk/`,
+    walksummerry: `${api}api/1/deliveries/walk/summery`,
+    dashboard: `${api}api/1/deliveries/dashboard/`,
+    user: `${api}api/1/deliveries/user/`,
+    report: `${api}api/1/deliveries/report/`,
+    reportModel: `${api}api/1/deliveries/user1/`,
+    data: `${api}api/1/deliveries/data/`
   }
 };
 

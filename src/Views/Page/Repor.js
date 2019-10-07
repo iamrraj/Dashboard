@@ -14,7 +14,7 @@ export class Repor extends Component {
     try {
       const res = await fetch(config.apiUrl.reportModel);
       const movies = await res.json();
-      console.log(report);
+      // console.log(report);
       this.setState({
         movies: movies.results
       });
