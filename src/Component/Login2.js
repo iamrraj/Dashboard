@@ -1,110 +1,73 @@
 import React, { Component } from "react";
-import Swal from "sweetalert2";
-import Cookies from "universal-cookie";
+// import Swal from "sweetalert2";
+// import Cookies from "universal-cookie";
 import head from "../img/head.png";
 import login from "../img/login.svg";
+import { AUTH_LOGIN } from "react-admin";
+// import axios from "axios";
+// import ls from "local-storage";
+// import Swal from "sweetalert2";
 
-export class Login extends Component {
+var _client_id = "hLloV1YL1XXHmbxst23GU72nAyLi8rCjMhr6cKVn";
+var _grant_type = "password";
+
+class Login2 extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      email: "",
-      password: "",
-      submitted: false,
-      response: null,
-      logged_in: localStorage.getItem("token") ? true : false
+      username: "",
+      password: ""
     };
-    this.cookies = new Cookies();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
     });
+    console.log(this.state);
   }
-
-  handleSubmit(event) {
+  handleSubmit(event, type, params) {
+    const { username, password } = params;
     event.preventDefault();
+    if (type === AUTH_LOGIN) {
+      let data =
+        "grant_type=" +
+        _grant_type +
+        "&username=" +
+        username +
+        "&password=" +
+        password +
+        "&client_id=" +
+        _client_id;
+      const request = new Request("http://localhost:8001/api/1/oauth/token/", {
+        method: "POST",
+        headers: new Headers({
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+          Authorization:
+            "Bearer" +
+            btoa("someclientid:hLloV1YL1XXHmbxst23GU72nAyLi8rCjMhr6cKVn")
+        }),
 
-    this.setState({ submitted: true });
-    if (this.state.email && this.state.password) {
-      this.fetchUserData();
+        body: data
+      });
+
+      return fetch(request)
+        .then(response => {
+          if (response.status < 200 || response.status >= 300) {
+            throw new Error(response.statusText);
+          }
+          return response.json();
+        })
+        .then(({ access_token }) => {
+          localStorage.setItem("token", access_token);
+          this.props.history.push("/dashboard");
+        });
     }
   }
 
-  async fetchUserData() {
-    Swal.fire({
-      title: "Logging in Process",
-      showCancelButton: false,
-      showConfirmButton: false,
-      onBeforeOpen: () => {
-        Swal.showLoading();
-      }
-    });
-
-    const requestData = {
-      method: "POST",
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
-      }),
-      headers: { "Content-Type": "application/json" }
-    };
-
-    const request = await fetch(
-      "https://tardis-back.herokuapp.com/auth/sign_in",
-      requestData
-    );
-    const response = await request;
-    // const response = await request.json();
-    // console.log(`>> POST request: ${JSON.stringify(request)}`);
-    // const response = await reques
-    // const { response } = this.state;
-    // console.log(response)
-    console.log(`>> POST response: ${JSON.stringify(response)}`);
-
-    this.cookies.set("Access-Token", response.headers.get("Access-Token"));
-    this.cookies.set("Client", response.headers.get("Client"));
-    this.cookies.set("Uid", response.headers.get("Uid"));
-    this.cookies.set("Expiry", response.headers.get("Expiry"));
-
-    var error = true;
-
-    if (response.ok) {
-      error = false;
-    } else {
-      error = true;
-    }
-
-    if (!error) {
-      Swal.fire({
-        title: "Logged in",
-        type: "success",
-        showConfirmButton: false,
-        timer: 1000
-      }).then(login => {
-        if (login.dismiss === Swal.DismissReason.timer) {
-          window.sessionStorage.setItem("isLoggedIn", true);
-          // localStorage.setItem("token", login.token);
-          window.location.href = "/";
-        }
-      });
-    } else {
-      Swal.fire({
-        timer: 1000,
-        title: "Logging Error",
-        type: "error",
-        text: "Your entered Wrong Email or Password"
-      });
-    }
-  }
   render() {
     return (
       <section class="login-block ">
@@ -134,8 +97,8 @@ export class Login extends Component {
                     type="text"
                     class="form-control"
                     placeholder=""
-                    name="email"
-                    value={this.state.email}
+                    name="username"
+                    value={this.state.username}
                     onChange={this.handleChange}
                   />
                 </div>
@@ -229,4 +192,4 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+export default Login2;

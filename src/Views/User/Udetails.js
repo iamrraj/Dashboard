@@ -96,11 +96,11 @@ class Udetails extends Component {
                 </th>
                 <th scope="col">Czas w ruchu</th>
 
-                <th scope="col">Llość przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listiwych</th>
                 {/* Adde New in api */}
                 <th scope="col">Masa przesylek listiwych</th>
                 {/* Adde New in api */}
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Liczba dobrań przesylek</th>
                 <th scope="col"></th>
@@ -113,7 +113,7 @@ class Udetails extends Component {
                   <td>{item.timestamp}</td>
                   <td>{item.mode}</td>
                   <td>{item.milage} Km</td>
-                  <td>{item.movingtime}</td>
+                  <td>{item.movingtime} hr</td>
                   <td>{item.letteritems}</td>
                   <td>{item.shipweight} Kg</td>
                   <td>{item.package}</td>

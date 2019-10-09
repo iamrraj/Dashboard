@@ -66,7 +66,7 @@ class ClassicBike extends Component {
                 <th scope="col" style={{ width: "100px" }}>
                   Czas w ruchu
                 </th>
-                <th scope="col" className="t" style={{ width: "100px" }}>
+                <th scope="col" style={{ width: "100px" }}>
                   Średnia prędkość
                 </th>
                 <th scope="col">Llość przesylek listiwych</th>

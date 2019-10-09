@@ -9,7 +9,7 @@ export class Topbar1 extends Component {
       >
         <a
           className="navbar-brand rrr"
-          href="/"
+          href="/dashboard"
           style={{ color: "rgba(19, 183, 96, 1.0)" }}
         >
           {" "}

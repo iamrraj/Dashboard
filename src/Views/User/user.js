@@ -72,7 +72,7 @@ export class user extends Component {
                 <th scope="col">Dystans rowerem elektrycznym</th>
                 <th scope="col">Przeniesiona masa przesyłek RE</th>
                 <th scope="col">Całkowity dystans</th>
-                <th scope="col">Całkowity masa przesyłek</th>
+                <th scope="col">Całkowita masa przesyłek</th>
               </tr>
             </thead>
             {this.state.user.map(c => (
@@ -85,7 +85,7 @@ export class user extends Component {
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {c.user}
+                      {c.username}
                     </a>
                   </td>
                   <td>

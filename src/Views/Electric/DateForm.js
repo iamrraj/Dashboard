@@ -6,25 +6,25 @@ class DateForm extends Component {
       <form onSubmit={this.props.loaddata}>
         <div className="row">
           <div className="col-sm-4">
-            <div class="form-group">
+            <div className="form-group">
               <span style={{ opacity: "0.6", fontSize: "13px" }}>OD</span>
               <input
                 type="date"
                 name="from"
-                class="form-control datepicker"
+                className="form-control datepicker"
                 style={{ width: "150px" }}
               />
             </div>
           </div>
 
           <div className="col-sm-4">
-            <div class="form-group">
+            <div className="form-group">
               <span style={{ opacity: "0.6", fontSize: "13px" }}>DO</span>
               <input
                 type="date"
                 name="to"
                 placeholder="Select Date"
-                class="form-control datepicker"
+                className="form-control datepicker"
                 style={{ width: "150px" }}
               />
             </div>

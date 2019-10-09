@@ -85,12 +85,12 @@ export class Details extends Component {
                 <tr>
                   <td>{c.id}</td>
                   <td>{c.timestamp} </td>
-                  <td>{c.milage} Km</td>
+                  <td>{c.milage} km</td>
                   <td>{c.movingtime} hr</td>
                   <td>{c.letteritems}</td>
-                  <td>{c.shipweight} kgs</td>
+                  <td>{c.shipweight} kg</td>
                   <td>{c.package}</td>
-                  <td>{c.kgtrasported} Kg</td>
+                  <td>{c.kgtrasported} kg</td>
                   <td>{c.additionalbox}</td>
                 </tr>
               </tbody>

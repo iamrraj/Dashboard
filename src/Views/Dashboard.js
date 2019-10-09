@@ -42,7 +42,7 @@ class Dashboard extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/dashboard1/?too__lte=${to}&fromm__gte=${from}`
+        `http://softbike.dev.myddp.eu/api/1/deliveries/dashboard1/?too__lte=${to}&fromm__gte=${from}`
       );
       const dash = await res.json();
       console.log(dash);
@@ -56,7 +56,9 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(config.apiUrl.dashboard);
+      const res = await fetch(
+        config.apiUrl.dashboard
+      );
       const dash = await res.json();
       console.log(dash);
       this.setState({
@@ -96,7 +98,7 @@ class Dashboard extends Component {
               <div className="cont">
                 <h4 className="text-center font-weight-bolder">PODSUMOWANIE</h4>
 
-                <div class="row">
+                <div className="row">
                   <div className="col-sm-4" style={{ marginTop: "5px" }}>
                     <div className="box">
                       <div className="n">

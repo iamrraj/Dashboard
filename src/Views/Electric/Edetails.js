@@ -110,7 +110,7 @@ export class Edetails extends Component {
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {item.user ? "User" : `${item.user}`}
+                      {item.user ? `${item.user}` : "User"}
                     </a>
                   </td>
                   <td>{item.milage} Km</td>

@@ -15,7 +15,7 @@ export class Notification extends Component {
           style={{ color: "#212226" }}
         >
           Powiadomienia
-          <span class="badge badge-danger">4</span>
+          <span className="badge badge-danger">4</span>
         </a>
         <div className="dropdown-menu noti " aria-labelledby="navbarDropdown">
           <table className="table table-hover ">

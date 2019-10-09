@@ -1,7 +1,7 @@
-const host = "http://localhost:5000/";
+const host = "http://localhost:8001/token-auth/";
 
 async function login(username, password) {
-  const res = await fetch(host + "auth/login", {
+  const res = await fetch(`http://localhost:8001/token-auth/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
