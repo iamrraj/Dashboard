@@ -56,9 +56,7 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(
-        config.apiUrl.dashboard
-      );
+      const res = await fetch(config.apiUrl.dashboard);
       const dash = await res.json();
       console.log(dash);
       this.setState({
@@ -104,7 +102,7 @@ class Dashboard extends Component {
                       <div className="n">
                         <br></br>
                         <img src={map} alt="map" className="imag" />
-                        <h5>{c.total_milage} Km </h5>
+                        <h5>{c.total_milage} km </h5>
                         <p id="p">Przebyte kilometry</p>
                       </div>
                     </div>
@@ -115,7 +113,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={weight} alt="weight" className="imag" />
-                        <h5>{c.total_kg} Kgs</h5>
+                        <h5>{c.total_kg} kg</h5>
                         <p id="p">
                           Przetransportowana masa<br></br>
                           przesylek
@@ -129,7 +127,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={leaf} alt="leaf" className="imag" />
-                        <h5>{c.total_co2} Mg </h5>
+                        <h5>{c.total_co2} mg </h5>
                         <p id="p">Zaoszczędzone CO2</p>
                       </div>
                     </div>
@@ -153,7 +151,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_walk_milage} Km </h5>
+                        <h5>{c.total_walk_milage} km </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -165,7 +163,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="electric" className="imag" />
-                        <h5>{c.total_electric_milage} Kms</h5>
+                        <h5>{c.total_electric_milage} km</h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -182,7 +180,7 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_classic_milage} Kms </h5>
+                        <h5>{c.total_classic_milage} km </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -198,7 +196,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_walk_kg} Kgs </h5>
+                        <h5>{c.total_walk_kg} kg </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -209,7 +207,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="walk" className="imag" />
-                        <h5>{c.total_electric_kg} Kgs </h5>
+                        <h5>{c.total_electric_kg} kg </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -225,7 +223,7 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_classic_kg} Kgs </h5>
+                        <h5>{c.total_classic_kg} kg </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>

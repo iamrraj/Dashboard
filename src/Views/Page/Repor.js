@@ -177,7 +177,7 @@ export class Repor extends Component {
                       name="idd"
                     >
                       {this.state.movies.map(c => (
-                        <option value={c.user}>{c.user1}</option>
+                        <option value={c.pk}>{c.user1}</option>
                       ))}
                     </select>
                   </div>

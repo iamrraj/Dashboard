@@ -113,13 +113,13 @@ export class Edetails extends Component {
                       {item.user ? `${item.user}` : "User"}
                     </a>
                   </td>
-                  <td>{item.milage} Km</td>
+                  <td>{item.milage} km</td>
                   <td>{item.movingtime} hr</td>
                   <td>{item.averagespeed} km/hr</td>
-                  <td>{item.letteritems}</td>
-                  <td>{item.shipweight} kgs</td>
-                  <td>{item.package}</td>
-                  <td>{item.kgtrasported}Kg</td>
+                  <td>{item.letters_number}</td>
+                  <td>{item.packaged_weight} kg</td>
+                  <td>{item.packages_number}</td>
+                  <td>{item.kgtrasported} kg</td>
                   <td>{item.co2} mg</td>
                   <td>{item.additionalbox}</td>
                 </tr>

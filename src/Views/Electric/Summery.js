@@ -31,7 +31,7 @@ export default class Summery extends Component {
               <strong>SUMMERY</strong>
             </th>
             <th scope="col" className="text-dark th" style={{ width: "100px" }}>
-              {c.total_milage} Km
+              {c.total_milage} km
             </th>
             <th scope="col" className="text-dark th" style={{ width: "100px" }}>
               {c.total_movingtime} hr
@@ -43,7 +43,7 @@ export default class Summery extends Component {
               {c.total_letter}
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_ship_weight} kgs
+              {c.total_ship_weight} kg
             </th>
             <th scope="col" className="text-dark th">
               {c.total_pack}

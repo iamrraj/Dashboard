@@ -89,23 +89,23 @@ export class user extends Component {
                     </a>
                   </td>
                   <td>
-                    {c.total_walk_milage ? `${c.total_walk_milage}` : 0} Km
+                    {c.total_walk_milage ? `${c.total_walk_milage}` : 0} km
                   </td>
-                  <td>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} Kg</td>
+                  <td>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} kg</td>
                   <td>
                     {c.total_classic_milage ? `${c.total_classic_milage}` : 0}{" "}
                     Km
                   </td>
-                  <td>{c.total_classic_kg ? `${c.total_classic_kg}` : 0} Kg</td>
+                  <td>{c.total_classic_kg ? `${c.total_classic_kg}` : 0} kg</td>
                   <td>
                     {c.total_electric_milage ? `${c.total_electric_milage}` : 0}{" "}
-                    Km
+                    km
                   </td>
                   <td>
-                    {c.total_electric_kg ? `${c.total_electric_kg}` : 0} Kg
+                    {c.total_electric_kg ? `${c.total_electric_kg}` : 0} kg
                   </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
                 </tr>
               </tbody>
             ))}

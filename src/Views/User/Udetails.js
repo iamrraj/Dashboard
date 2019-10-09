@@ -112,12 +112,12 @@ class Udetails extends Component {
                   <td>{item.id}</td>
                   <td>{item.timestamp}</td>
                   <td>{item.mode}</td>
-                  <td>{item.milage} Km</td>
+                  <td>{item.milage} km</td>
                   <td>{item.movingtime} hr</td>
-                  <td>{item.letteritems}</td>
-                  <td>{item.shipweight} Kg</td>
-                  <td>{item.package}</td>
-                  <td>{item.kgtrasported} Kg</td>
+                  <td>{item.letters_number}</td>
+                  <td>{item.packaged_weight} kg</td>
+                  <td>{item.packages_number}</td>
+                  <td>{item.kgtrasported} kg</td>
                   <td>{item.additionalbox}</td>
                   <td data-toggle="modal" data-target="#eexampleModal">
                     <i
@@ -142,22 +142,22 @@ class Udetails extends Component {
                   <strong>Summery</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_milage} Km
+                  {movie.summery.total_milage} km
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_movingtime}
+                  {movie.summery.total_movingtime} hr
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_letter}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_ship} Kg
+                  {movie.summery.total_ship} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_package}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg} kgs
+                  {movie.summery.total_kg} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes}

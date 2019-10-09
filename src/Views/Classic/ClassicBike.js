@@ -19,7 +19,7 @@ class ClassicBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.classic}?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -95,18 +95,18 @@ class ClassicBike extends Component {
                       CB-{c.user}
                     </a>
                   </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
                   <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
                   <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} Km/hr
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/hr
                   </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
                   <td>
-                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
                   </td>
                   <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
-                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} Mg </td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
+                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
                   <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                 </tr>
               </tbody>

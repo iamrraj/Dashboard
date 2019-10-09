@@ -77,3 +77,12 @@ export default class CustomMap extends Component {
     );
   }
 }
+
+
+// componentDidMount() {
+//   axios.get(`http://localhost:8000/api/1/me/`).then(res => {
+//     const info = res.data;
+//     console.log(res);
+//     this.setState({ info });
+//   });
+// }

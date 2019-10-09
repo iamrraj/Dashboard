@@ -73,15 +73,9 @@ export class Cdetails extends Component {
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col" >
-                  Lp
-                </th>
-                <th scope="col">
-                  Data
-                </th>
-                <th scope="col" >
-                  Dystans
-                </th>
+                <th scope="col">Lp</th>
+                <th scope="col">Data</th>
+                <th scope="col">Dystans</th>
                 {/* <th scope="col" style={{ width: "140px" }}>
                   
                 </th> */}
@@ -98,13 +92,13 @@ export class Cdetails extends Component {
                 <tr>
                   <th scope="row">{item.id}</th>
                   <td>{item.timestamp} </td>
-                  <td>{item.milage} Km</td>
+                  <td>{item.milage} km</td>
                   {/* <td>{item.movingtime}</td> */}
                   <td>{item.averagespeed} km/hr</td>
-                  <td>{item.letteritems}</td>
-                  <td>{item.shipweight} kgs</td>
-                  <td>{item.package}</td>
-                  <td>{item.kgtrasported} Kg</td>
+                  <td>{item.letters_number}</td>
+                  <td>{item.packaged_weight} kg</td>
+                  <td>{item.packages_number}</td>
+                  <td>{item.kgtrasported} kg</td>
                   <td>{item.additionalbox}</td>
                 </tr>
               </tbody>

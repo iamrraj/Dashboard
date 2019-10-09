@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-// import Logout from "../Logout";
-// import Logout1 from
-// import Repor from "../../Views/Page/Repor";
-// import Swal from "sweetalert2";
 import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
-// import Report from "./Report";
 import Notification from "./Notification";
 
 class Topbar extends Component {
@@ -13,24 +8,25 @@ class Topbar extends Component {
     super(props);
     this.state = {
       username: "",
-      movies: null,
+      movies: [],
+      info: [],
       logged_in: localStorage.getItem("Token") ? true : false
     };
     this.onLogout = this.onLogout.bind(this);
   }
 
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch(`http://localhost:8001/api/1/me/`);
-  //     const movies = await res.json();
-  //     console.log(movies);
-  //     this.setState({
-  //       movies
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
+  async componentDidMount() {
+    try {
+      const res = await fetch(`http://localhost:8000/api/1/me/?format=json`);
+      const info = await res.json();
+      console.log(info);
+      this.setState({
+        info
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   onLogout() {
     localStorage.clear();
@@ -88,8 +84,9 @@ class Topbar extends Component {
                     href="# "
                     style={{ color: "#212226" }}
                   >
-                    {/* {this.state.logged_in ? `${this.state.username}` : "User"} */}
-                    User
+                    {/* {this.state.name.map(c => (
+                      <span>{c.name ? `${c.name}` : "User"}</span>
+                    ))} */}
                   </a>
                 </li>
               )}

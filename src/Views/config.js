@@ -1,4 +1,4 @@
-const api = `http://localhost:8001/`;
+const api = `http://localhost:8000/`;
 
 const config = {
   apiUrl: {

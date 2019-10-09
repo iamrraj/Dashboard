@@ -32,10 +32,10 @@ class Summery extends Component {
               SUMMERY
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_walk_milage} Km
+              {c.total_walk_milage} km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_walk_kg} Kg
+              {c.total_walk_kg} kg
             </th>
             <th scope="col" className="text-dark th">
               {c.total_classic_milage} km
@@ -47,13 +47,13 @@ class Summery extends Component {
               {c.total_electric_milage} km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_electric_kg} Kg
+              {c.total_electric_kg} kg
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_milage} Km
+              {c.total_milage} km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_kg} Kgs
+              {c.total_kg} kg
             </th>
           </tr>
         ))}
