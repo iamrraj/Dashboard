@@ -72,9 +72,9 @@ class ElectricBike extends Component {
                 </th>
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
-                <th scope="col">Ilość przesyłek listiwych</th>
+                <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">Masa przesyłek listiwych</th>
+                <th scope="col">Masa przesyłek listowych</th>
 
                 <th scope="col">Ilość paczek</th>
 

@@ -3,6 +3,7 @@ import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
 import config from "../../Views/config";
+import Report from "./Report";
 // import axios from "axios";
 // import ls from "local-storage";
 
@@ -88,6 +89,7 @@ class Topbar extends Component {
     const { loggedIn } = this.props;
     return (
       <div>
+        {/* <Report loaddata={this.getData} /> */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-white">
           <a className="navbar-brand" href="/" style={{ color: "#212226" }}>
             <img src={head} alt="logo" style={{ height: "40px" }}></img> &nbsp;{" "}

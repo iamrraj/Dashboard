@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Topbar1 from "../../Container/Layout/Topbar1";
+import config from "../../Views/config";
 
 export class Report extends Component {
   constructor(props) {
@@ -12,11 +12,11 @@ export class Report extends Component {
   // Get Data From Backend
   async componentDidMount() {
     try {
-      const res = await fetch(`http://localhost:8000/api/1/deliveries/user1/`);
+      const res = await fetch(config.apiUrl.reportModel);
       const movies = await res.json();
       // console.log(report);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -60,85 +60,104 @@ export class Report extends Component {
             <div className="modal-body ">
               <form onSubmit={this.props.loaddata}>
                 <div className="row">
-                  <div className="col-sm-7">
-                    <div className="form-group">
-                      From
+                  <div className="col-sm-6">
+                    <div class="form-group">
+                      <span style={{ opacity: "0.6", fontSize: "13px" }}>
+                        OD
+                      </span>
                       <input
                         type="date"
                         name="from"
-                        className="form-control datepicker"
-                        style={{ width: "150px", color: "#13B760" }}
+                        class="form-control datepicker"
+                        style={{ width: "150px" }}
                       />
                     </div>
                   </div>
 
-                  <div className="col-sm-5">
-                    <div className="form-group">
-                      To
+                  <div className="col-sm-4">
+                    <div class="form-group">
+                      <span style={{ opacity: "0.6", fontSize: "13px" }}>
+                        DO
+                      </span>
                       <input
                         type="date"
                         name="to"
-                        className="form-control datepicker"
-                        style={{ width: "150px", color: "#13B760" }}
+                        class="form-control datepicker"
+                        style={{ width: "150px" }}
                       />
                     </div>
                   </div>
                 </div>
 
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active btn-outline-success"
-                      id="pills-home-tab"
-                      data-toggle="pill"
-                      href="#pills-home"
-                      role="tab"
-                      aria-controls="pills-home"
-                      aria-selected="true"
-                    >
-                      User
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link btn-outline-success"
-                      id="pills-profile-tab"
-                      data-toggle="pill"
-                      href="#pills-profile"
-                      role="tab"
-                      aria-controls="pills-profile"
-                      aria-selected="false"
-                    >
-                      Electric
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link btn-outline-success"
-                      id="pills-contact-tab"
-                      data-toggle="pill"
-                      href="#pills-contact"
-                      role="tab"
-                      aria-controls="pills-contact"
-                      aria-selected="false"
-                    >
-                      Classic
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link btn-outline-success"
-                      id="pills-walk-tab"
-                      data-toggle="pill"
-                      href="#pills-walk"
-                      role="tab"
-                      aria-controls="pills-contact"
-                      aria-selected="false"
-                    >
-                      Walk
-                    </a>
-                  </li>
-                </ul>
+                <div className="form-group">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active btn-outline-success"
+                        id="pills-home-tab"
+                        data-toggle="pill"
+                        href="#pills-home"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        User
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link btn-outline-success"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Electric
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link btn-outline-success"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Classic
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link btn-outline-success"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Walk
+                      </a>
+                    </li>
+                    {/* <li class="nav-item">
+              <a
+                class="nav-link btn-outline-success"
+                id="pills-contact-tab"
+                data-toggle="pill"
+                href="#pills-contact"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                Contact
+              </a>
+            </li> */}
+                  </ul>
+                </div>
                 <div class="tab-content" id="pills-tabContent">
                   <div
                     class="tab-pane fade show active"
@@ -158,82 +177,45 @@ export class Report extends Component {
                       name="idd"
                     >
                       {this.state.movies.map(c => (
-                        <option key={c.pk} value={c.user}>
-                          {c.user1}
-                        </option>
+                        <option value={c.pk}>{c.user1}</option>
                       ))}
                     </select>
                   </div>
+
                   <div
-                    class="tab-pane fade"
-                    id="pills-profile"
+                    class="tab-pane fade "
+                    id="pills-profile "
                     role="tabpanel"
                     aria-labelledby="pills-profile-tab"
                   >
                     <label>Select Electric Bike</label>
-                    <select
-                      multiple
-                      className="form-control btn-block"
-                      id="exampleFormControlSelect2 btn-block"
-                      style={{
-                        width: "200px",
-                        color: "rgba(19, 183, 96, 1.0)"
-                      }}
-                      name="idd"
-                    >
-                      <option>Electric</option>
-                      <option>Electric</option>
-                      <option>Electric</option>
-                    </select>
                   </div>
-                  <div
-                    class="tab-pane fade"
-                    id="pills-contact"
-                    role="tabpanel"
-                    aria-labelledby="pills-contact-tab"
-                  >
-                    <label>Select Classic Bike</label>
-                    <select
-                      multiple
-                      className="form-control btn-block"
-                      id="exampleFormControlSelect2 btn-block"
-                      style={{
-                        width: "200px",
-                        color: "rgba(19, 183, 96, 1.0)"
-                      }}
-                      name="idd"
-                    >
-                      <option>Classic</option>
-                      <option>Classic</option>
-                      <option>Classic</option>
-                    </select>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="pills-walk"
-                    role="tabpanel"
-                    aria-labelledby="pills-walk-tab"
-                  >
-                    <label>Select Walk</label>
-                    <select
-                      multiple
-                      className="form-control btn-block"
-                      id="exampleFormControlSelect2 btn-block"
-                      style={{
-                        width: "200px",
-                        color: "rgba(19, 183, 96, 1.0)"
-                      }}
-                      name="idd"
-                    >
-                      <option>Walk</option>
-                      <option>Walk</option>
-                      <option>Walk</option>
-                    </select>
-                  </div>
+                  {/* <div
+            class="tab-pane fade"
+            id="pills-contact"
+            role="tabpanel"
+            aria-labelledby="pills-contact-tab"
+          >
+             <label>Select User</label>
+            <select
+              // multiple
+              className="form-control btn-block"
+              id="exampleFormControlSelect2 btn-block"
+              style={{
+                width: "200px",
+                color: "rgba(19, 183, 96, 1.0)"
+              }}
+              name="idd"
+            >
+              {this.state.movies.map(c => (
+                <option value={c.user}>{c.user1}</option>
+              ))}
+            </select> 
+          </div> */}
                 </div>
-
+                <br></br>
                 <select
-                  // multiple
+                  multiple
                   className="form-control btn-block"
                   id="exampleFormControlSelect2 btn-block"
                   style={{
@@ -243,22 +225,14 @@ export class Report extends Component {
                   name="modee"
                 >
                   <option value="">None</option>
-                  <option value="foot">Foot</option>
-                  <option value="bike">Classic Bike</option>
-                  <option value="electric-bike">Electric Bike</option>
+                  <option value="foot">Pieszo</option>
+                  <option value="bike">Rower Klasyczny</option>
+                  <option value="electric-bike">Rower Elektryczny</option>
                 </select>
-
-                {/* <button
-                  type="submit"
-                  value="Get Data"
-                  className="btn btn-login"
-                  style={{ height: "40px", marginTop: "13px" }}
-                >
-                  Report
-                </button> */}
-
                 <center>
                   <button
+                    type="submit"
+                    value="Get Data"
                     className="btn btn-success active"
                     style={{
                       width: "200px",
@@ -269,7 +243,7 @@ export class Report extends Component {
                       fontWeight: "500"
                     }}
                   >
-                    GET REPORT
+                    Raport
                   </button>
                 </center>
               </form>
