@@ -139,7 +139,7 @@ class Udetails extends Component {
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col" className="text-dark th">
-                  <strong>Summery</strong>
+                  <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_milage} km

@@ -90,9 +90,9 @@ export class Edetails extends Component {
                   Czas w ruchu
                 </th>
                 <th scope="col">Średnia prędkość</th>
-                <th scope="col">Llość przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listiwych</th>
                 <th scope="col">Masa przesylek listiwych</th>
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th> {/* Adde New in api */}
                 <th scope="col">Liczba dobrań przesylek</th>
@@ -129,7 +129,7 @@ export class Edetails extends Component {
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col" className="text-dark th">
-                  <strong>SUMMERY</strong>
+                  <strong>SUMA</strong>
                 </th>
                 <th
                   scope="col"

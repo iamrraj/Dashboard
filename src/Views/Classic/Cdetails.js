@@ -23,7 +23,7 @@ export class Cdetails extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -68,7 +68,7 @@ export class Cdetails extends Component {
               aria-hidden="true"
               style={{ color: "#CCEFDC", height: "20px" }}
             ></i>{" "}
-            {movie.bikeid}
+            {movie.username}
           </a>
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
@@ -80,9 +80,9 @@ export class Cdetails extends Component {
                   
                 </th> */}
                 <th scope="col">Średnia prędkość</th>
-                <th scope="col">Llość przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listiwych</th>
                 <th scope="col">Masa przesylek listiwych</th>
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
@@ -108,7 +108,7 @@ export class Cdetails extends Component {
               <tr className="thead">
                 <th scope="col"></th>
                 <th scope="col" className="text-dark th">
-                  <strong>Summery</strong>
+                  <strong>SUMA</strong>
                 </th>
                 <th
                   scope="col"

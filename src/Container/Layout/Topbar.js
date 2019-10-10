@@ -3,8 +3,8 @@ import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
 import config from "../../Views/config";
-import axios from "axios";
-import ls from "local-storage";
+// import axios from "axios";
+// import ls from "local-storage";
 
 class Topbar extends Component {
   constructor(props) {
@@ -18,40 +18,46 @@ class Topbar extends Component {
     this.onLogout = this.onLogout.bind(this);
   }
 
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch(`http://localhost:8000/api/1/me/?format=json`);
-  //     const info = await res.json();
-  //     console.log(info);
-  //     this.setState({
-  //       info
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
-  componentDidMount() {
-    axios({
-      // Define Method
-      method: "get",
-
-      // Set Access Token URL
-      url: config.apiUrl.me,
-
-      //Set Headers
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Accept: "application/json",
-        Authorization: localStorage.getItem("Token")
-        // "Cache-Control": "no-cache"
+  async componentDidMount() {
+    try {
+      const response = await fetch(config.apiUrl.me, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+          Authorization: "Bearer " + localStorage.getItem("Token")
+        }
+      });
+      let responseJson = await response.json();
+      if (responseJson !== null) {
+        console.log("Got user info: " + responseJson.name);
       }
-    }).then(response => {
-      console.log(response.data);
-      var ls = require("local-storage");
-      ls.set("Name", response.data["name"]);
-    });
+    } catch (e) {
+      console.log(e);
+    }
   }
+
+  // componentDidMount() {
+  //   axios({
+  //     // Define Method
+  //     method: "get",
+
+  //     // Set Access Token URL
+  //     url: config.apiUrl.me,
+
+  //     //Set Headers
+  //     headers: {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //       Accept: "application/json",
+  //       Authorization: localStorage.getItem("Token")
+  //       // "Cache-Control": "no-cache"
+  //     }
+  //   }).then(response => {
+  //     console.log(response.data);
+  //     var ls = require("local-storage");
+  //     ls.set("Name", response.data["name"]);
+  //   });
+  // }
 
   onLogout() {
     localStorage.clear();
@@ -72,7 +78,7 @@ class Topbar extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -134,7 +140,7 @@ class Topbar extends Component {
                     style={{ color: "#212226" }}
                   >
                     {" "}
-                    Report
+                    Raport
                   </a>
                 </li>
               )}

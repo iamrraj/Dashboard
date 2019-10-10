@@ -64,7 +64,7 @@ export class Details extends Component {
               aria-hidden="true"
               style={{ color: "#CCEFDC", height: "20px" }}
             ></i>{" "}
-            Anybody
+            {walk.username}
           </a>
           <table class="table " style={{ marginTop: "20px" }}>
             <thead>
@@ -73,9 +73,9 @@ export class Details extends Component {
                 <th scope="col">Data</th>
                 <th scope="col">Dystans</th>
                 <th scope="col">Czas w ruchu</th>
-                <th scope="col">Llość przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listiwych</th>
                 <th scope="col">Masa przesylek listiwych</th>
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
@@ -100,7 +100,7 @@ export class Details extends Component {
               <tr className="thead">
                 <th scope="col"></th>
                 <th scope="col" className="text-dark th">
-                  <strong>Summery</strong>
+                  <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_milage} Km

@@ -24,7 +24,7 @@ class ElectricBike extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -37,7 +37,7 @@ class ElectricBike extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -72,11 +72,11 @@ class ElectricBike extends Component {
                 </th>
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
-                <th scope="col">Llość przesyłek listiwych</th>
+                <th scope="col">Ilość przesyłek listiwych</th>
 
                 <th scope="col">Masa przesyłek listiwych</th>
 
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
 
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th>

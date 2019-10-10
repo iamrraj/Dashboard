@@ -1,4 +1,4 @@
-const api = `http://localhost:8000/`;
+const api = `http://softbike.dev.myddp.eu/`;
 
 const config = {
   apiUrl: {
@@ -13,7 +13,8 @@ const config = {
     report: `${api}api/1/deliveries/report/`,
     reportModel: `${api}api/1/deliveries/user1/`,
     data: `${api}api/1/deliveries/data/`,
-    me: `${api}api/1/me/`
+    me: `${api}api/1/me/`,
+    login: `${api}api/1/oauth/token/`
   }
 };
 

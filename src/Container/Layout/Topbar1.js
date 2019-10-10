@@ -66,7 +66,7 @@ export class Topbar1 extends Component {
                 style={{ color: "rgba(19, 183, 96, 1.0)", marginTop: "9px" }}
               >
                 {" "}
-                Uźytkownicy
+                Uzytkownicy
               </a>
             </li>
           </ul>

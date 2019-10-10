@@ -27,7 +27,7 @@ class ReportPage extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -45,7 +45,7 @@ class ReportPage extends Component {
             style={{ marginTop: "10px", marginBottom: "10px" }}
           >
             {" "}
-            REPORT{" "}
+            RAPORT{" "}
           </h5>
 
           <table class="table table-hover table-lg " id="table-to-xls">
@@ -62,11 +62,11 @@ class ReportPage extends Component {
                 </th>
                 <th scope="col">Czas w ruchu</th>
                 <th scope="col">Średnia prędkość</th>
-                <th scope="col">Llość przesyłek listiwych</th>
+                <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">Masa przesyłek listiwych</th>
+                <th scope="col">Masa przesyłek listowych</th>
 
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
 
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Zaoszczędzone CO2</th>
@@ -88,17 +88,17 @@ class ReportPage extends Component {
                       {c.user}
                     </a>
                   </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} Km</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
                   <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
                   <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} Km/hr
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/hr
                   </td>
-                  <td>{c.total_letter ? `${c.total_letter}` : 0} Kg</td>
+                  <td>{c.total_letter ? `${c.total_letter}` : 0} kg</td>
                   <td>
-                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kgs
+                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
                   </td>
                   <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} Kg</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
                   <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
                   <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                   <td>{c.total_user ? `${c.total_user}` : 0}</td>
@@ -110,22 +110,22 @@ class ReportPage extends Component {
               <tr>
                 <th scope="col"></th>
                 <th scope="col" className="text-dark th">
-                  <strong>Summery</strong>
+                  <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  45 Km
+                  45 km
                 </th>
                 <th scope="col" className="text-dark th">
-                  4h 11min
+                  4h 11 min
                 </th>
                 <th scope="col" className="text-dark th">
                   14 km/hr
                 </th>
                 <th scope="col" className="text-dark th">
-                  67 Kg
+                  67 kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  190 Mg
+                  190 kg
                 </th>
                 <th scope="col" className="text-dark th">
                   14
@@ -134,7 +134,7 @@ class ReportPage extends Component {
                   4
                 </th>
                 <th scope="col" className="text-dark th">
-                  190 Mg
+                  190 kg
                 </th>
                 <th scope="col" className="text-dark th">
                   14

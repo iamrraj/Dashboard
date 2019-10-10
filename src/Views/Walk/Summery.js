@@ -15,7 +15,7 @@ export default class Summery extends Component {
       const dash = await res.json();
       // console.log(dash)
       this.setState({
-        dash: dash.results
+        dash
       });
     } catch (e) {
       console.log(e);
@@ -28,7 +28,7 @@ export default class Summery extends Component {
           <tr className="thead">
             <th scope="col"></th>
             <th scope="col" className="text-dark th">
-              <strong>SUMMERY</strong>
+              <strong>SUMA</strong>
             </th>
             <th scope="col" className="text-dark th">
               {c.total_milage} Km

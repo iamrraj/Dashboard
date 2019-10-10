@@ -25,7 +25,7 @@ class Walk extends Component {
       const walk = await res.json();
       console.log(walk);
       this.setState({
-        walk: walk.results
+        walk
       });
     } catch (e) {
       console.log(e);
@@ -81,13 +81,13 @@ class Walk extends Component {
                 </th>
 
                 <th scope="col" style={{ width: "130px" }}>
-                  Llość przesylek listiwych
+                  Ilość przesylek listiwych
                 </th>
                 <th scope="col">
                   Masa przesylek<br></br> listiwych
                 </th>
                 <th scope="col" className="t">
-                  Llość paczek
+                  Ilość paczek
                 </th>
 
                 <th scope="col" className="t">

@@ -24,7 +24,7 @@ class ClassicBike extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -37,7 +37,7 @@ class ClassicBike extends Component {
       const movies = await res.json();
       console.log(movies);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -69,11 +69,11 @@ class ClassicBike extends Component {
                 <th scope="col" style={{ width: "100px" }}>
                   Średnia prędkość
                 </th>
-                <th scope="col">Llość przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listiwych</th>
                 {/* Adde New in api */}
                 <th scope="col">Masa przesylek listiwych</th>
                 {/* Adde New in api */}
-                <th scope="col">Llość paczek</th>
+                <th scope="col">Ilość paczek</th>
                 {/* Adde New in api */}
                 <th scope="col">Masa paczek</th>
                 <th scope="col" style={{ width: "100px" }}>

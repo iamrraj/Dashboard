@@ -16,7 +16,7 @@ export class Repor extends Component {
       const movies = await res.json();
       // console.log(report);
       this.setState({
-        movies: movies.results
+        movies
       });
     } catch (e) {
       console.log(e);
@@ -225,26 +225,27 @@ export class Repor extends Component {
                   name="modee"
                 >
                   <option value="">None</option>
-                  <option value="foot">Foot</option>
-                  <option value="bike">Classic Bike</option>
-                  <option value="electric-bike">Electric Bike</option>
+                  <option value="foot">Pieszo</option>
+                  <option value="bike">Rower Klasyczny</option>
+                  <option value="electric-bike">Rower Elektryczny</option>
                 </select>
-
-                <button
-                  type="submit"
-                  value="Get Data"
-                  className="btn btn-success active"
-                  style={{
-                    width: "200px",
-                    background: "rgba(19, 183, 96, 1.0)",
-                    padding: "7px",
-                    marginTop: "15px",
-                    marginBottom: "15px",
-                    fontWeight: "500"
-                  }}
-                >
-                  Report
-                </button>
+                <center>
+                  <button
+                    type="submit"
+                    value="Get Data"
+                    className="btn btn-success active"
+                    style={{
+                      width: "200px",
+                      background: "rgba(19, 183, 96, 1.0)",
+                      padding: "7px",
+                      marginTop: "15px",
+                      marginBottom: "15px",
+                      fontWeight: "500"
+                    }}
+                  >
+                    Raport
+                  </button>
+                </center>
               </form>
             </div>
           </div>

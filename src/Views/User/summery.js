@@ -15,7 +15,7 @@ class Summery extends Component {
       const dash = await res.json();
       // console.log(dash)
       this.setState({
-        dash: dash.results
+        dash
       });
     } catch (e) {
       console.log(e);
@@ -29,7 +29,7 @@ class Summery extends Component {
           <tr className="thead">
             <th scope="col" className="font-weight-bold"></th>
             <th scope="col" className="font-weight-bold">
-              SUMMERY
+              SUMA
             </th>
             <th scope="col" className="text-dark th">
               {c.total_walk_milage} km

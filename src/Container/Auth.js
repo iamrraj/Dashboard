@@ -5,6 +5,7 @@ import login from "../img/login.svg";
 import axios from "axios";
 import ls from "local-storage";
 import Swal from "sweetalert2";
+import config from "../Views/config";
 
 var CLIENT_ID = "softbike-web";
 var GRANT_TYPE = "password";
@@ -37,7 +38,7 @@ export class Auth extends Component {
       method: "post",
 
       // Set Access Token URL
-      url: `http://softbike.dev.myddp.eu/api/1/oauth/token/`,
+      url: config.apiUrl.login,
 
       //Set Headers
       headers: {
@@ -186,14 +187,9 @@ export class Auth extends Component {
                       alt="First slide"
                     />
                     <div className="carousel-caption d-none d-md-block">
-                      <div className="banner-text">
+                      <div className="banner-text" style={{ bottom: "300px" }}>
                         <h2>SOFT BIKE</h2>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation
-                        </p>
+                        <p>System do zarządzania rowerami elektrycznymi.</p>
                       </div>
                     </div>
                   </div>

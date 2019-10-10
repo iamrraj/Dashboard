@@ -19,7 +19,7 @@ export class user extends Component {
       const user = await res.json();
       console.log(user);
       this.setState({
-        user: user.results
+        user
       });
     } catch (e) {
       console.log(e);
@@ -68,9 +68,9 @@ export class user extends Component {
                 <th scope="col">Dystans pieszo</th>
                 <th scope="col">Przeniesiona masa przesyłek</th>
                 <th scope="col">Dystans rowerem klasycznym</th>
-                <th scope="col">Przeniesiona masa przesyłek RK</th>
+                <th scope="col">Przewieziona masa przesyłek RK</th>
                 <th scope="col">Dystans rowerem elektrycznym</th>
-                <th scope="col">Przeniesiona masa przesyłek RE</th>
+                <th scope="col">Przewieziona masa przesyłek RE</th>
                 <th scope="col">Całkowity dystans</th>
                 <th scope="col">Całkowita masa przesyłek</th>
               </tr>

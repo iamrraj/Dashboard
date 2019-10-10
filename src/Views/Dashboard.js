@@ -47,7 +47,7 @@ class Dashboard extends Component {
       const dash = await res.json();
       console.log(dash);
       this.setState({
-        dash: dash.results
+        dash
       });
     } catch (e) {
       console.log(e);
@@ -60,7 +60,7 @@ class Dashboard extends Component {
       const dash = await res.json();
       console.log(dash);
       this.setState({
-        dash: dash.results
+        dash
       });
     } catch (e) {
       console.log(e);
@@ -158,18 +158,6 @@ class Dashboard extends Component {
                   </div>
 
                   <div className="col-sm-4" style={{ marginTop: "5px" }}>
-                    <h4 className="text-center ww">Rower elektryczny</h4>
-                    <div className="box">
-                      <div className=" r">
-                        <br></br>
-                        <img src={electric} alt="electric" className="imag" />
-                        <h5>{c.total_electric_milage} km</h5>
-                        <p id="p">Dystans</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-sm-4" style={{ marginTop: "5px" }}>
                     <h4 className="text-center www">Rower klasyczny</h4>
                     <div className="box">
                       <div className=" r">
@@ -181,6 +169,18 @@ class Dashboard extends Component {
                           style={{ height: "25px", marginTop: "15px" }}
                         />
                         <h5>{c.total_classic_milage} km </h5>
+                        <p id="p">Dystans</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-sm-4" style={{ marginTop: "5px" }}>
+                    <h4 className="text-center ww">Rower elektryczny</h4>
+                    <div className="box">
+                      <div className=" r">
+                        <br></br>
+                        <img src={electric} alt="electric" className="imag" />
+                        <h5>{c.total_electric_milage} km</h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -206,8 +206,13 @@ class Dashboard extends Component {
                     <div className="box">
                       <div className=" r">
                         <br></br>
-                        <img src={electric} alt="walk" className="imag" />
-                        <h5>{c.total_electric_kg} kg </h5>
+                        <img
+                          src={classic}
+                          alt="walk"
+                          className="imag"
+                          style={{ height: "25px", marginTop: "15px" }}
+                        />
+                        <h5>{c.total_classic_kg} kg </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -217,13 +222,8 @@ class Dashboard extends Component {
                     <div className="box">
                       <div className=" r">
                         <br></br>
-                        <img
-                          src={classic}
-                          alt="walk"
-                          className="imag"
-                          style={{ height: "25px", marginTop: "15px" }}
-                        />
-                        <h5>{c.total_classic_kg} kg </h5>
+                        <img src={electric} alt="walk" className="imag" />
+                        <h5>{c.total_electric_kg} kg </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
