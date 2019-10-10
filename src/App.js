@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
-// import { Provider } from "unstated";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Topbar from "./Container/Layout/Topbar";
 
@@ -13,13 +12,10 @@ import Cdetails from "./Views/Classic/Cdetails";
 import Details from "./Views/Walk/Details";
 import user from "./Views/User/user";
 import Udetails from "./Views/User/Udetails";
-// import Login from "./Container/Login";
-// import RegisterPage from "./Container/Demo/Register";
 import Notification from "./Views/Page/Notification";
 import ReportPage from "./Views/Page/Report";
-// import Login2 from "./Component/Login2";
 import Auth from "./Container/Auth";
-import Signin from "./Container/Signin";
+// import Signin from "./Container/Signin";
 
 import "./App.css";
 
@@ -72,7 +68,7 @@ class App extends Component {
           <PrivateRoute path="/notification" component={Notification} />
           <PrivateRoute path="/report" component={ReportPage} />
 
-          <Route path="/login" component={Signin} />
+          {/* <Route path="/login" component={Signin} /> */}
         </Switch>
       </BrowserRouter>
     );

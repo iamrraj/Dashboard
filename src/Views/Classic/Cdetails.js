@@ -18,7 +18,7 @@ export class Cdetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}&mode=bike`
       );
       const movies = await res.json();
       console.log(movies);

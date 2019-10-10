@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Swal from "sweetalert2";
 // import Cookies from "universal-cookie";
 import head from "../img/head.png";
 import login from "../img/login.svg";
@@ -9,9 +8,6 @@ import Swal from "sweetalert2";
 
 var CLIENT_ID = "softbike-web";
 var GRANT_TYPE = "password";
-// var username = "iamrraj";
-// var password = "Rahul@1995";
-// var username =
 // data: `grant_type=${GRANT_TYPE}&username=${username}&password=${password}&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
 export class Auth extends Component {
   constructor(props) {
@@ -41,7 +37,7 @@ export class Auth extends Component {
       method: "post",
 
       // Set Access Token URL
-      url: `http://softbike.dev.myddp.eu/api/1/oauth/token/`,
+      url: `http://localhost:8000/api/1/oauth/token/`,
 
       //Set Headers
       headers: {

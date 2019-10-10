@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-// import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import config from "../config";
-// import axios from 'axios'
 
 export class Edetails extends Component {
   constructor(props) {
@@ -20,7 +18,7 @@ export class Edetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}&mode=electric-bike`
       );
       const movie = await res.json();
       console.log(movie);
@@ -57,7 +55,8 @@ export class Edetails extends Component {
     if (movie === null) return <p>Loading ....</p>;
     return (
       <div className="container" style={{ marginTop: "20px" }}>
-        <DateForm loaddata={this.getData} />
+        <DateForm />
+        {/* <DateForm loaddata={this.getData} /> */}
         <Topbar1 />
         <div
           className="bg-white"

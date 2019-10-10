@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
+import config from "../../Views/config";
+import axios from "axios";
+import ls from "local-storage";
 
 class Topbar extends Component {
   constructor(props) {
@@ -15,17 +18,39 @@ class Topbar extends Component {
     this.onLogout = this.onLogout.bind(this);
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(`http://localhost:8000/api/1/me/?format=json`);
-      const info = await res.json();
-      console.log(info);
-      this.setState({
-        info
-      });
-    } catch (e) {
-      console.log(e);
-    }
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(`http://localhost:8000/api/1/me/?format=json`);
+  //     const info = await res.json();
+  //     console.log(info);
+  //     this.setState({
+  //       info
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
+  componentDidMount() {
+    axios({
+      // Define Method
+      method: "get",
+
+      // Set Access Token URL
+      url: config.apiUrl.me,
+
+      //Set Headers
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+        Authorization: localStorage.getItem("Token")
+        // "Cache-Control": "no-cache"
+      }
+    }).then(response => {
+      console.log(response.data);
+      var ls = require("local-storage");
+      ls.set("Name", response.data["name"]);
+    });
   }
 
   onLogout() {
@@ -87,6 +112,7 @@ class Topbar extends Component {
                     {/* {this.state.name.map(c => (
                       <span>{c.name ? `${c.name}` : "User"}</span>
                     ))} */}
+                    Admin
                   </a>
                 </li>
               )}
