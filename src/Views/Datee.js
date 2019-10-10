@@ -13,7 +13,7 @@ export class Datee extends Component {
   }
 
   getDate = () => {
-    var date = new Date().toDateString();
+    var date = new Date().toLocaleDateString();
     this.setState({ date });
   };
 
