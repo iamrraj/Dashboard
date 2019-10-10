@@ -13,7 +13,13 @@ export class Datee extends Component {
   }
 
   getDate = () => {
-    var date = new Date().toLocaleDateString();
+    var options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    };
+    var date = new Date().toLocaleDateString("pl", options);
     this.setState({ date });
   };
 
