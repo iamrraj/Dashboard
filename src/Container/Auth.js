@@ -37,7 +37,7 @@ export class Auth extends Component {
       method: "post",
 
       // Set Access Token URL
-      url: `http://localhost:8000/api/1/oauth/token/`,
+      url: `http://softbike.dev.myddp.eu/api/1/oauth/token/`,
 
       //Set Headers
       headers: {
