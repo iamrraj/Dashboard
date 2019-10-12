@@ -43,7 +43,7 @@ export class Auth extends Component {
       //Set Headers
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Accept: "application/json"
+        Authorization: "Bearer o8D0IqWwtIuGVJmKM3okGSveS6ng7O"
         // "Cache-Control": "no-cache"
       },
 

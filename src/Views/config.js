@@ -1,4 +1,4 @@
-const api = `http://softbike.dev.myddp.eu/`;
+const api = `http://localhost:8000/`;
 
 const config = {
   apiUrl: {

@@ -9,6 +9,7 @@ import electric from "../img/electric.png";
 import DateForm from "./Electric/DateForm";
 import Topbar1 from "../Container/Layout/Topbar1";
 import config from "./config";
+import User from "../Container/User";
 // import Topbar from "../Container/Layout/Topbar";
 
 class Dashboard extends Component {
@@ -72,7 +73,9 @@ class Dashboard extends Component {
       <div className="container" style={{ marginTop: "20px" }}>
         <div className="row">
           <div className="col-sm-3" style={{ marginTop: "12px" }}>
-            <strong>Witaj, Piotr</strong>
+            <strong>
+              Witaj, <User />
+            </strong>
             <Datee />
           </div>
           <div className="col-sm-8">
@@ -102,7 +105,7 @@ class Dashboard extends Component {
                       <div className="n">
                         <br></br>
                         <img src={map} alt="map" className="imag" />
-                        <h5>{c.total_milage} km </h5>
+                        <h5>{c.total_milage ? `${c.total_milage}` : 0} km </h5>
                         <p id="p">Przebyte kilometry</p>
                       </div>
                     </div>
@@ -113,7 +116,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={weight} alt="weight" className="imag" />
-                        <h5>{c.total_kg} kg</h5>
+                        <h5>{c.total_kg ? `${c.total_kg}` : 0} kg</h5>
                         <p id="p">
                           Przetransportowana masa<br></br>
                           przesylek
@@ -127,7 +130,7 @@ class Dashboard extends Component {
                       <div className=" n">
                         <br></br>
                         <img src={leaf} alt="leaf" className="imag" />
-                        <h5>{c.total_co2} mg </h5>
+                        <h5>{c.total_co2 ? `${c.total_co2}` : 0} mg </h5>
                         <p id="p">Zaoszczędzone CO2</p>
                       </div>
                     </div>
@@ -151,7 +154,10 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_walk_milage} km </h5>
+                        <h5>
+                          {c.total_walk_milage ? `${c.total_walk_milage}` : 0}{" "}
+                          km{" "}
+                        </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -168,7 +174,12 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_classic_milage} km </h5>
+                        <h5>
+                          {c.total_classic_milage
+                            ? `${c.total_classic_milage}`
+                            : 0}{" "}
+                          km{" "}
+                        </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -180,7 +191,12 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="electric" className="imag" />
-                        <h5>{c.total_electric_milage} km</h5>
+                        <h5>
+                          {c.total_electric_milage
+                            ? `${c.total_electric_milage}`
+                            : 0}{" "}
+                          km
+                        </h5>
                         <p id="p">Dystans</p>
                       </div>
                     </div>
@@ -196,7 +212,7 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={walk} alt="walk" className="imag" />
-                        <h5>{c.total_walk_kg} kg </h5>
+                        <h5>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} kg</h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -212,7 +228,9 @@ class Dashboard extends Component {
                           className="imag"
                           style={{ height: "25px", marginTop: "15px" }}
                         />
-                        <h5>{c.total_classic_kg} kg </h5>
+                        <h5>
+                          {c.total_classic_kg ? `${c.total_classic_kg}` : 0} kg{" "}
+                        </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>
@@ -223,7 +241,10 @@ class Dashboard extends Component {
                       <div className=" r">
                         <br></br>
                         <img src={electric} alt="walk" className="imag" />
-                        <h5>{c.total_electric_kg} kg </h5>
+                        <h5>
+                          {c.total_electric_kg ? `${c.total_electric_kg}` : 0}{" "}
+                          kg{" "}
+                        </h5>
                         <p id="p">Masa przesyłek</p>
                       </div>
                     </div>

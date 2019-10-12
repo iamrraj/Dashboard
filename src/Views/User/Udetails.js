@@ -112,13 +112,23 @@ class Udetails extends Component {
                   <td>{item.id}</td>
                   <td>{item.timestamp}</td>
                   <td>{item.mode}</td>
-                  <td>{item.milage} km</td>
-                  <td>{item.movingtime} hr</td>
+
+                  {/* <td>{item.milage} km</td> */}
+                  {item.worday.map(c => (
+                    <td>{c.mileage} km</td>
+                  ))}
+                  {item.worday.map(c => (
+                    <td>{c.time} hr</td>
+                  ))}
                   <td>{item.letters_number}</td>
                   <td>{item.packaged_weight} kg</td>
                   <td>{item.packages_number}</td>
-                  <td>{item.kgtrasported} kg</td>
+                  {item.worday.map(c => (
+                    <td>{c.weight} kg</td>
+                  ))}
+
                   <td>{item.additionalbox}</td>
+
                   <td data-toggle="modal" data-target="#eexampleModal">
                     <i
                       className="fa fa-map"

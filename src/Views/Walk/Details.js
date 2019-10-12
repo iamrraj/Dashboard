@@ -85,12 +85,18 @@ export class Details extends Component {
                 <tr>
                   <td>{c.id}</td>
                   <td>{c.timestamp} </td>
-                  <td>{c.milage} km</td>
-                  <td>{c.movingtime} hr</td>
+                  {c.worday.map(cc => (
+                    <td>{cc.foot_mileage} km</td>
+                  ))}
+                  {c.worday.map(cc => (
+                    <td>{cc.foot_time} hr</td>
+                  ))}
                   <td>{c.letters_number}</td>
                   <td>{c.packaged_weight} kg</td>
                   <td>{c.packages_number}</td>
-                  <td>{c.kgtrasported} kg</td>
+                  {c.worday.map(cc => (
+                    <td>{cc.weight} km</td>
+                  ))}
                   <td>{c.additionalbox}</td>
                 </tr>
               </tbody>
@@ -103,25 +109,36 @@ export class Details extends Component {
                   <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_milage} Km
+                  {walk.summery.total_milage
+                    ? `${walk.summery.total_milage}`
+                    : 0}{" "}
+                  km
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_movingtime} hr
+                  {walk.summery.total_movingtime
+                    ? `${walk.summery.total_movingtime}`
+                    : 0}{" "}
+                  hr
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_letter}
+                  {walk.summery.total_letter
+                    ? `${walk.summery.total_letter}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_ship_weight} kgs
+                  {walk.summery.total_ship_weight
+                    ? `${walk.summery.total_ship_weight}`
+                    : 0}{" "}
+                  kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_pack}
+                  {walk.summery.total_pack ? `${walk.summery.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_kg} kgs
+                  {walk.summery.total_kg ? `${walk.summery.total_kg}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_boxes}
+                  {walk.summery.total_boxes ? `${walk.summery.total_boxes}` : 0}
                 </th>
               </tr>
             </thead>

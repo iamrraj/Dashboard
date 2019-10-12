@@ -15,6 +15,7 @@ import Udetails from "./Views/User/Udetails";
 import Notification from "./Views/Page/Notification";
 import ReportPage from "./Views/Page/Report";
 import Auth from "./Container/Auth";
+import User from "./Container/User";
 // import Signin from "./Container/Signin";
 
 import "./App.css";
@@ -67,6 +68,7 @@ class App extends Component {
           <PrivateRoute path="/uoverview/:pk" component={Udetails} />
           <PrivateRoute path="/notification" component={Notification} />
           <PrivateRoute path="/report" component={ReportPage} />
+          <PrivateRoute path="/userr" component={User} />
 
           {/* <Route path="/login" component={Signin} /> */}
         </Switch>

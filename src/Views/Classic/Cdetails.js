@@ -92,13 +92,17 @@ export class Cdetails extends Component {
                 <tr>
                   <th scope="row">{item.id}</th>
                   <td>{item.timestamp} </td>
-                  <td>{item.milage} km</td>
+                  {item.worday.map(cc => (
+                    <td>{cc.bike_mileage} km</td>
+                  ))}
                   {/* <td>{item.movingtime}</td> */}
                   <td>{item.averagespeed} km/hr</td>
                   <td>{item.letters_number}</td>
                   <td>{item.packaged_weight} kg</td>
                   <td>{item.packages_number}</td>
-                  <td>{item.kgtrasported} kg</td>
+                  {item.worday.map(cc => (
+                    <td>{cc.weight} kg</td>
+                  ))}
                   <td>{item.additionalbox}</td>
                 </tr>
               </tbody>
@@ -115,26 +119,39 @@ export class Cdetails extends Component {
                   className="text-dark th"
                   style={{ width: "100px" }}
                 >
-                  {movie.summery.total_milage} Km
+                  {movie.summery.total_milage
+                    ? `${movie.summery.total_milage}`
+                    : 0}{" "}
+                  Km
                 </th>
 
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_averagespeed} Km/hr
+                  {movie.summery.total_averagespeed
+                    ? `${movie.summery.total_averagespeed}`
+                    : 0}{" "}
+                  km/hr
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_letter}
+                  {movie.summery.total_letter
+                    ? `${movie.summery.total_letter}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_ship_weight} kgs
+                  {movie.summery.total_ship_weight
+                    ? `${movie.summery.total_ship_weight}`
+                    : 0}{" "}
+                  kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_pack}
+                  {movie.summery.total_pack ? `${movie.summery.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg} kgs
+                  {movie.summery.total_kg ? `${movie.summery.total_kg}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_boxes}
+                  {movie.summery.total_boxes
+                    ? `${movie.summery.total_boxes}`
+                    : 0}
                 </th>
               </tr>
             </thead>
