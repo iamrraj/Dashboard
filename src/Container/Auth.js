@@ -33,6 +33,7 @@ export class Auth extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let authToken = localStorage.getItem("Token");
     axios({
       // Define Method
       method: "post",
@@ -43,7 +44,7 @@ export class Auth extends Component {
       //Set Headers
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: "Bearer o8D0IqWwtIuGVJmKM3okGSveS6ng7O"
+        Authorization: "Bearer " + JSON.parse(authToken)
         // "Cache-Control": "no-cache"
       },
 
