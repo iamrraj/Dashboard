@@ -16,6 +16,8 @@ import Notification from "./Views/Page/Notification";
 import ReportPage from "./Views/Page/Report";
 import Auth from "./Container/Auth";
 import User from "./Container/User";
+import Mapp1 from "./Views/User/Map1";
+// import Report from "./Container/Layout/Report";
 // import Signin from "./Container/Signin";
 
 import "./App.css";
@@ -69,6 +71,8 @@ class App extends Component {
           <PrivateRoute path="/notification" component={Notification} />
           <PrivateRoute path="/report" component={ReportPage} />
           <PrivateRoute path="/userr" component={User} />
+          <PrivateRoute path="/map" component={Mapp1} />
+          {/* <PrivateRoute path="/reportt" component={Report} /> */}
 
           {/* <Route path="/login" component={Signin} /> */}
         </Switch>

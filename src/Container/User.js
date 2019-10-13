@@ -40,12 +40,10 @@ export class User extends Component {
 
   render() {
     return (
-      <div>
-        <span>
-          {/* {localStorage.getItem("Name")} */}
-          {this.state.name}
-        </span>
-      </div>
+      <span>
+        {/* {localStorage.getItem("Name")} */}
+        {this.state.name}
+      </span>
     );
   }
 }

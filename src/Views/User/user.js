@@ -38,7 +38,7 @@ export class user extends Component {
       const user = await res.json();
       console.log(user);
       this.setState({
-        user: user.results
+        user
       });
     } catch (e) {
       console.log(e);

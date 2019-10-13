@@ -16,13 +16,15 @@ class ReportPage extends Component {
   // Get Data from filter date
   getData = async e => {
     try {
+      // alert("Your favorite flavor is: " + this.state.value);
+      const edd = e.target.elements.edd.value;
       const idd = e.target.elements.idd.value;
       const modee = e.target.elements.modee.value;
       const from = e.target.elements.from.value;
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}`
+        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
       );
       const movies = await res.json();
       console.log(movies);

@@ -44,7 +44,7 @@ class Walk extends Component {
       const walk = await res.json();
       // console.log(walk);
       this.setState({
-        walk: walk.results
+        walk
       });
     } catch (e) {
       console.log(e);

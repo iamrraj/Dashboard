@@ -1,13 +1,28 @@
 import React, { Component } from "react";
 import config from "../config";
+import Electric from "./Electric";
 
 export class Repor extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
+      value: ["iamrraj"]
     };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(event) {
+    //this.setState({value: event.option});
+    this.setState({
+      value: Array.from(event.target.selectedOptions, item => item.value)
+    });
+  }
+
+  // handleSubmit(event) {
+  //   alert('Your favorite flavor is: ' + this.state.value);
+  //   event.preventDefault();
+  // }
 
   // Get Data From Backend
   async componentDidMount() {
@@ -89,85 +104,54 @@ export class Repor extends Component {
                   </div>
                 </div>
 
-                <div className="form-group">
-                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                      <a
-                        class="nav-link active btn-outline-success"
-                        id="pills-home-tab"
-                        data-toggle="pill"
-                        href="#pills-home"
-                        role="tab"
-                        aria-controls="pills-home"
-                        aria-selected="true"
-                      >
-                        User
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link btn-outline-success"
-                        id="pills-profile-tab"
-                        data-toggle="pill"
-                        href="#pills-profile"
-                        role="tab"
-                        aria-controls="pills-profile"
-                        aria-selected="false"
-                      >
-                        Electric
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link btn-outline-success"
-                        id="pills-profile-tab"
-                        data-toggle="pill"
-                        href="#pills-profile"
-                        role="tab"
-                        aria-controls="pills-profile"
-                        aria-selected="false"
-                      >
-                        Classic
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a
-                        class="nav-link btn-outline-success"
-                        id="pills-profile-tab"
-                        data-toggle="pill"
-                        href="#pills-profile"
-                        role="tab"
-                        aria-controls="pills-profile"
-                        aria-selected="false"
-                      >
-                        Walk
-                      </a>
-                    </li>
-                    {/* <li class="nav-item">
-              <a
-                class="nav-link btn-outline-success"
-                id="pills-contact-tab"
-                data-toggle="pill"
-                href="#pills-contact"
-                role="tab"
-                aria-controls="pills-contact"
-                aria-selected="false"
-              >
-                Contact
-              </a>
-            </li> */}
-                  </ul>
-                </div>
-                <div class="tab-content" id="pills-tabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="pills-home"
-                    role="tabpanel"
-                    aria-labelledby="pills-home-tab"
-                  >
+                <ul class="nav nav-pills">
+                  <li class="active">
+                    <a
+                      data-toggle="pill"
+                      href="#home"
+                      className="nav-link btn-outline-success"
+                    >
+                      User
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-toggle="pill"
+                      href="#menu1"
+                      className=" nav-link btn-outline-success"
+                    >
+                      Elektryczny
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-toggle="pill"
+                      href="#menu2"
+                      className=" nav-link btn-outline-success"
+                    >
+                      Klasyczny
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      data-toggle="pill"
+                      href="#menu3"
+                      className="nav-link btn-outline-success"
+                    >
+                      Pieszo
+                    </a>
+                  </li>
+                </ul>
+
+                <br></br>
+
+                <div class="tab-content">
+                  <div id="home" class="tab-pane fade in active">
                     <label>Select User</label>
                     <select
-                      multiple
+                      multiple={true}
+                      // value={this.state.value}
+                      // onChange={this.handleChange}
                       className="form-control btn-block"
                       id="exampleFormControlSelect2 btn-block"
                       style={{
@@ -181,38 +165,50 @@ export class Repor extends Component {
                       ))}
                     </select>
                   </div>
-
-                  <div
-                    class="tab-pane fade "
-                    id="pills-profile "
-                    role="tabpanel"
-                    aria-labelledby="pills-profile-tab"
-                  >
-                    <label>Select Electric Bike</label>
+                  <div id="menu1" class="tab-pane fade">
+                    <label>Select Elektryczny </label>
+                    <Electric />
                   </div>
-                  {/* <div
-            class="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
-             <label>Select User</label>
-            <select
-              // multiple
-              className="form-control btn-block"
-              id="exampleFormControlSelect2 btn-block"
-              style={{
-                width: "200px",
-                color: "rgba(19, 183, 96, 1.0)"
-              }}
-              name="idd"
-            >
-              {this.state.movies.map(c => (
-                <option value={c.user}>{c.user1}</option>
-              ))}
-            </select> 
-          </div> */}
+                  <div id="menu2" class="tab-pane fade">
+                    <label>Select Rower Klasyczny User</label>
+                    <select
+                      multiple={true}
+                      // value={this.state.value}
+                      // onChange={this.handleChange}
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      // name="idd"
+                    >
+                      {this.state.movies.map(c => (
+                        <option value={c.pk}>CB-{c.user1}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div id="menu3" class="tab-pane fade">
+                    <label>Select Pieszo User</label>
+                    <select
+                      multiple={true}
+                      // value={this.state.value}
+                      // onChange={this.handleChange}
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      // name="idd"
+                    >
+                      {this.state.movies.map(c => (
+                        <option value={c.pk}>{c.user1}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
+
                 <br></br>
                 <select
                   multiple

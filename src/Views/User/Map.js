@@ -1,90 +1,59 @@
 import React, { Component } from "react";
-import {
-  Map,
-  TileLayer,
-  Marker,
-  Popup
-  // PropTypes as MapPropTypes
-} from "react-leaflet";
-import PropTypes from "prop-types";
+import { Map, TileLayer, Polyline } from "react-leaflet";
+// import L from "leaflet";
+import config from "../config";
 
-const MyPopupMarker = ({ children, position }) => (
-  <Marker position={position}>
-    <Popup>
-      <span>{children}</span>
-    </Popup>
-  </Marker>
-);
-
-const MyMarkersList = ({ markers }) => {
-  const items = markers.map(({ key, ...props }) => (
-    <MyPopupMarker key={key} {...props} />
-  ));
-  return <div style={{ display: "none" }}>{items}</div>;
-};
-MyMarkersList.propTypes = {
-  markers: PropTypes.array.isRequired
-};
+import "leaflet/dist/leaflet.css";
 
 class Mapp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 45.6982642,
-      lng: 9.6772698,
-      zoom: 13,
-      markers: [],
-      movie: []
+      movie: [],
+      lat: 12.92415,
+      lng: 77.67229,
+      zoom: 11,
+      data: [
+        {
+          from_lat: "12.92415",
+          from_long: "77.67229",
+          id: "132512",
+          to_lat: "12.92732",
+          to_long: "77.63575"
+        },
+        {
+          from_lat: "12.96691",
+          from_long: "77.74935",
+          id: "132513",
+          to_lat: "12.92768",
+          to_long: "77.62664"
+        }
+      ]
     };
   }
 
-  // async componentDidMount() {
-  //   try {
-  //     const res = await fetch(
-  //       `http://localhost:8000/api/1/deliveries/user/${this.props.match.params.pk}`
-  //     );
-  //     const movie = await res.json();
-  //     console.log(movie);
-  //     this.setState({
-  //       movie
-  //     });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
   async componentDidMount() {
     try {
-      const res = await fetch(`http://localhost:8000/api/1/deliveries/user/`);
+      const res = await fetch(config.apiUrl.reportModel);
       const movie = await res.json();
       console.log(movie);
       this.setState({
-        movie: movie.results
+        movie
       });
     } catch (e) {
       console.log(e);
     }
   }
   render() {
-    const center = [this.state.lat, this.state.lng];
+    const position = [this.state.lat, this.state.lng];
 
-    const markers = [
-      {
-        key: "marker1",
-        position: [45.69836455, 9.6472798],
-        children: "Lampione rotto"
-      },
-      {
-        key: "marker2",
-        position: [45.6980459, 9.6872748],
-        children: "Segnalazione: tombino rotto"
-      },
-      {
-        key: "marker3",
-        position: [45.69856455, 9.6570798],
-        children: "Segnalazione: rumore di notte"
-      }
-    ];
+    // const from_lat = this.state.data.map(start => start.from_lat);
+    // const to_lat = this.state.data.map(to => to.to_lat);
+
+    // const from_long = this.state.data.map(start => start.from_long);
+    // const to_long = this.state.data.map(to => to.to_long);
+    // const center = [this.state.lat, this.state.lng];
+
     return (
       <div>
         {/* <!-- Modal For Map --> */}
@@ -134,7 +103,7 @@ class Mapp extends Component {
                         name="idd"
                       >
                         {this.state.movie.map(c => (
-                          <option value={c.user}>{c.user}</option>
+                          <option value={c.pk}>{c.user1}</option>
                         ))}
                       </select>
                     </div>
@@ -155,7 +124,7 @@ class Mapp extends Component {
                 </div>
               </div>
 
-              <Map
+              {/* <Map
                 center={center}
                 zoom={this.state.zoom}
                 style={{ marginTop: "30px" }}
@@ -165,7 +134,31 @@ class Mapp extends Component {
                   url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
                 />
                 <MyMarkersList markers={markers} />
-              </Map>
+              </Map> */}
+              <div id="map">
+                <Map
+                  style={{ height: "100vh", marginTop: "30px" }}
+                  center={position}
+                  zoom={this.state.zoom}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="http://rajrahul.pl" target="_blank">Rahul Raj</a> contributors'
+                  />
+                  {this.state.data.map(
+                    ({ id, from_lat, from_long, to_lat, to_long }) => {
+                      return (
+                        <Polyline
+                          key={id}
+                          positions={[[from_lat, from_long], [to_lat, to_long]]}
+                          color={"red"}
+                        />
+                      );
+                    }
+                  )}
+                </Map>
+              </div>
+
               <h6 className="text-center">WYNIKI DZIENNE</h6>
               <div className="row container">
                 <div className="col-sm-3" style={{ marginBottom: "15px" }}>
