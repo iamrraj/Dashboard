@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
-// import config from "../../Views/config";
-// import Report from "./Report";
+import Repor from "../../Views/Page/Repor";
 import User from "../User";
+import config from "../../Views/config";
 
 class Topbar extends Component {
   constructor(props) {
@@ -24,15 +24,18 @@ class Topbar extends Component {
     window.location.reload();
   }
 
-  getdata = async e => {
+  // Get Data from filter date
+  getData = async e => {
     try {
+      // alert("Your favorite flavor is: " + this.state.value);
+      const edd = e.target.elements.edd.value;
+      const idd = e.target.elements.idd.value;
+      const modee = e.target.elements.modee.value;
       const from = e.target.elements.from.value;
       const to = e.target.elements.to.value;
-      const electric = e.target.elements.electric.value;
-      const user = e.target.elements.user.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/deliveries/report/?too__lte=${to}&fromm__gte=${from}&electric_bike=${electric}&user=${user}`
+        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -47,7 +50,7 @@ class Topbar extends Component {
     const { loggedIn } = this.props;
     return (
       <div>
-        {/* <Report loaddata={this.getData} /> */}
+        {/* <Repor loaddata={this.getData} /> */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-white">
           <a className="navbar-brand" href="/" style={{ color: "#212226" }}>
             <img src={head} alt="logo" style={{ height: "40px" }}></img> &nbsp;{" "}
@@ -87,20 +90,18 @@ class Topbar extends Component {
                   <a href="/report">.</a>
                 </li>
               )}
-              {loggedIn && (
+              {/* {loggedIn && (
                 <li className="nav-item  ">
                   <a
                     className="nav-link a"
                     href="/report"
-                    data-toggle="modal"
-                    data-target="#exampleModal"
                     style={{ color: "#212226" }}
                   >
                     {" "}
                     Raport
                   </a>
                 </li>
-              )}
+              )} */}
 
               {loggedIn && (
                 <li>
@@ -130,7 +131,6 @@ class Topbar extends Component {
             </ul>
           </div>
         </nav>
-
         {/* <!-- Modal --> */}
         {/* <Repor loaddata={this.getData} /> */}
       </div>

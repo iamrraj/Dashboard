@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import ReactToExcel from "react-html-table-to-excel";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import config from "../config";
-// import Report from "../../Container/Layout/Report";
-// import Form from "./Form";
 import Repor from "./Repor";
 
 class ReportPage extends Component {
@@ -49,6 +47,21 @@ class ReportPage extends Component {
             {" "}
             RAPORT{" "}
           </h5>
+          <a
+            className="btn btn-success btn-sm bb pull-right "
+            href="/report"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            style={{
+              color: "white",
+              fontSize: "17px",
+              padding: "6px",
+              width: "150px"
+            }}
+          >
+            {" "}
+            Raport
+          </a>
 
           <table class="table table-hover table-lg " id="table-to-xls">
             <thead>

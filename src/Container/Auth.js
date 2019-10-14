@@ -60,10 +60,11 @@ export class Auth extends Component {
         ls.set("Expire in", response.data["expires_in"]);
         // ls.set("Username", response.data["user.username"]);
         Swal.fire({
-          title: "Logged in",
+          title: "Log in",
           type: "success",
+          text: "You Successfully loggedin",
           showConfirmButton: false,
-          timer: 1000
+          timer: 3000
         });
         this.redirect();
       })
@@ -74,7 +75,7 @@ export class Auth extends Component {
           title: "Login Error",
           type: "error",
           text: "Please Enter Correct Username and Password",
-          timer: 1000
+          timer: 2000
         });
       });
   }

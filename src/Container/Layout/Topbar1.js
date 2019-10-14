@@ -59,7 +59,7 @@ export class Topbar1 extends Component {
                 Dystrybucja rowerem klasycznym
               </a>
             </li>
-            <li className="nav-item   l">
+            <li className="nav-item   lll">
               <a
                 className="nav-link font-weight-bold ll"
                 href="/user"
@@ -67,6 +67,16 @@ export class Topbar1 extends Component {
               >
                 {" "}
                 Uzytkownicy
+              </a>
+            </li>
+            <li className="nav-item   lll">
+              <a
+                className="nav-link font-weight-bold ll"
+                href="/report"
+                style={{ color: "rgba(19, 183, 96, 1.0)", marginTop: "9px" }}
+              >
+                {" "}
+                Raport
               </a>
             </li>
           </ul>

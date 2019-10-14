@@ -156,7 +156,30 @@
   border: 2px solid #ccefdc;
   border-bottom: 0 white;
   font-weight: bolder;
-  width: 200px;
+  width: 193px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.lll {
+  font-family: "Rubik", Helvetica, Arial, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+
+  text-align: left;
+  letter-spacing: -0.11px;
+  line-height: 15px;
+  background: white;
+  margin-right: 10px;
+  padding: 12px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 2px solid #ccefdc;
+  border-bottom: 0 white;
+  font-weight: bolder;
+  width: 170px;
   font-size: 14px;
   text-align: center;
   opacity: 0.8;
