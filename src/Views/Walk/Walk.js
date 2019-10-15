@@ -39,7 +39,7 @@ class Walk extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}&mode=foot`
+        `http://localhost:8000/api/1/workday/?date__lte=${to}&date__gte=${from}&mode=foot`
       );
       const walk = await res.json();
       // console.log(walk);
@@ -114,7 +114,7 @@ class Walk extends Component {
                     </a>
                   </td>
                   <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
-                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
                   <td>
                     {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg

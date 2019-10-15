@@ -43,7 +43,7 @@ class Dashboard extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://softbike.dev.myddp.eu/api/1/deliveries/dashboard1/?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/deliveries/dashboard1/?too__lte=${to}&fromm__gte=${from}`
       );
       const dash = await res.json();
       console.log(dash);
@@ -79,8 +79,7 @@ class Dashboard extends Component {
             <Datee />
           </div>
           <div className="col-sm-8">
-            <DateForm />
-            {/* loaddata={this.getData} */}
+            <DateForm loaddata={this.getData} />
           </div>
         </div>
         <Topbar1 />
@@ -102,7 +101,7 @@ class Dashboard extends Component {
                 <div className="row">
                   <div className="col-sm-4" style={{ marginTop: "5px" }}>
                     <div className="box">
-                      <div className="n">
+                      <div className="nn">
                         <br></br>
                         <img src={map} alt="map" className="imag" />
                         <h5>{c.total_milage ? `${c.total_milage}` : 0} km </h5>
@@ -119,7 +118,7 @@ class Dashboard extends Component {
                         <h5>{c.total_kg ? `${c.total_kg}` : 0} kg</h5>
                         <p id="p">
                           Przetransportowana masa<br></br>
-                          przesylek
+                          <span style={{ lineHeight: "30px" }}>przesylek</span>
                         </p>
                       </div>
                     </div>
@@ -127,7 +126,7 @@ class Dashboard extends Component {
 
                   <div className="col-sm-4" style={{ marginTop: "5px" }}>
                     <div className="box">
-                      <div className=" n">
+                      <div className=" nn">
                         <br></br>
                         <img src={leaf} alt="leaf" className="imag" />
                         <h5>{c.total_co2 ? `${c.total_co2}` : 0} mg </h5>

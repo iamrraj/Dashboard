@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
-import Repor from "../../Views/Page/Repor";
 import User from "../User";
 import config from "../../Views/config";
 
@@ -49,7 +48,7 @@ class Topbar extends Component {
   render() {
     const { loggedIn } = this.props;
     return (
-      <div>
+      <div className="roww">
         {/* <Repor loaddata={this.getData} /> */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-white">
           <a className="navbar-brand" href="/" style={{ color: "#212226" }}>
@@ -72,7 +71,7 @@ class Topbar extends Component {
             <ul className="navbar-nav mr-auto"></ul>
             <ul className="navbar-nav" style={{ marginRight: "70px" }}>
               {loggedIn && (
-                <li className="nav-item  active">
+                <li className="nav-item  ">
                   <a
                     className="nav-link font-weight-bolder"
                     href="# "
@@ -85,11 +84,7 @@ class Topbar extends Component {
               {/* For Notification */}
               {loggedIn && <Notification />}
               {/* End For Notificatioj */}
-              {loggedIn && (
-                <li className="nav-item  ">
-                  <a href="/report">.</a>
-                </li>
-              )}
+
               {/* {loggedIn && (
                 <li className="nav-item  ">
                   <a

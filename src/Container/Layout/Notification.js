@@ -20,7 +20,7 @@ export class Notification extends Component {
         <div className="dropdown-menu noti " aria-labelledby="navbarDropdown">
           <table className="table table-hover ">
             <h6 className="container font-weight-bolder">
-              NOTIFICATION{" "}
+              POWIADOMIENIA{" "}
               <span
                 aria-hidden="true"
                 className="pull-right"
@@ -69,7 +69,7 @@ export class Notification extends Component {
             <center>
               <a href="# " className="head" style={{ fontSize: "14px" }}>
                 {" "}
-                See All
+                Zobacz wszystkie
               </a>
             </center>
           </table>

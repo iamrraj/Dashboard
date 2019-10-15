@@ -19,7 +19,7 @@ class ClassicBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}`
+        `http://localhost:8000/api/1/workday/?date__lte=${to}&date__gte=${from}&mode=bike`
       );
       const movies = await res.json();
       console.log(movies);
@@ -69,9 +69,9 @@ class ClassicBike extends Component {
                 <th scope="col" style={{ width: "100px" }}>
                   Średnia prędkość
                 </th>
-                <th scope="col">Ilość przesylek listiwych</th>
+                <th scope="col">Ilość przesyłek listowych</th>
                 {/* Adde New in api */}
-                <th scope="col">Masa przesylek listiwych</th>
+                <th scope="col">Masa przesyłek listowych</th>
                 {/* Adde New in api */}
                 <th scope="col">Ilość paczek</th>
                 {/* Adde New in api */}
@@ -96,9 +96,9 @@ class ClassicBike extends Component {
                     </a>
                   </td>
                   <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
-                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
                   <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/hr
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
                   </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
                   <td>

@@ -34,10 +34,10 @@ export default class Summery extends Component {
               {c.total_milage} km
             </th>
             <th scope="col" className="text-dark th" style={{ width: "100px" }}>
-              {c.total_movingtime} hr
+              {c.total_movingtime}
             </th>
             <th scope="col" className="text-dark th" style={{ width: "100px" }}>
-              {c.total_averagespeed} km/hr
+              {c.total_averagespeed} km/h
             </th>
             <th scope="col" className="text-dark th">
               {c.total_letter}

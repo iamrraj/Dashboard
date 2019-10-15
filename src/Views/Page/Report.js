@@ -104,9 +104,9 @@ class ReportPage extends Component {
                     </a>
                   </td>
                   <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
-                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} hr</td>
+                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
                   <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/hr
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
                   </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0} kg</td>
                   <td>

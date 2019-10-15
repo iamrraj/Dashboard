@@ -116,7 +116,7 @@ export class Edetails extends Component {
                     <td>{c.electric_bike_mileage} km</td>
                   ))}
                   {item.worday.map(c => (
-                    <td>{c.electric_bike_time} hr</td>
+                    <td>{c.electric_bike_time}</td>
                   ))}
                   <td>{item.averagespeed} km/hr</td>
                   <td>{item.letters_number}</td>
@@ -157,7 +157,6 @@ export class Edetails extends Component {
                   {movie.summery.total_movingtime
                     ? `${movie.summery.total_movingtime}`
                     : 0}
-                  hr
                 </th>
 
                 <th

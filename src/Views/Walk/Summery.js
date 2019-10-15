@@ -34,7 +34,7 @@ export default class Summery extends Component {
               {c.total_milage} Km
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_movingtime} hr
+              {c.total_movingtime}
             </th>
             <th scope="col" className="text-dark th">
               {c.total_letter}

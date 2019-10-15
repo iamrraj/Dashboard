@@ -3,6 +3,7 @@ import DateForm from "../Electric/DateForm";
 import config from "../config";
 import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
+import Sms from "./Sms";
 
 class Udetails extends Component {
   constructor(props) {
@@ -118,7 +119,7 @@ class Udetails extends Component {
                     <td>{c.mileage} km</td>
                   ))}
                   {item.worday.map(c => (
-                    <td>{c.time} hr</td>
+                    <td>{c.time} </td>
                   ))}
                   <td>{item.letters_number}</td>
                   <td>{item.packaged_weight} kg</td>
@@ -203,10 +204,8 @@ class Udetails extends Component {
                 </button>
               </div>
               <div class="modal-body">
-                <h3 className="text-center">
-                  {" "}
-                  Contact Number: <strong>{movie.phone} </strong>
-                </h3>
+                <Sms />
+                {/* loaddata={this.sendsm} */}
               </div>
             </div>
           </div>

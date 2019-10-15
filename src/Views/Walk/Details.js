@@ -89,13 +89,13 @@ export class Details extends Component {
                     <td>{cc.foot_mileage} km</td>
                   ))}
                   {c.worday.map(cc => (
-                    <td>{cc.foot_time} hr</td>
+                    <td>{cc.foot_time}</td>
                   ))}
                   <td>{c.letters_number}</td>
                   <td>{c.packaged_weight} kg</td>
                   <td>{c.packages_number}</td>
                   {c.worday.map(cc => (
-                    <td>{cc.weight} km</td>
+                    <td>{cc.weight} kg</td>
                   ))}
                   <td>{c.additionalbox}</td>
                 </tr>
@@ -118,7 +118,6 @@ export class Details extends Component {
                   {walk.summery.total_movingtime
                     ? `${walk.summery.total_movingtime}`
                     : 0}{" "}
-                  hr
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_letter

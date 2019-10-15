@@ -18,12 +18,12 @@ export class Cdetails extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.data}?too__lte=${to}&fromm__gte=${from}&mode=bike`
+        `http://localhost:8000/api/1/workday/?date__lte=${to}&date__gte=${from}&mode=bike`
       );
-      const movies = await res.json();
-      console.log(movies);
+      const movie = await res.json();
+      console.log(movie);
       this.setState({
-        movies
+        movie
       });
     } catch (e) {
       console.log(e);
