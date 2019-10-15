@@ -44,7 +44,7 @@ export class Sms extends Component {
         console.log(response.data);
 
         Swal.fire({
-          title: "Logged in",
+          title: "Wiadomosc wyslana",
           type: "success",
           showConfirmButton: false,
           timer: 1000
@@ -55,7 +55,7 @@ export class Sms extends Component {
         //handle error
         console.log(response);
         Swal.fire({
-          title: "Error Sms",
+          title: "Blad podczas wysylania wiadomosci",
           type: "error",
           text: "Please Check",
           timer: 1000
