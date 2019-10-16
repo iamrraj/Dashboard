@@ -67,7 +67,11 @@ export class Notification extends Component {
             </tbody>
             <hr></hr>
             <center>
-              <a href="# " className="head" style={{ fontSize: "14px" }}>
+              <a
+                href="/notification"
+                className="head"
+                style={{ fontSize: "14px" }}
+              >
                 {" "}
                 Zobacz wszystkie
               </a>
