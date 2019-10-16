@@ -179,7 +179,7 @@ class Udetails extends Component {
               <tbody>
                 <tr>
                   <td>{item.id ? `${item.id}` : 0}</td>
-                  <td>{item.timestamp ? `${item.timestamp}` : 0}</td>
+                  <td>{item.date ? `${item.date}` : 0}</td>
                   <td>{item.mode ? `${item.mode}` : 0}</td>
 
                   {/* <td>{item.milage} km</td> */}
@@ -222,7 +222,7 @@ class Udetails extends Component {
                   {movie.summery.total_milage} km
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_movingtime} hr
+                  {movie.summery.total_movingtime}
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_letter}

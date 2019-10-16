@@ -102,7 +102,7 @@ export class Edetails extends Component {
               <tbody>
                 <tr>
                   <td>{item.id}</td>
-                  <td>{item.timestamp}</td>
+                  <td>{item.date}</td>
                   <td>
                     <a
                       href="/user"

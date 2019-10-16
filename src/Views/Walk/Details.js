@@ -84,7 +84,7 @@ export class Details extends Component {
               <tbody>
                 <tr>
                   <td>{c.id}</td>
-                  <td>{c.timestamp ? `${c.timestamp}` : 0} </td>
+                  <td>{c.date ? `${c.date}` : 0} </td>
                   <td>{c.foot_mileage ? `${c.foot_mileage}` : 0} km</td>
                   <td>{c.foot_time ? `${c.foot_time}` : 0}</td>
                   <td>{c.letternumber ? `${c.letternumber}` : 0}</td>
