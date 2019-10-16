@@ -101,11 +101,11 @@ class ClassicBike extends Component {
                     {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
                   </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
+                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
                   <td>
                     {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
                   </td>
-                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
                   <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
                   <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                 </tr>

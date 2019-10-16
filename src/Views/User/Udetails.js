@@ -4,6 +4,8 @@ import config from "../config";
 import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import Sms from "./Sms";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 class Udetails extends Component {
   constructor(props) {
@@ -13,8 +15,74 @@ class Udetails extends Component {
       lat: 45.6982642,
       lng: 9.6772698,
       zoom: 13,
-      markers: []
+      markers: [],
+      user: "",
+      text: "",
+      errors: []
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+    console.log(this.state);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let authToken = localStorage.getItem("Token");
+    axios({
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        Authorization: "Bearer " + JSON.parse(authToken)
+      },
+
+      url: "https://softbike.dev.myddp.eu/api/1/push/sms/",
+      data: JSON.stringify({
+        text: this.state.text,
+        user: this.state.user
+      })
+    })
+      .then(response => {
+        console.log(response.data);
+
+        Swal.fire({
+          title: "Wiadomosc wyslana",
+          type: "success",
+          showConfirmButton: false,
+          timer: 1000
+        });
+        // this.redirect();
+      })
+      .catch(response => {
+        //handle error
+        console.log(response);
+        Swal.fire({
+          title: "Blad podczas wysylania wiadomosci",
+          type: "error",
+          text: "Please Check",
+          timer: 1000
+        });
+      });
+  }
+
+  async componentDidMount() {
+    try {
+      const res = await fetch(
+        `https://softbike.dev.myddp.eu/api/1/deliveries/user1/`
+      );
+      const movie = await res.json();
+      console.log(movie);
+      this.setState({
+        movie
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   async componentDidMount() {
@@ -110,25 +178,23 @@ class Udetails extends Component {
             {movie.results.map(item => (
               <tbody>
                 <tr>
-                  <td>{item.id}</td>
-                  <td>{item.timestamp}</td>
-                  <td>{item.mode}</td>
+                  <td>{item.id ? `${item.id}` : 0}</td>
+                  <td>{item.timestamp ? `${item.timestamp}` : 0}</td>
+                  <td>{item.mode ? `${item.mode}` : 0}</td>
 
                   {/* <td>{item.milage} km</td> */}
-                  {item.worday.map(c => (
-                    <td>{c.mileage} km</td>
-                  ))}
-                  {item.worday.map(c => (
-                    <td>{c.time} </td>
-                  ))}
-                  <td>{item.letters_number}</td>
-                  <td>{item.packaged_weight} kg</td>
-                  <td>{item.packages_number}</td>
-                  {item.worday.map(c => (
-                    <td>{c.weight} kg</td>
-                  ))}
 
-                  <td>{item.additionalbox}</td>
+                  <td>{item.mileage ? `${item.mileage}` : 0} km</td>
+
+                  <td>{item.time ? `${item.time}` : 0} </td>
+
+                  <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
+                  <td>{item.letterweight ? `${item.letterweight}` : 0} kg</td>
+                  <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
+
+                  <td>{item.packageweight ? `${item.packageweight}` : 0} kg</td>
+
+                  <td>{item.delivery_count ? `${item.delivery_count}` : 0}</td>
 
                   <td data-toggle="modal" data-target="#eexampleModal">
                     <i
@@ -168,7 +234,7 @@ class Udetails extends Component {
                   {movie.summery.total_package}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg} kg
+                  {movie.summery.total_kg1} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes}
@@ -192,7 +258,10 @@ class Udetails extends Component {
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLongTitle">
-                  User: <strong>{movie.user}</strong>
+                  User:{" "}
+                  <strong>
+                    {movie.user}&nbsp; Id:{movie.id}
+                  </strong>
                 </h5>
                 <button
                   type="button"
@@ -204,8 +273,54 @@ class Udetails extends Component {
                 </button>
               </div>
               <div class="modal-body">
-                <Sms />
-                {/* loaddata={this.sendsm} */}
+                <form onSubmit={this.handleSubmit}>
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <label id="p"> UZYTKOWNIK</label>
+
+                      <input
+                        type="text"
+                        ref="user"
+                        className="form-control"
+                        name="user"
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                    <br></br>
+
+                    <div className="col-sm-6">
+                      <br></br>
+                      <label id="p"> TYPE MESSAGE</label>
+                      <textarea
+                        className="form-control"
+                        row="3"
+                        ref="text"
+                        name="text"
+                        col="10"
+                        onChange={this.handleChange}
+                        //   placeholder="Type Message"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <br></br>
+                  <center>
+                    <button
+                      type="submit"
+                      value="Get Data"
+                      className="btn btn-success active"
+                      style={{
+                        width: "200px",
+                        background: "rgba(19, 183, 96, 1.0)",
+                        padding: "7px",
+                        marginTop: "15px",
+                        marginBottom: "15px",
+                        fontWeight: "500"
+                      }}
+                    >
+                      Send Sms
+                    </button>
+                  </center>
+                </form>
               </div>
             </div>
           </div>

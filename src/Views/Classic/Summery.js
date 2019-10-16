@@ -43,14 +43,14 @@ export default class Summery extends Component {
               {c.total_letter}
             </th>
             <th scope="col" className="text-dark th">
-              {c.total_ship_weight} kg
+              {c.total_kg} kg
             </th>
             <th scope="col" className="text-dark th">
               {c.total_pack}
             </th>
 
             <th scope="col" className="text-dark th">
-              {c.total_kg} kg
+              {c.total_ship_weight} kg
             </th>
             <th scope="col" className="text-dark th">
               {c.total_co2_save} mg

@@ -92,18 +92,13 @@ export class Cdetails extends Component {
                 <tr>
                   <th scope="row">{item.id}</th>
                   <td>{item.timestamp} </td>
-                  {item.worday.map(cc => (
-                    <td>{cc.bike_mileage} km</td>
-                  ))}
-                  {/* <td>{item.movingtime}</td> */}
+                  <td>{item.bike_mileage} km</td>
                   <td>{item.averagespeed} km/hr</td>
-                  <td>{item.letters_number}</td>
-                  <td>{item.packaged_weight} kg</td>
-                  <td>{item.packages_number}</td>
-                  {item.worday.map(cc => (
-                    <td>{cc.weight} kg</td>
-                  ))}
-                  <td>{item.additionalbox}</td>
+                  <td>{item.letternumber}</td>
+                  <td>{item.weight} kg</td>
+                  <td>{item.packagenumber}</td>
+                  <td>{item.packageweight} kg</td>
+                  <td>{item.delivery_count}</td>
                 </tr>
               </tbody>
             ))}
