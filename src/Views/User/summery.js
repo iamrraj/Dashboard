@@ -11,7 +11,7 @@ class Summery extends Component {
 
   async componentDidMount() {
     try {
-      const res = await fetch(config.apiUrl.dashboard);
+      const res = await fetch(config.apiUrl.dashboard1);
       const dash = await res.json();
       // console.log(dash)
       this.setState({
