@@ -43,6 +43,13 @@
   font-size: 17px;
 }
 
+.fa-bell {
+  color: rgba(19, 183, 96, 1);
+}
+.toast-header {
+  border-bottom: 2px solid #ccefdc;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -8,13 +8,14 @@ const config = {
     classicSummery: `${api}api/1/classic/summery/`, // "/api/1/classic/summery" -The New Api will be this
     walk: `${api}api/1/walk/`, // "/api/1/walk/"" -The New Api will be this
     walksummerry: `${api}api/1/walk/summery/`, // "/api/1/walk/summery" -The New Api will be this
-    dashboard: `${api}api/1/deliveries/dashboard/?format=json`,
+    dashboard: `${api}api/1/deliveries/dashboard1/`,
     user: `${api}api/1/deliveries/postman/`, // "/api/1/deliveries/postman/" -The New Api will be this
     report: `${api}api/1/deliveries/report/`,
     reportModel: `${api}api/1/deliveries/user1/`,
     data: `${api}api/1/deliveries/data/`,
     me: `${api}api/1/me/`,
-    login: `${api}api/1/oauth/token/`
+    login: `${api}api/1/oauth/token/`,
+    sms: `${api}api/1/push/sms/`
   }
 };
 

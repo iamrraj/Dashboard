@@ -3,7 +3,7 @@ import DateForm from "../Electric/DateForm";
 import config from "../config";
 import Mapp from "./Map";
 import Topbar1 from "../../Container/Layout/Topbar1";
-import Sms from "./Sms";
+// import Sms from "./Sms";
 import Swal from "sweetalert2";
 import axios from "axios";
 
@@ -42,21 +42,21 @@ class Udetails extends Component {
       },
 
       url: "https://softbike.dev.myddp.eu/api/1/push/sms/",
+      // config.apiUrl.sms
       data: JSON.stringify({
         text: this.state.text,
         user: this.state.user
       })
     })
       .then(response => {
+        //Get Data In Console
         console.log(response.data);
-
         Swal.fire({
           title: "Wiadomosc wyslana",
           type: "success",
           showConfirmButton: false,
           timer: 1000
         });
-        // this.redirect();
       })
       .catch(response => {
         //handle error
@@ -68,21 +68,6 @@ class Udetails extends Component {
           timer: 1000
         });
       });
-  }
-
-  async componentDidMount() {
-    try {
-      const res = await fetch(
-        `https://softbike.dev.myddp.eu/api/1/deliveries/user1/`
-      );
-      const movie = await res.json();
-      console.log(movie);
-      this.setState({
-        movie
-      });
-    } catch (e) {
-      console.log(e);
-    }
   }
 
   async componentDidMount() {
@@ -283,12 +268,13 @@ class Udetails extends Component {
                         ref="user"
                         className="form-control"
                         name="user"
+                        placeholder={movie.id}
                         onChange={this.handleChange}
                       />
                     </div>
                     <br></br>
 
-                    <div className="col-sm-6">
+                    <div className="col-sm-12">
                       <br></br>
                       <label id="p"> TYPE MESSAGE</label>
                       <textarea

@@ -119,16 +119,16 @@ export class Details extends Component {
                     : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_ship_weight
-                    ? `${walk.summery.total_ship_weight}`
-                    : 0}{" "}
-                  kg
+                  {walk.summery.total_kg ? `${walk.summery.total_kg}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_pack ? `${walk.summery.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_kg ? `${walk.summery.total_kg}` : 0} kg
+                  {walk.summery.total_ship_weight
+                    ? `${walk.summery.total_ship_weight}`
+                    : 0}{" "}
+                  kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_boxes ? `${walk.summery.total_boxes}` : 0}

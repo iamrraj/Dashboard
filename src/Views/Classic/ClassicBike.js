@@ -19,7 +19,7 @@ class ClassicBike extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/workday/?date__lte=${to}&date__gte=${from}&mode=bike`
+        `http://localhost:8000/api/1/classic/?date__lte=${to}&date__gte=${from}&mode=bike`
       );
       const movies = await res.json();
       console.log(movies);
