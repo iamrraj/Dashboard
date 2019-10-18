@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import DeatilSummery from "./DeatilSummery";
 import DateForm from "../Electric/DateForm";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import config from "../config";

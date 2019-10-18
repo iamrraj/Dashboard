@@ -112,22 +112,16 @@ export class Edetails extends Component {
                       {item.user ? `${item.user}` : "User"}
                     </a>
                   </td>
-                  {item.worday.map(c => (
-                    <td>{c.electric_bike_mileage} km</td>
-                  ))}
-                  {item.worday.map(c => (
-                    <td>{c.electric_bike_time}</td>
-                  ))}
+                  <td>{item.electric_bike_mileage} km</td>
+                  <td>{item.electric_bike_time}</td>
                   <td>{item.averagespeed} km/hr</td>
-                  <td>{item.letters_number}</td>
-                  <td>{item.packaged_weight} kg</td>
-                  <td>{item.packages_number}</td>
-                  {item.worday.map(c => (
-                    <td>{c.weight} kg</td>
-                  ))}
-                  {item.worday.map(c => (
-                    <td>{c.co2} mg</td>
-                  ))}
+                  <td>{item.letternumber}</td>
+                  <td>{item.packageweight} kg</td>
+                  <td>{item.packagenumber}</td>
+                  <td>{item.weight} kg</td>
+
+                  <td>{item.co2} mg</td>
+
                   <td>{item.additionalbox}</td>
                 </tr>
               </tbody>

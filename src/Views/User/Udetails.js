@@ -268,6 +268,8 @@ class Udetails extends Component {
                         ref="user"
                         className="form-control"
                         name="user"
+                        value={this.state.user}
+                        defaultValue={movie.id}
                         placeholder={movie.id}
                         onChange={this.handleChange}
                       />
@@ -283,6 +285,7 @@ class Udetails extends Component {
                         ref="text"
                         name="text"
                         col="10"
+                        value={this.state.text}
                         onChange={this.handleChange}
                         //   placeholder="Type Message"
                       ></textarea>

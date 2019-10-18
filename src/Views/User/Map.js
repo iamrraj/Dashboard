@@ -47,13 +47,6 @@ class Mapp extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
 
-    // const from_lat = this.state.data.map(start => start.from_lat);
-    // const to_lat = this.state.data.map(to => to.to_lat);
-
-    // const from_long = this.state.data.map(start => start.from_long);
-    // const to_long = this.state.data.map(to => to.to_long);
-    // const center = [this.state.lat, this.state.lng];
-
     return (
       <div>
         {/* <!-- Modal For Map --> */}

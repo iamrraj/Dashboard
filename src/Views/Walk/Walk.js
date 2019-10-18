@@ -12,10 +12,8 @@ class Walk extends Component {
       walk: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
   }
   handleSubmit(event) {
-    // this.setState({ value: event.target.value});
     event.preventDefault();
   }
 
@@ -51,9 +49,6 @@ class Walk extends Component {
     }
   };
 
-  // handleChange(event) {
-  //     this.setState({ value: event.target.value});
-  // }
   render() {
     return (
       <div className="container" style={{ marginTop: "20px" }}>

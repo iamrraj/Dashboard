@@ -85,19 +85,6 @@ class Topbar extends Component {
               {loggedIn && <Notification />}
               {/* End For Notificatioj */}
 
-              {/* {loggedIn && (
-                <li className="nav-item  ">
-                  <a
-                    className="nav-link a"
-                    href="/report"
-                    style={{ color: "#212226" }}
-                  >
-                    {" "}
-                    Raport
-                  </a>
-                </li>
-              )} */}
-
               {loggedIn && (
                 <li>
                   <a
@@ -121,13 +108,9 @@ class Topbar extends Component {
                   </a>
                 </li>
               )}
-
-              {/* <Logout /> */}
             </ul>
           </div>
         </nav>
-        {/* <!-- Modal --> */}
-        {/* <Repor loaddata={this.getData} /> */}
       </div>
     );
   }
