@@ -111,7 +111,7 @@ export class Repor extends Component {
                       href="#home"
                       className="nav-link btn-outline-success"
                     >
-                      User
+                      Uzytkownik
                     </a>
                   </li>
                   <li>
@@ -164,6 +164,23 @@ export class Repor extends Component {
                         <option value={c.pk}>{c.user1}</option>
                       ))}
                     </select>
+                    <br></br>
+                    <label>Select Mode</label>
+                    <select
+                      multiple
+                      className="form-control btn-block"
+                      id="exampleFormControlSelect2 btn-block"
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
+                      name="modee"
+                    >
+                      <option value="">None</option>
+                      <option value="foot">Pieszo</option>
+                      <option value="bike">Rower Klasyczny</option>
+                      <option value="electric-bike">Rower Elektryczny</option>
+                    </select>
                   </div>
                   <div id="menu1" class="tab-pane fade">
                     <label>Select Elektryczny </label>
@@ -210,21 +227,7 @@ export class Repor extends Component {
                 </div>
 
                 <br></br>
-                <select
-                  multiple
-                  className="form-control btn-block"
-                  id="exampleFormControlSelect2 btn-block"
-                  style={{
-                    width: "200px",
-                    color: "rgba(19, 183, 96, 1.0)"
-                  }}
-                  name="modee"
-                >
-                  <option value="">None</option>
-                  <option value="foot">Pieszo</option>
-                  <option value="bike">Rower Klasyczny</option>
-                  <option value="electric-bike">Rower Elektryczny</option>
-                </select>
+                {/*  */}
                 <center>
                   <button
                     type="submit"

@@ -37,7 +37,7 @@ class Walk extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `http://localhost:8000/api/1/classic/?date__lte=${to}&date__gte=${from}&mode=foot`
+        `${config.apiUrl.walk}?date__lte=${to}&date__gte=${from}`
       );
       const walk = await res.json();
       // console.log(walk);
