@@ -33,7 +33,7 @@ export class user extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.user}?too__lte=${to}&fromm__gte=${from}`
+        `${config.apiUrl.user}?date__lte=${to}&date__gte=${from}`
       );
       const user = await res.json();
       console.log(user);
@@ -85,7 +85,7 @@ export class user extends Component {
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
-                      {c.username}
+                      {c.user}
                     </a>
                   </td>
                   <td>
