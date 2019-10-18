@@ -83,12 +83,12 @@ class ClassicBike extends Component {
               </tr>
             </thead>
             {this.state.movies.map(c => (
-              <tbody key={c.id}>
+              <tbody key={c.pk}>
                 <tr className="one">
-                  <td>{c.id}</td>
+                  <td>{c.pk}</td>
                   <td>
                     <a
-                      href={"coverview/" + c.id}
+                      href={"coverview/" + c.pk}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >

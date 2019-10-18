@@ -98,10 +98,10 @@ class Walk extends Component {
             {this.state.walk.map(c => (
               <tbody key={c.pk}>
                 <tr>
-                  <th scope="row">{c.id}</th>
+                  <th scope="row">{c.pk}</th>
                   <td>
                     <a
-                      href={"woverview/" + c.id}
+                      href={"woverview/" + c.pk}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >

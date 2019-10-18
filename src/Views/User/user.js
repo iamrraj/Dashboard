@@ -78,10 +78,10 @@ export class user extends Component {
             {this.state.user.map(c => (
               <tbody key={c.pk}>
                 <tr>
-                  <th scope="row">{c.id}</th>
+                  <th scope="row">{c.pk}</th>
                   <td>
                     <a
-                      href={"uoverview/" + c.id}
+                      href={"uoverview/" + c.pk}
                       style={{ color: "#13B760" }}
                       class="font-weight-bold"
                     >
