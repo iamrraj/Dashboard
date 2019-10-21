@@ -7,21 +7,38 @@ export class Repor extends Component {
     super(props);
     this.state = {
       movies: [],
-      value: null,
-      isOpened: false
+      selectOptions: []
     };
     this.handleChange = this.handleChange.bind(this);
-    this.toggleBox = this.toggleBox.bind(this);
+    // this.toggleBox = this.toggleBox.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = e => {
+    let target = e.target;
+    let name = target.name;
+    //here
+    let value = Array.from(target.selectedOptions, option => option.value);
     this.setState({
-      value: Array.from(event.target.selectedOptions, item => item.value)
+      [name]: value
     });
-  }
-  toggleBox() {
-    this.setState(oldState => ({ isOpened: !oldState.isOpened }));
-  }
+  };
+
+  // handleChange(event) {
+  //   this.setState({
+  //     value: Array.from(event.target.selectedOptions, item => item.value)
+  //   });
+  // }
+  // handleChange(e) {
+  //   // assuming you initialized the default state to hold selected values
+  //   this.setState({
+  //     selected: [].slice.call(e.target.selectedOptions).map(o => {
+  //       return o.value;
+  //     })
+  //   });
+  // }
+  // toggleBox() {
+  //   this.setState(oldState => ({ isOpened: !oldState.isOpened }));
+  // }
 
   async componentDidMount() {
     try {
@@ -147,21 +164,18 @@ export class Repor extends Component {
                   <div id="home" class="tab-pane fade in active">
                     <label>Select User</label>
                     <select
-                      multiple
-                      onChange={e => console.log()}
-                      value={this.state.value}
-                      className="form-control btn-block"
-                      id="exampleFormControlSelect2 btn-block"
-                      style={{
-                        width: "200px",
-                        color: "rgba(19, 183, 96, 1.0)"
-                      }}
-                      name="idd"
+                      name="selectOptions"
+                      multiple={true}
+                      className="form-control"
+                      onChange={this.handleChange}
+                      value={this.state.selectOptions}
                     >
                       {this.state.movies.map(c => (
                         <option value={c.pk}>{c.user1}</option>
                       ))}
                     </select>
+                    {/* <div>{this.state.selectOptions.join(", ")}</div> */}
+
                     <br></br>
                     <label>Select Mode</label>
                     <select

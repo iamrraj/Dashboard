@@ -3,6 +3,7 @@ import ReactToExcel from "react-html-table-to-excel";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import config from "../config";
 import Repor from "./Repor";
+import $ from "jquery";
 
 class ReportPage extends Component {
   constructor(props) {
@@ -16,13 +17,17 @@ class ReportPage extends Component {
     try {
       // alert("Your favorite flavor is: " + this.state.value);
       const edd = e.target.elements.edd.value;
-      const idd = e.target.elements.idd.value;
+      const selections = [...e.target.elements.selectOptions.options].filter(
+        opt => opt.selected
+      );
+      const selectedValues = selections.map(opt => opt.value);
+      const selectedString = selectedValues.join(",");
       const modee = e.target.elements.modee.value;
       const from = e.target.elements.from.value;
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.report}?date__lte=${to}&date__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
+        `${config.apiUrl.report}?date__lte=${to}&date__gte=${from}&user=${selectedString}&mode=${modee}&electric_bike=${edd}`
       );
       const movies = await res.json();
       console.log(movies);

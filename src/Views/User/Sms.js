@@ -106,7 +106,6 @@ export class Sms extends Component {
               ref="user"
               className="form-control"
               name="user"
-              defaultValue="default"
               value="2"
               onChange={this.handleChange}
             />

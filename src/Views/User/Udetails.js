@@ -213,13 +213,13 @@ class Udetails extends Component {
                   {movie.summery.total_letter}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_ship} kg
+                  {movie.summery.total_kg1} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_package}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg1} kg
+                  {movie.summery.total_ship} kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes}
