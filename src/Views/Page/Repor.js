@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import Electric from "./Electric";
+// import "./index.js";
 
 export class Repor extends Component {
   constructor(props) {
@@ -244,7 +245,6 @@ export class Repor extends Component {
                   <button
                     type="submit"
                     value="Get Data"
-                    onClick={this.toggleBox}
                     className="btn btn-success active"
                     style={{
                       width: "200px",

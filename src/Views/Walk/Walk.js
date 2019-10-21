@@ -76,10 +76,10 @@ class Walk extends Component {
                 </th>
 
                 <th scope="col" style={{ width: "130px" }}>
-                  Ilość przesylek listiwych
+                  Ilość przesylek listowych
                 </th>
                 <th scope="col">
-                  Masa przesylek<br></br> listiwych
+                  Masa przesylek<br></br> listowych
                 </th>
                 <th scope="col" className="t">
                   Ilość paczek

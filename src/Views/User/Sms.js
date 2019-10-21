@@ -8,7 +8,7 @@ export class Sms extends Component {
     super(props);
     this.state = {
       movie: [],
-      user: "",
+      user: this.props.value,
       text: "",
       errors: []
     };

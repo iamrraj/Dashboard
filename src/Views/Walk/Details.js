@@ -72,8 +72,8 @@ export class Details extends Component {
                 <th scope="col">Data</th>
                 <th scope="col">Dystans</th>
                 <th scope="col">Czas w ruchu</th>
-                <th scope="col">Ilość przesylek listiwych</th>
-                <th scope="col">Masa przesylek listiwych</th>
+                <th scope="col">Ilość przesylek listowych</th>
+                <th scope="col">Masa przesylek listowych</th>
                 <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
                 <th scope="col">Liczba dobrań przesylek</th>
