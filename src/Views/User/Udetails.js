@@ -245,7 +245,7 @@ class Udetails extends Component {
                 <h5 class="modal-title" id="exampleModalLongTitle">
                   User:{" "}
                   <strong>
-                    {movie.user}&nbsp; Id:{movie.id}
+                    {movie.user}&nbsp; Id:{movie.pk}
                   </strong>
                 </h5>
                 <button
@@ -269,8 +269,8 @@ class Udetails extends Component {
                         className="form-control"
                         name="user"
                         value={this.state.user}
-                        defaultValue={movie.id}
-                        placeholder={movie.id}
+                        // defaultValue={movie.id}
+                        placeholder={movie.pk}
                         onChange={this.handleChange}
                       />
                     </div>

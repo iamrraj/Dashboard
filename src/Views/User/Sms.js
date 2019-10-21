@@ -71,7 +71,7 @@ export class Sms extends Component {
       const movie = await res.json();
       console.log(movie);
       this.setState({
-        movie
+        movie: movie.pk
       });
     } catch (e) {
       console.log(e);
@@ -79,6 +79,7 @@ export class Sms extends Component {
   }
 
   render() {
+    // const { user } = this.state.movie;
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="row">
@@ -105,7 +106,8 @@ export class Sms extends Component {
               ref="user"
               className="form-control"
               name="user"
-              value={this.state.user}
+              defaultValue="default"
+              value="2"
               onChange={this.handleChange}
             />
           </div>

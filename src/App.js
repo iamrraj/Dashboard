@@ -17,6 +17,7 @@ import ReportPage from "./Views/Page/Report";
 import Auth from "./Container/Auth";
 import User from "./Container/User";
 import Mapp1 from "./Views/User/Map1";
+import Sms from "./Views/User/Sms"
 // import Report from "./Container/Layout/Report";
 // import Signin from "./Container/Signin";
 
@@ -72,6 +73,7 @@ class App extends Component {
           <PrivateRoute path="/report" component={ReportPage} />
           <PrivateRoute path="/userr" component={User} />
           <PrivateRoute path="/map" component={Mapp1} />
+          <PrivateRoute path="/sms" component={Sms} />
           {/* <PrivateRoute path="/reportt" component={Report} /> */}
 
           {/* <Route path="/login" component={Signin} /> */}

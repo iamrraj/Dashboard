@@ -112,17 +112,26 @@ export class Edetails extends Component {
                       {item.user ? `${item.user}` : "User"}
                     </a>
                   </td>
-                  <td>{item.electric_bike_mileage} km</td>
-                  <td>{item.electric_bike_time}</td>
-                  <td>{item.averagespeed} km/hr</td>
-                  <td>{item.letternumber}</td>
-                  <td>{item.packageweight} kg</td>
-                  <td>{item.packagenumber}</td>
-                  <td>{item.weight} kg</td>
+                  <td>
+                    {item.electric_bike_mileage
+                      ? `${item.electric_bike_mileage}`
+                      : 0}{" "}
+                    km
+                  </td>
+                  <td>
+                    {item.electric_bike_time ? `${item.electric_bike_time}` : 0}
+                  </td>
+                  <td>
+                    {item.electricaverage ? `${item.electricaverage}` : 0} km/hr
+                  </td>
+                  <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
+                  <td>{item.packageweight ? `${item.packageweight}` : 0} kg</td>
+                  <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
+                  <td>{item.weight ? `${item.weight}` : 0} kg</td>
 
-                  <td>{item.co2} mg</td>
+                  <td>{item.co2 ? `${item.co2}` : 0} mg</td>
 
-                  <td>{item.additionalbox}</td>
+                  <td>{item.delivery_count ? `${item.delivery_count}` : 0}</td>
                 </tr>
               </tbody>
             ))}

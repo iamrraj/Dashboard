@@ -94,7 +94,7 @@ export class Cdetails extends Component {
                   <td>{item.date ? `${item.date}` : 0} </td>
                   <td>{item.bike_mileage ? `${item.bike_mileage}` : 0} km</td>
                   <td>
-                    {item.averagespeed ? `${item.averagespeed}` : 0} km/hr
+                    {item.classicaverage ? `${item.classicaverage}` : 0} km/hr
                   </td>
                   <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
                   <td>{item.weight ? `${item.weight}` : 0} kg</td>

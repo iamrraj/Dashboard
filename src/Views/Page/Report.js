@@ -22,7 +22,7 @@ class ReportPage extends Component {
       const to = e.target.elements.to.value;
       e.preventDefault();
       const res = await fetch(
-        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
+        `${config.apiUrl.report}?date__lte=${to}&date__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
       );
       const movies = await res.json();
       console.log(movies);
@@ -91,9 +91,9 @@ class ReportPage extends Component {
             </thead>
 
             {this.state.movies.map(c => (
-              <tbody>
+              <tbody key={c.pk}>
                 <tr>
-                  <th scope="row">1</th>
+                  <th scope="row">{c.pk}</th>
                   <td>
                     <a
                       href="/overview/4343"

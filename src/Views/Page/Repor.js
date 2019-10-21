@@ -7,24 +7,22 @@ export class Repor extends Component {
     super(props);
     this.state = {
       movies: [],
-      value: ["iamrraj"]
+      value: null,
+      isOpened: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.toggleBox = this.toggleBox.bind(this);
   }
 
   handleChange(event) {
-    //this.setState({value: event.option});
     this.setState({
       value: Array.from(event.target.selectedOptions, item => item.value)
     });
   }
+  toggleBox() {
+    this.setState(oldState => ({ isOpened: !oldState.isOpened }));
+  }
 
-  // handleSubmit(event) {
-  //   alert('Your favorite flavor is: ' + this.state.value);
-  //   event.preventDefault();
-  // }
-
-  // Get Data From Backend
   async componentDidMount() {
     try {
       const res = await fetch(config.apiUrl.reportModel);
@@ -149,9 +147,9 @@ export class Repor extends Component {
                   <div id="home" class="tab-pane fade in active">
                     <label>Select User</label>
                     <select
-                      multiple={true}
-                      // value={this.state.value}
-                      // onChange={this.handleChange}
+                      multiple
+                      onChange={e => console.log()}
+                      value={this.state.value}
                       className="form-control btn-block"
                       id="exampleFormControlSelect2 btn-block"
                       style={{
@@ -232,6 +230,7 @@ export class Repor extends Component {
                   <button
                     type="submit"
                     value="Get Data"
+                    onClick={this.toggleBox}
                     className="btn btn-success active"
                     style={{
                       width: "200px",
