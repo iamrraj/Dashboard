@@ -133,34 +133,34 @@ class ReportPage extends Component {
                   <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  45 km
+                  0 km
                 </th>
                 <th scope="col" className="text-dark th">
-                  4h 11 min
+                  0
                 </th>
                 <th scope="col" className="text-dark th">
-                  14 km/hr
+                  0 km/h
                 </th>
                 <th scope="col" className="text-dark th">
-                  67 kg
+                  0 kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  190 kg
+                  0 kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  14
+                  0
                 </th>
                 <th scope="col" className="text-dark th">
-                  4
+                  0
                 </th>
                 <th scope="col" className="text-dark th">
-                  190 kg
+                  0 kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  14
+                  0
                 </th>
                 <th scope="col" className="text-dark th">
-                  4
+                  0
                 </th>
               </tr>
             </thead>
