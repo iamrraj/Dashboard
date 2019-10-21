@@ -85,22 +85,6 @@ export class Sms extends Component {
         <div className="row">
           <div className="col-sm-12">
             <label id="p"> UZYTKOWNIK</label>
-            {/* <select
-              // multiple
-              className="form-control "
-              id="exampleFormControlSelect2 btn-block"
-              style={{
-                width: "200px",
-                color: "rgba(19, 183, 96, 1.0)"
-              }}
-              name="user"
-              value={this.state.user}
-              onChange={this.handleChange}
-            >
-              {this.state.movie.map(c => (
-                <option value={c.id}>{c.user1}</option>
-              ))}
-            </select> */}
             <input
               type="text"
               ref="user"

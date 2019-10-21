@@ -33,7 +33,7 @@ export class Edetails extends Component {
   async componentDidMount() {
     try {
       const res = await fetch(
-        `${config.apiUrl.electric}${this.props.match.params.pk}/`
+        `${config.apiUrl.electric1}${this.props.match.params.pk}/`
       );
       const movie = await res.json();
       // console.log(movie);
