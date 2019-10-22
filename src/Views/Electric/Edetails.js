@@ -75,13 +75,13 @@ export class Edetails extends Component {
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
                 <th scope="col" className="t">
-                  Id
+                  Lp
                 </th>
                 <th scope="col" className="t" style={{ width: "250px" }}>
                   Data
                 </th>
                 <th scope="col" className="t">
-                  User
+                  Uzytkownik
                 </th>
                 <th scope="col" className="t">
                   Dystans

@@ -1,10 +1,9 @@
 import $ from "jquery";
 
-$("#button").submit(function(e) {
-  e.preventDefault();
-  // Coding
-  $("#IDModal").modal("hide"); //or  $('#IDModal').modal('hide');
-  return false;
+$("#exampleModal").on("submit", function() {
+  $("#StudentModal").on("hide.bs.modal", function(e) {
+    e.preventDefault();
+  });
 });
 
 // Get Data from filter date and This All Data Belongs to Report Page To display the data by

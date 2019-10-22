@@ -59,8 +59,11 @@ export default class Summery extends Component {
             {c.total_boxes ? `${c.total_boxes}` : 0}
           </th>
           <th scope="col" className="text-dark th">
-            {c.total_user ? `${c.total_user}` : 0}
+            0
           </th>
+          {/* <th scope="col" className="text-dark th">
+            {c.total_user ? `${c.total_user}` : 0}
+          </th> */}
         </tr>
       </thead>
     );

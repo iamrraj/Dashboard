@@ -14,6 +14,9 @@ export class Repor extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  handleClick(e) {
+    e.target.value = "";
+  }
   toggleModal = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -82,7 +85,7 @@ export class Repor extends Component {
               </button>
             </div>
             <div className="modal-body ">
-              <form onSubmit={this.props.loaddata}>
+              <form onSubmit={this.props.loaddata} id="frmStudent">
                 <div className="row">
                   <div className="col-sm-6">
                     <div class="form-group">
@@ -244,7 +247,6 @@ export class Repor extends Component {
                     className="btn btn-success active hide"
                     id="button"
                     onSubmit={this.handleCloseModal}
-                    onClose={this.toggleModal}
                     style={{
                       width: "200px",
                       background: "rgba(19, 183, 96, 1.0)",

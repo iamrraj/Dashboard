@@ -32,9 +32,11 @@ class DateForm extends Component {
           <button
             type="submit"
             value="Get Data"
-            className="btn btn-login"
+            className="btn btn-success"
             style={{ height: "40px", marginTop: "13px" }}
-          ></button>
+          >
+            Wyświetl Dane
+          </button>
         </div>
       </form>
     );
