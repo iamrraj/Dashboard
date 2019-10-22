@@ -3,19 +3,18 @@ import ReactToExcel from "react-html-table-to-excel";
 import Topbar1 from "../../Container/Layout/Topbar1";
 import config from "../config";
 import Repor from "./Repor";
-import $ from "jquery";
 
 class ReportPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      c: [],
+      movies1: []
     };
   }
-  // Get Data from filter date
-  getData = async e => {
+
+  getDataa = async e => {
     try {
-      // alert("Your favorite flavor is: " + this.state.value);
       const edd = e.target.elements.edd.value;
       const selections = [...e.target.elements.selectOptions.options].filter(
         opt => opt.selected
@@ -26,23 +25,39 @@ class ReportPage extends Component {
       const from = e.target.elements.from.value;
       const to = e.target.elements.to.value;
       e.preventDefault();
-      const res = await fetch(
-        `${config.apiUrl.report}?date__lte=${to}&date__gte=${from}&user=${selectedString}&mode=${modee}&electric_bike=${edd}`
-      );
-      const movies = await res.json();
-      console.log(movies);
-      this.setState({
-        movies
-      });
+      Promise.all([
+        fetch(
+          `${config.apiUrl.report}?date__lte=${to}&date__gte=${from}&user=${selectedString}&mode=${modee}&electric_bike=${edd}`
+        )
+          .then(movies1 => movies1.json())
+          .then(movies1 => {
+            console.log(movies1);
+            this.setState({
+              movies1
+            });
+          }),
+        fetch(
+          `${config.apiUrl.reportsummery}?date__lte=${to}&date__gte=${from}&user=${selectedString}&mode=${modee}&electric_bike=${edd}`
+        )
+          .then(c => c.json())
+          .then(c => {
+            console.log(c);
+            this.setState({
+              c
+            });
+          })
+      ]);
     } catch (e) {
       console.log(e);
     }
   };
 
   render() {
+    const { c } = this.state;
+    if (c === null) return <p>Loading ....</p>;
     return (
       <div className="container" style={{ marginTop: "30px" }}>
-        <Repor loaddata={this.getData} />
+        <Repor loaddata={this.getDataa} />
         <Topbar1 />
         <div style={{ background: "white", padding: "15px" }}>
           <h5
@@ -95,7 +110,7 @@ class ReportPage extends Component {
               </tr>
             </thead>
 
-            {this.state.movies.map(c => (
+            {this.state.movies1.map(c => (
               <tbody key={c.pk}>
                 <tr>
                   <th scope="row">{c.pk}</th>
@@ -125,7 +140,6 @@ class ReportPage extends Component {
                 </tr>
               </tbody>
             ))}
-
             <thead className="thead">
               <tr>
                 <th scope="col"></th>
@@ -133,34 +147,34 @@ class ReportPage extends Component {
                   <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  0 km
+                  {c.total_milage ? `${c.total_milage}` : 0} km
                 </th>
                 <th scope="col" className="text-dark th">
-                  0
+                  {c.total_movingtime ? `${c.total_movingtime}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  0 km/h
+                  {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
                 </th>
                 <th scope="col" className="text-dark th">
-                  0 kg
+                  {c.total_letter ? `${c.total_letter}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  0 kg
+                  {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  0
+                  {c.total_pack ? `${c.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  0
+                  {c.total_kg ? `${c.total_kg}` : 0} kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  0 kg
+                  {c.total_co2_save ? `${c.total_co2_save}` : 0} mg
                 </th>
                 <th scope="col" className="text-dark th">
-                  0
+                  {c.total_boxes ? `${c.total_boxes}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  0
+                  {c.total_user ? `${c.total_user}` : 0}
                 </th>
               </tr>
             </thead>

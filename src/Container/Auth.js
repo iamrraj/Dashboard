@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Cookies from "universal-cookie";
 import head from "../img/head.png";
 import login from "../img/login.svg";
 import axios from "axios";
@@ -52,13 +51,16 @@ export class Auth extends Component {
     })
       .then(response => {
         console.log(response.data);
+
+        // Save All Data in localstorage
         var ls = require("local-storage");
         ls.set("Token", response.data["access_token"]);
         ls.set("RefreshToken", response.data["refresh_token"]);
         ls.set("Toke Type", response.data["token_type"]);
         ls.set("Token Scope", response.data["scope"]);
         ls.set("Expire in", response.data["expires_in"]);
-        // ls.set("Username", response.data["user.username"]);
+
+        // Used swal alert
         Swal.fire({
           title: "Log in",
           type: "success",

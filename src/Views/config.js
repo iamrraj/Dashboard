@@ -13,6 +13,7 @@ const config = {
     // dashboard1: `${api}api/1/deliveries/dashboard/`,
     user: `${api}api/1/deliveries/postman/`, // "/api/1/deliveries/postman/" -The New Api will be this
     report: `${api}api/1/deliveries/report/`,
+    reportsummery: `${api}api/1/deliveries/report/summery`,
     reportModel: `${api}api/1/deliveries/user1/`,
     data: `${api}api/1/deliveries/data`,
     me: `${api}api/1/me/`,

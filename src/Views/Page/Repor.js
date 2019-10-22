@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import config from "../config";
 import Electric from "./Electric";
-// import "./index.js";
+import "./index.js";
 
 export class Repor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       movies: [],
-      selectOptions: []
+      selectOptions: [],
+      showModal: false
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.toggleBox = this.toggleBox.bind(this);
   }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  };
 
   handleChange = e => {
     let target = e.target;
@@ -24,22 +30,9 @@ export class Repor extends Component {
     });
   };
 
-  // handleChange(event) {
-  //   this.setState({
-  //     value: Array.from(event.target.selectedOptions, item => item.value)
-  //   });
-  // }
-  // handleChange(e) {
-  //   // assuming you initialized the default state to hold selected values
-  //   this.setState({
-  //     selected: [].slice.call(e.target.selectedOptions).map(o => {
-  //       return o.value;
-  //     })
-  //   });
-  // }
-  // toggleBox() {
-  //   this.setState(oldState => ({ isOpened: !oldState.isOpened }));
-  // }
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
 
   async componentDidMount() {
     try {
@@ -170,6 +163,10 @@ export class Repor extends Component {
                       className="form-control"
                       onChange={this.handleChange}
                       value={this.state.selectOptions}
+                      style={{
+                        width: "200px",
+                        color: "rgba(19, 183, 96, 1.0)"
+                      }}
                     >
                       {this.state.movies.map(c => (
                         <option value={c.pk}>{c.user1}</option>
@@ -203,8 +200,6 @@ export class Repor extends Component {
                     <label>Select Rower Klasyczny User</label>
                     <select
                       multiple={true}
-                      // value={this.state.value}
-                      // onChange={this.handleChange}
                       className="form-control btn-block"
                       id="exampleFormControlSelect2 btn-block"
                       style={{
@@ -241,11 +236,15 @@ export class Repor extends Component {
 
                 <br></br>
                 {/*  */}
+
                 <center>
                   <button
                     type="submit"
                     value="Get Data"
-                    className="btn btn-success active"
+                    className="btn btn-success active hide"
+                    id="button"
+                    onSubmit={this.handleCloseModal}
+                    onClose={this.toggleModal}
                     style={{
                       width: "200px",
                       background: "rgba(19, 183, 96, 1.0)",

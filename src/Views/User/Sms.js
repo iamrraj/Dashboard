@@ -7,8 +7,8 @@ export class Sms extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: [],
-      user: this.props.value,
+      // movie: [],
+      user: "",
       text: "",
       errors: []
     };
@@ -63,20 +63,20 @@ export class Sms extends Component {
       });
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(
-        `https://softbike.dev.myddp.eu/api/1/deliveries/user1/`
-      );
-      const movie = await res.json();
-      console.log(movie);
-      this.setState({
-        movie: movie.pk
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(
+  //       `https://softbike.dev.myddp.eu/api/1/deliveries/user1/`
+  //     );
+  //     const movie = await res.json();
+  //     console.log(movie);
+  //     this.setState({
+  //       movie: movie.pk
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   render() {
     // const { user } = this.state.movie;
@@ -90,9 +90,10 @@ export class Sms extends Component {
               ref="user"
               className="form-control"
               name="user"
-              value="2"
+              value={(this.state.value = 3)}
               onChange={this.handleChange}
             />
+            <p>g {this.state.value}</p>
           </div>
           <br></br>
 

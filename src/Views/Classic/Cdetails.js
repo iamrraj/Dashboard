@@ -76,9 +76,6 @@ export class Cdetails extends Component {
                 <th scope="col">Lp</th>
                 <th scope="col">Data</th>
                 <th scope="col">Dystans</th>
-                {/* <th scope="col" style={{ width: "140px" }}>
-                  
-                </th> */}
                 <th scope="col">Średnia prędkość</th>
                 <th scope="col">Ilość przesylek listowych</th>
                 <th scope="col">Masa przesylek listowych</th>

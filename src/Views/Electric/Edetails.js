@@ -94,7 +94,7 @@ export class Edetails extends Component {
                 <th scope="col">Masa przesylek listowych</th>
                 <th scope="col">Ilość paczek</th>
                 <th scope="col">Masa paczek</th>
-                <th scope="col">Zaoszczędzone CO2</th> {/* Adde New in api */}
+                <th scope="col">Zaoszczędzone CO2</th>
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
             </thead>

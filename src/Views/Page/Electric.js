@@ -35,8 +35,6 @@ export class Electric extends Component {
     return (
       <select
         multiple={true}
-        // value={this.state.value}
-        // onChange={this.handleChange}
         className="form-control btn-block"
         id="exampleFormControlSelect2 btn-block"
         style={{

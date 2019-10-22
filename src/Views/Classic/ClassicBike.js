@@ -70,11 +70,8 @@ class ClassicBike extends Component {
                   Średnia prędkość
                 </th>
                 <th scope="col">Ilość przesyłek listowych</th>
-                {/* Adde New in api */}
                 <th scope="col">Masa przesyłek listowych</th>
-                {/* Adde New in api */}
                 <th scope="col">Ilość paczek</th>
-                {/* Adde New in api */}
                 <th scope="col">Masa paczek</th>
                 <th scope="col" style={{ width: "100px" }}>
                   Zaoszczędzone CO2

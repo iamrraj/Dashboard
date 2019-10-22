@@ -204,25 +204,38 @@ class Udetails extends Component {
                   <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_milage} km
+                  {movie.summery.total_milage
+                    ? `${movie.summery.total_milage}`
+                    : 0}{" "}
+                  km
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_movingtime}
+                  {movie.summery.total_movingtime
+                    ? `${movie.summery.total_movingtime}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_letter}
+                  {movie.summery.total_letter
+                    ? `${movie.summery.total_letter}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg1} kg
+                  {movie.summery.total_kg1 ? `${movie.summery.total_kg1}` : 0}{" "}
+                  kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_package}
+                  {movie.summery.total_package
+                    ? `${movie.summery.total_package}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_ship} kg
+                  {movie.summery.total_ship ? `${movie.summery.total_ship}` : 0}{" "}
+                  kg
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_boxes}
+                  {movie.summery.total_boxes
+                    ? `${movie.summery.total_boxes}`
+                    : 0}
                 </th>
                 <th scope="col"></th>
               </tr>
@@ -245,7 +258,7 @@ class Udetails extends Component {
                 <h5 class="modal-title" id="exampleModalLongTitle">
                   User:{" "}
                   <strong>
-                    {movie.user}&nbsp; Id:{movie.pk}
+                    {movie.user}&nbsp; Id:{movie.pk ? `${movie.pk}` : 0}
                   </strong>
                 </h5>
                 <button
@@ -257,10 +270,11 @@ class Udetails extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+              <hr></hr>
               <div class="modal-body">
                 <form onSubmit={this.handleSubmit}>
                   <div className="row">
-                    <div className="col-sm-12">
+                    <div className="col-sm-12" hidden>
                       <label id="p"> UZYTKOWNIK</label>
 
                       <input
@@ -268,20 +282,19 @@ class Udetails extends Component {
                         ref="user"
                         className="form-control"
                         name="user"
-                        value={this.state.user}
-                        // defaultValue={movie.id}
+                        value={(this.state.user = movie.pk)}
                         placeholder={movie.pk}
                         onChange={this.handleChange}
                       />
                     </div>
                     <br></br>
 
-                    <div className="col-sm-12">
+                    <div className="col-sm-12" style={{ marginTop: "-20px" }}>
                       <br></br>
                       <label id="p"> TYPE MESSAGE</label>
                       <textarea
                         className="form-control"
-                        row="3"
+                        row="10"
                         ref="text"
                         name="text"
                         col="10"

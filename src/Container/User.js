@@ -27,6 +27,8 @@ export class User extends Component {
       .then(response => {
         // const name = response.data;
         console.log(response);
+
+        // Save Name in Localstorage
         var ls = require("local-storage");
         ls.set("Name", response.data["name"]);
         this.setState({
