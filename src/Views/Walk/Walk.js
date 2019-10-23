@@ -62,10 +62,10 @@ class Walk extends Component {
           <table class="table " style={{ marginTop: "20px" }}>
             <thead style={{ background: "#CCEFDC" }}>
               <tr className="thead1">
-                <th scope="col" style={{ width: "70px" }} className="t">
+                <th scope="col" style={{ width: "70px" }} className="tt">
                   Lp
                 </th>
-                <th scope="col" style={{ width: "130px" }} className="t">
+                <th scope="col" style={{ width: "130px" }} className="tt">
                   Uźytkownik
                 </th>
                 <th scope="col" style={{ width: "100px" }}>
@@ -81,7 +81,7 @@ class Walk extends Component {
                 <th scope="col">
                   Masa przesylek <br></br>listowych (kg)
                 </th>
-                <th scope="col" className="t">
+                <th scope="col" className="tt">
                   Ilość paczek
                 </th>
 

@@ -59,7 +59,9 @@ class ClassicBike extends Component {
                 <th scope="col" className="t">
                   Lp
                 </th>
-                <th scope="col">Identyfikator roweru</th>
+                <th scope="col" style={{ margin: "40px" }}>
+                  Identyfikator roweru
+                </th>
                 <th scope="col" style={{ width: "90px" }}>
                   Dystans <br></br>(km)
                 </th>

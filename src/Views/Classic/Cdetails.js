@@ -73,10 +73,10 @@ export class Cdetails extends Component {
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col" className="t">
+                <th scope="col" className="tt">
                   Lp
                 </th>
-                <th scope="col" className="t">
+                <th scope="col" className="tt">
                   Data
                 </th>
                 <th scope="col">
@@ -91,7 +91,7 @@ export class Cdetails extends Component {
                 <th scope="col">
                   Masa przesylek <br></br> listowych(kg){" "}
                 </th>
-                <th scope="col" className="t">
+                <th scope="col" className="tt">
                   {" "}
                   Ilość paczek
                 </th>

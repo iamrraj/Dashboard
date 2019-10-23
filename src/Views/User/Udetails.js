@@ -136,10 +136,10 @@ class Udetails extends Component {
           <table class="table " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col" className="t">
+                <th scope="col" className="tt">
                   Lp
                 </th>
-                <th scope="col" className="t" style={{ width: "130px" }}>
+                <th scope="col" className="tt" style={{ width: "130px" }}>
                   Data
                 </th>
                 <th scope="col" style={{ width: "100px" }}>

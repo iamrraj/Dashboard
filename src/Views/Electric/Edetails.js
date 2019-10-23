@@ -80,7 +80,7 @@ export class Edetails extends Component {
                 <th scope="col" className="t" style={{ width: "250px" }}>
                   Data
                 </th>
-                <th scope="col" className="t">
+                <th scope="col" className="t" style={{ marginTop: "200px" }}>
                   Uzytkownik
                 </th>
                 <th scope="col">
