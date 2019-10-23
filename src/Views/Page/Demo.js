@@ -1,53 +1,51 @@
-import React, { Component } from "react";
-import config from "../config";
-class Demo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectOptions: [],
-      movies: []
-    };
-  }
+import React, { useState } from "react";
+import moment from "moment";
 
-  handleChange = e => {
-    let target = e.target;
-    let name = target.name;
-    //here
-    let value = Array.from(target.selectedOptions, option => option.value);
-    this.setState({
-      [name]: value
-    });
+function Demo() {
+  const [fromDate, setFromDate] = useState("");
+
+  const [toDate, setToDate] = useState("");
+
+  const assignFromDate = e => {
+    console.log(e.target.value);
+    setFromDate(e.target.value);
   };
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(config.apiUrl.reportModel);
-      const movies = await res.json();
-      // console.log(report);
-      this.setState({
-        movies
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  render() {
-    return (
-      <div>
-        <select
-          name="selectOptions"
-          multiple={true}
-          onChange={this.handleChange}
-          value={this.state.selectOptions}
-        >
-          {this.state.movies.map(c => (
-            <option value={c.pk}>{c.user1}</option>
-          ))}
-        </select>
-        <div>{this.state.selectOptions.join(", ")}</div>
+  return (
+    <div className="row">
+      <div className="col-sm-6">
+        <div class="form-group">
+          <span style={{ opacity: "0.6", fontSize: "13px" }}>OD</span>
+          <input
+            type="date"
+            name="from"
+            value={fromDate}
+            max={moment().format("YYYY-MM-DD")}
+            onChange={assignFromDate}
+            class="form-control datepicker"
+            style={{ width: "150px" }}
+          />
+        </div>
       </div>
-    );
-  }
+
+      <div className="col-sm-4">
+        <div class="form-group">
+          <span style={{ opacity: "0.6", fontSize: "13px" }}>DO</span>
+          <input
+            type="date"
+            name="to"
+            min={fromDate}
+            id="enddate"
+            value={toDate}
+            max={moment().format("YYYY-MM-DD")}
+            placeholder="Select Date"
+            class="form-control datepicker"
+            onChange={e => setToDate(e.target.value)}
+            style={{ width: "150px" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 export default Demo;

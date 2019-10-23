@@ -169,20 +169,27 @@
   opacity: 0.8;
 }
 
-/* .active {
-  background: red;
-} */
-/* .active {
-  background: red;
+input[type="date"] {
+  padding: 0;
+  text-align: center;
 }
-.nav-item:active {
-  background: red !important;
-} */
 
-/* .btnn:active {
-  border: 2px solid green;
-  border-bottom: 0 white;
-} */
+td.day {
+  position: relative;
+}
+
+td.day.disabled:hover:before {
+  content: "This date is disabled";
+  color: red;
+  background-color: white;
+  top: -22px;
+  position: absolute;
+  width: 136px;
+  left: -34px;
+  z-index: 1000;
+  text-align: center;
+  padding: 2px;
+}
 
 .btnn a.active {
   border: 2px solid rgba(19, 183, 96, 1);

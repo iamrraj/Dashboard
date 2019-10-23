@@ -145,17 +145,23 @@ class Udetails extends Component {
                 <th scope="col" className="t" style={{ width: "130px" }}>
                   Typ dystrybucji
                 </th>
-                <th scope="col" className="t">
-                  Dystans
+                <th scope="col">
+                  Dystans<br></br> (km)
                 </th>
-                <th scope="col">Czas w ruchu</th>
+                <th scope="col">
+                  Czas w ruchu <br></br> (g : min)
+                </th>
 
-                <th scope="col">Ilość przesylek listowych</th>
+                <th scope="col">Ilość przesylek listowych </th>
                 {/* Adde New in api */}
-                <th scope="col">Masa przesylek listowych</th>
+                <th scope="col">
+                  Masa przesylek listowych <br></br> (kg)
+                </th>
                 {/* Adde New in api */}
                 <th scope="col">Ilość paczek</th>
-                <th scope="col">Masa paczek</th>
+                <th scope="col">
+                  Masa paczek <br></br> (kg)
+                </th>
                 <th scope="col">Liczba dobrań przesylek</th>
                 <th scope="col"></th>
               </tr>
@@ -169,15 +175,15 @@ class Udetails extends Component {
 
                   {/* <td>{item.milage} km</td> */}
 
-                  <td>{item.mileage ? `${item.mileage}` : 0} km</td>
+                  <td>{item.mileage ? `${item.mileage}` : 0} </td>
 
                   <td>{item.time ? `${item.time}` : 0} </td>
 
                   <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
-                  <td>{item.letterweight ? `${item.letterweight}` : 0} kg</td>
+                  <td>{item.letterweight ? `${item.letterweight}` : 0} </td>
                   <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
 
-                  <td>{item.packageweight ? `${item.packageweight}` : 0} kg</td>
+                  <td>{item.packageweight ? `${item.packageweight}` : 0} </td>
 
                   <td>{item.delivery_count ? `${item.delivery_count}` : 0}</td>
 
@@ -207,7 +213,6 @@ class Udetails extends Component {
                   {movie.summery.total_milage
                     ? `${movie.summery.total_milage}`
                     : 0}{" "}
-                  km
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_movingtime
@@ -221,7 +226,6 @@ class Udetails extends Component {
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_kg1 ? `${movie.summery.total_kg1}` : 0}{" "}
-                  kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_package
@@ -230,7 +234,6 @@ class Udetails extends Component {
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_ship ? `${movie.summery.total_ship}` : 0}{" "}
-                  kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes

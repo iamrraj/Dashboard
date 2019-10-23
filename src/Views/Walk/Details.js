@@ -70,12 +70,20 @@ export class Details extends Component {
               <tr style={{ background: "#CCEFDC" }} className="thead1">
                 <th scope="col">Ld</th>
                 <th scope="col">Data</th>
-                <th scope="col">Dystans</th>
-                <th scope="col">Czas w ruchu</th>
+                <th scope="col">
+                  Dystans <br></br> (km)
+                </th>
+                <th scope="col">
+                  Czas w ruchu<br></br> (g : min)
+                </th>
                 <th scope="col">Ilość przesylek listowych</th>
-                <th scope="col">Masa przesylek listowych</th>
+                <th scope="col">
+                  Masa przesylek listowych<br></br> (kg)
+                </th>
                 <th scope="col">Ilość paczek</th>
-                <th scope="col">Masa paczek</th>
+                <th scope="col">
+                  Masa paczek<br></br> (kg)
+                </th>
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
             </thead>
@@ -84,12 +92,12 @@ export class Details extends Component {
                 <tr>
                   <td>{c.id}</td>
                   <td>{c.date ? `${c.date}` : 0} </td>
-                  <td>{c.foot_mileage ? `${c.foot_mileage}` : 0} km</td>
+                  <td>{c.foot_mileage ? `${c.foot_mileage}` : 0} </td>
                   <td>{c.foot_time ? `${c.foot_time}` : 0}</td>
                   <td>{c.letternumber ? `${c.letternumber}` : 0}</td>
-                  <td>{c.letterweight ? `${c.letterweight}` : 0} kg</td>
+                  <td>{c.letterweight ? `${c.letterweight}` : 0} </td>
                   <td>{c.packagenumber ? `${c.packagenumber}` : 0}</td>
-                  <td>{c.packageweight ? `${c.packageweight}` : 0} kg</td>
+                  <td>{c.packageweight ? `${c.packageweight}` : 0} </td>
                   <td>{c.delivery_count ? `${c.delivery_count}` : 0}</td>
                 </tr>
               </tbody>
@@ -105,7 +113,6 @@ export class Details extends Component {
                   {walk.summery.total_milage
                     ? `${walk.summery.total_milage}`
                     : 0}{" "}
-                  km
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_movingtime
@@ -121,13 +128,12 @@ export class Details extends Component {
                   {walk.summery.total_ship_weight
                     ? `${walk.summery.total_ship_weight}`
                     : 0}{" "}
-                  kg{" "}
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_pack ? `${walk.summery.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {walk.summery.total_kg ? `${walk.summery.total_kg}` : 0} kg
+                  {walk.summery.total_kg ? `${walk.summery.total_kg}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {walk.summery.total_boxes ? `${walk.summery.total_boxes}` : 0}

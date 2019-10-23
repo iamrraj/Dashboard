@@ -59,6 +59,10 @@ class ReportPage extends Component {
       <div className="container" style={{ marginTop: "30px" }}>
         <Repor loaddata={this.getDataa} />
         <Topbar1 />
+        <div
+          className="bg-white"
+          style={{ borderTop: "2px solid #CCEFDC" }}
+        ></div>
         <div style={{ background: "white", padding: "15px" }}>
           <h5
             className="font-weight-bold"
@@ -92,54 +96,70 @@ class ReportPage extends Component {
                 <th scope="col" className="t">
                   Identyfikator
                 </th>
-                <th scope="col" className="t">
-                  Dystans
+                <th scope="col">
+                  Dystans<br></br> (km)
                 </th>
-                <th scope="col">Czas w ruchu</th>
-                <th scope="col">Średnia prędkość</th>
+                <th scope="col">
+                  Czas w ruchu <br></br> (g : min)
+                </th>
+                <th scope="col">
+                  Średnia prędkość <br></br> (km/h)
+                </th>
                 <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">Masa przesyłek listowych</th>
+                <th scope="col">
+                  Masa przesyłek listowych <br></br> (kg)
+                </th>
 
                 <th scope="col">Ilość paczek</th>
 
-                <th scope="col">Masa paczek</th>
-                <th scope="col">Zaoszczędzone CO2</th>
+                <th scope="col">
+                  Masa paczek<br></br> (kg)
+                </th>
+                <th scope="col">
+                  Zaoszczędzone CO2<br></br> (mg)
+                </th>
                 <th scope="col">Liczba dobrań </th>
                 <th scope="col">Liczba uzytkowników</th>
               </tr>
             </thead>
 
-            {this.state.movies1.map(c => (
-              <tbody key={c.pk}>
-                <tr>
-                  <th scope="row">{c.pk}</th>
-                  <td>
-                    <a
-                      href="/overview/4343"
-                      style={{ color: "#13B760" }}
-                      class="font-weight-bold"
-                    >
-                      {c.user}
-                    </a>
-                  </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
-                  <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
-                  <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
-                  </td>
-                  <td>{c.total_letter ? `${c.total_letter}` : 0} kg</td>
-                  <td>
-                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
-                  </td>
-                  <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
-                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
-                  <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
-                  <td>{c.total_user ? `${c.total_user}` : 0}</td>
-                </tr>
-              </tbody>
-            ))}
+            {this.state.movies1.map(c =>
+              c ? (
+                <tbody key={c.pk}>
+                  <tr>
+                    <th scope="row">{c.pk}</th>
+                    <td>
+                      <a
+                        href="/overview/4343"
+                        style={{ color: "#13B760" }}
+                        class="font-weight-bold"
+                      >
+                        {c.user}
+                      </a>
+                    </td>
+                    <td>{c.total_milage ? `${c.total_milage}` : 0} </td>
+                    <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
+                    <td>
+                      {c.total_averagespeed ? `${c.total_averagespeed}` : 0}
+                    </td>
+                    <td>{c.total_letter ? `${c.total_letter}` : 0} </td>
+                    <td>
+                      {c.total_ship_weight ? `${c.total_ship_weight}` : 0}
+                    </td>
+                    <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
+                    <td>{c.total_kg ? `${c.total_kg}` : 0} </td>
+                    <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} </td>
+                    <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
+                    <td>{c.total_user ? `${c.total_user}` : 0}</td>
+                  </tr>
+                </tbody>
+              ) : (
+                <td>
+                  <h1>There is No data Availbe for this moment</h1>
+                </td>
+              )
+            )}
             <thead className="thead">
               <tr>
                 <th scope="col"></th>
@@ -147,28 +167,28 @@ class ReportPage extends Component {
                   <strong>SUMA</strong>
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_milage ? `${c.total_milage}` : 0} km
+                  {c.total_milage ? `${c.total_milage}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {c.total_movingtime ? `${c.total_movingtime}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
+                  {c.total_averagespeed ? `${c.total_averagespeed}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_letter ? `${c.total_letter}` : 0} kg
+                  {c.total_letter ? `${c.total_letter}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
+                  {c.total_ship_weight ? `${c.total_ship_weight}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {c.total_pack ? `${c.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_kg ? `${c.total_kg}` : 0} kg
+                  {c.total_kg ? `${c.total_kg}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {c.total_co2_save ? `${c.total_co2_save}` : 0} mg
+                  {c.total_co2_save ? `${c.total_co2_save}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {c.total_boxes ? `${c.total_boxes}` : 0}

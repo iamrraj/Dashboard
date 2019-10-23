@@ -67,21 +67,29 @@ class ElectricBike extends Component {
                 <th scope="col" className="t">
                   Identyfikator
                 </th>
-                <th scope="col" className="t">
-                  Dystans
+                <th scope="col">
+                  Dystans <br></br> (km)
                 </th>
-                <th scope="col">Czas w ruchu</th>
-                <th scope="col">Średnia prędkość</th>
+                <th scope="col">
+                  Czas w ruchu<br></br> (g : min)
+                </th>
+                <th scope="col">
+                  Średnia prędkość<br></br> (km/h)
+                </th>
                 <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">Masa przesyłek listowych</th>
+                <th scope="col">
+                  Masa przesyłek listowych<br></br> (kg)
+                </th>
 
                 <th scope="col">Ilość paczek</th>
 
-                <th scope="col" className="t">
-                  Masa paczek
+                <th scope="col">
+                  Masa paczek<br></br> (kg)
                 </th>
-                <th scope="col">Zaoszczędzone CO2</th>
+                <th scope="col">
+                  Zaoszczędzone CO2 <br></br> (mg)
+                </th>
                 <th scope="col">Liczba dobrań </th>
                 <th scope="col">Liczba uzytkowników</th>
               </tr>
@@ -100,18 +108,20 @@ class ElectricBike extends Component {
                       {c.label}
                     </a>
                   </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} </td>
                   <td>{c.total_movingtime ? `${c.total_movingtime}` : 0} </td>
                   <td>
-                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
+                    {c.total_averagespeed ? `${c.total_averagespeed}` : 0}
                   </td>
                   <td>{c.total_letter ? `${c.total_letter}` : 0}</td>
                   <td>
-                    {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
+                    {c.total_letter_weight ? `${c.total_letter_weight}` : 0}
                   </td>
                   <td>{c.total_pack ? `${c.total_pack}` : 0}</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
-                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} mg </td>
+                  <td>
+                    {c.total_package_weight ? `${c.total_package_weight}` : 0}{" "}
+                  </td>
+                  <td>{c.total_co2_save ? `${c.total_co2_save}` : 0} </td>
                   <td>{c.total_boxes ? `${c.total_boxes}` : 0}</td>
                   <td>{c.total_user ? `${c.total_user}` : 0}</td>
                 </tr>

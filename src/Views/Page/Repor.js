@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import config from "../config";
+import Demo from "./Demo";
 import Electric from "./Electric";
 import "./index.js";
 
@@ -86,36 +87,7 @@ export class Repor extends Component {
             </div>
             <div className="modal-body ">
               <form onSubmit={this.props.loaddata} id="frmStudent">
-                <div className="row">
-                  <div className="col-sm-6">
-                    <div class="form-group">
-                      <span style={{ opacity: "0.6", fontSize: "13px" }}>
-                        OD
-                      </span>
-                      <input
-                        type="date"
-                        name="from"
-                        class="form-control datepicker"
-                        style={{ width: "150px" }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-sm-4">
-                    <div class="form-group">
-                      <span style={{ opacity: "0.6", fontSize: "13px" }}>
-                        DO
-                      </span>
-                      <input
-                        type="date"
-                        name="to"
-                        class="form-control datepicker"
-                        style={{ width: "150px" }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
+                <Demo />
                 <ul class="nav nav-pills">
                   <li class="active">
                     <a
@@ -246,7 +218,7 @@ export class Repor extends Component {
                     value="Get Data"
                     className="btn btn-success active hide"
                     id="button"
-                    onSubmit={this.handleCloseModal}
+                    onHide={this.handleCloseModal}
                     style={{
                       width: "200px",
                       background: "rgba(19, 183, 96, 1.0)",

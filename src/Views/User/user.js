@@ -65,14 +65,30 @@ export class user extends Component {
                 <th scope="col" className="t">
                   Uzytkownik
                 </th>
-                <th scope="col">Dystans pieszo</th>
-                <th scope="col">Przeniesiona masa przesyłek</th>
-                <th scope="col">Dystans rowerem klasycznym</th>
-                <th scope="col">Przewieziona masa przesyłek RK</th>
-                <th scope="col">Dystans rowerem elektrycznym</th>
-                <th scope="col">Przewieziona masa przesyłek RE</th>
-                <th scope="col">Całkowity dystans</th>
-                <th scope="col">Całkowita masa przesyłek</th>
+                <th scope="col">
+                  Dystans pieszo <br></br> (km)
+                </th>
+                <th scope="col">
+                  Przeniesiona masa przesyłek <br></br> (kg)
+                </th>
+                <th scope="col">
+                  Dystans rowerem klasycznym <br></br> (km)
+                </th>
+                <th scope="col">
+                  Przewieziona masa przesyłek RK <br></br> (kg)
+                </th>
+                <th scope="col">
+                  Dystans rowerem elektrycznym <br></br> (km)
+                </th>
+                <th scope="col">
+                  Przewieziona masa przesyłek RE<br></br> (kg)
+                </th>
+                <th scope="col">
+                  Całkowity dystans<br></br> (km)
+                </th>
+                <th scope="col">
+                  Całkowita masa przesyłek<br></br> (kg)
+                </th>
               </tr>
             </thead>
             {this.state.user.map(c => (
@@ -88,24 +104,18 @@ export class user extends Component {
                       {c.user}
                     </a>
                   </td>
-                  <td>
-                    {c.total_walk_milage ? `${c.total_walk_milage}` : 0} km
-                  </td>
-                  <td>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} kg</td>
+                  <td>{c.total_walk_milage ? `${c.total_walk_milage}` : 0}</td>
+                  <td>{c.total_walk_kg ? `${c.total_walk_kg}` : 0} </td>
                   <td>
                     {c.total_classic_milage ? `${c.total_classic_milage}` : 0}{" "}
-                    Km
                   </td>
-                  <td>{c.total_classic_kg ? `${c.total_classic_kg}` : 0} kg</td>
+                  <td>{c.total_classic_kg ? `${c.total_classic_kg}` : 0} </td>
                   <td>
                     {c.total_electric_milage ? `${c.total_electric_milage}` : 0}{" "}
-                    km
                   </td>
-                  <td>
-                    {c.total_electric_kg ? `${c.total_electric_kg}` : 0} kg
-                  </td>
-                  <td>{c.total_milage ? `${c.total_milage}` : 0} km</td>
-                  <td>{c.total_kg ? `${c.total_kg}` : 0} kg</td>
+                  <td>{c.total_electric_kg ? `${c.total_electric_kg}` : 0}</td>
+                  <td>{c.total_milage ? `${c.total_milage}` : 0} </td>
+                  <td>{c.total_kg ? `${c.total_kg}` : 0} </td>
                 </tr>
               </tbody>
             ))}

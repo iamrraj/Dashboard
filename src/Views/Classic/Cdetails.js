@@ -73,15 +73,34 @@ export class Cdetails extends Component {
           <table class="table table-hover " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Lp</th>
-                <th scope="col">Data</th>
-                <th scope="col">Dystans</th>
-                <th scope="col">Średnia prędkość</th>
-                <th scope="col">Ilość przesylek listowych</th>
-                <th scope="col">Masa przesylek listowych</th>
-                <th scope="col">Ilość paczek</th>
-                <th scope="col">Masa paczek</th>
-                <th scope="col">Liczba dobrań przesylek</th>
+                <th scope="col" className="t">
+                  Lp
+                </th>
+                <th scope="col" className="t">
+                  Data
+                </th>
+                <th scope="col">
+                  Dystans<br></br>(km)
+                </th>
+                <th scope="col">
+                  Średnia prędkość <br></br>(km/h)
+                </th>
+                <th scope="col" className="t">
+                  Ilość przesylek listowych
+                </th>
+                <th scope="col">
+                  Masa przesylek listowych <br></br>(kg){" "}
+                </th>
+                <th scope="col" className="t">
+                  {" "}
+                  Ilość paczek
+                </th>
+                <th scope="col">
+                  Masa paczek <br></br>(kg)
+                </th>
+                <th scope="col" className="t">
+                  Liczba dobrań przesylek
+                </th>
               </tr>
             </thead>
             {movie.detail.map(item => (
@@ -89,10 +108,8 @@ export class Cdetails extends Component {
                 <tr>
                   <th scope="row">{item.id}</th>
                   <td>{item.date ? `${item.date}` : 0} </td>
-                  <td>{item.bike_mileage ? `${item.bike_mileage}` : 0} km</td>
-                  <td>
-                    {item.classicaverage ? `${item.classicaverage}` : 0} km/hr
-                  </td>
+                  <td>{item.bike_mileage ? `${item.bike_mileage}` : 0}</td>
+                  <td>{item.classicaverage ? `${item.classicaverage}` : 0}</td>
                   <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
                   <td>{item.letterweight ? `${item.letterweight}` : 0} kg</td>
                   <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
@@ -116,14 +133,12 @@ export class Cdetails extends Component {
                   {movie.summery.total_milage
                     ? `${movie.summery.total_milage}`
                     : 0}{" "}
-                  Km
                 </th>
 
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_averagespeed
                     ? `${movie.summery.total_averagespeed}`
                     : 0}{" "}
-                  km/hr
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_letter
@@ -134,13 +149,12 @@ export class Cdetails extends Component {
                   {movie.summery.total_ship_weight
                     ? `${movie.summery.total_ship_weight}`
                     : 0}{" "}
-                  kg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_pack ? `${movie.summery.total_pack}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
-                  {movie.summery.total_kg ? `${movie.summery.total_kg}` : 0} kg
+                  {movie.summery.total_kg ? `${movie.summery.total_kg}` : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes

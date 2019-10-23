@@ -32,28 +32,28 @@ export default class Summery extends Component {
             <strong>SUMA</strong>
           </th>
           <th scope="col" className="text-dark th" style={{ width: "100px" }}>
-            {c.total_milage ? `${c.total_milage}` : 0} km
+            {c.total_milage ? `${c.total_milage}` : 0} 
           </th>
           <th scope="col" className="text-dark th" style={{ width: "100px" }}>
             {c.total_movingtime ? `${c.total_movingtime}` : 0}
           </th>
           <th scope="col" className="text-dark th" style={{ width: "100px" }}>
-            {c.total_averagespeed ? `${c.total_averagespeed}` : 0} km/h
+            {c.total_averagespeed ? `${c.total_averagespeed}` : 0} 
           </th>
           <th scope="col" className="text-dark th">
             {c.total_letter ? `${c.total_letter}` : 0}
           </th>
           <th scope="col" className="text-dark th">
-            {c.total_ship_weight ? `${c.total_ship_weight}` : 0} kg
+            {c.total_letter_weight ? `${c.total_letter_weight}` : 0} 
           </th>
           <th scope="col" className="text-dark th">
             {c.total_pack ? `${c.total_pack}` : 0}
           </th>
           <th scope="col" className="text-dark th" style={{ width: "150px" }}>
-            {c.total_kg ? `${c.total_kg}` : 0} kg
+            {c.total_package_weight ? `${c.total_package_weight}` : 0} 
           </th>
           <th scope="col" className="text-dark th">
-            {c.total_co2_save ? `${c.total_co2_save}` : 0} mg
+            {c.total_co2_save ? `${c.total_co2_save}` : 0} 
           </th>
           <th scope="col" className="text-dark th">
             {c.total_boxes ? `${c.total_boxes}` : 0}

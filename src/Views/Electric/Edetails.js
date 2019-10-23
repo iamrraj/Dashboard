@@ -83,18 +83,26 @@ export class Edetails extends Component {
                 <th scope="col" className="t">
                   Uzytkownik
                 </th>
-                <th scope="col" className="t">
-                  Dystans
+                <th scope="col">
+                  Dystans<br></br> (km)
                 </th>
                 <th scope="col" style={{ width: "130px" }}>
-                  Czas w ruchu
+                  Czas w ruchu<br></br> (g : min)
                 </th>
-                <th scope="col">Średnia prędkość</th>
+                <th scope="col">
+                  Średnia prędkość <br></br> (km/h)
+                </th>
                 <th scope="col">Ilość przesylek listowych</th>
-                <th scope="col">Masa przesylek listowych</th>
+                <th scope="col">
+                  Masa przesylek listowych<br></br> (kg)
+                </th>
                 <th scope="col">Ilość paczek</th>
-                <th scope="col">Masa paczek</th>
-                <th scope="col">Zaoszczędzone CO2</th>
+                <th scope="col">
+                  Masa paczek<br></br> (kg)
+                </th>
+                <th scope="col">
+                  Zaoszczędzone Co2 <br></br> (mg)
+                </th>
                 <th scope="col">Liczba dobrań przesylek</th>
               </tr>
             </thead>
@@ -116,7 +124,6 @@ export class Edetails extends Component {
                     {item.electric_bike_mileage
                       ? `${item.electric_bike_mileage}`
                       : 0}{" "}
-                    km
                   </td>
                   <td>
                     {item.electric_bike_time ? `${item.electric_bike_time}` : 0}
@@ -150,7 +157,6 @@ export class Edetails extends Component {
                   {movie.summery.total_milage
                     ? `${movie.summery.total_milage}`
                     : 0}
-                  Km
                 </th>
                 <th
                   scope="col"
@@ -170,7 +176,6 @@ export class Edetails extends Component {
                   {movie.summery.total_averagespeed
                     ? `${movie.summery.total_averagespeed}`
                     : 0}
-                  Km/hr
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_letter
@@ -182,10 +187,9 @@ export class Edetails extends Component {
                   className="text-dark th"
                   style={{ width: "120px" }}
                 >
-                  {movie.summery.total_ship_weight
-                    ? `${movie.summery.total_ship_weight}`
+                  {movie.summery.total_letter_weight
+                    ? `${movie.summery.total_letter_weight}`
                     : 0}
-                  kgs
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_pack ? `${movie.summery.total_pack}` : 0}
@@ -195,14 +199,14 @@ export class Edetails extends Component {
                   className="text-dark th"
                   style={{ width: "170px" }}
                 >
-                  {movie.summery.total_kg ? `${movie.summery.total_kg}` : 0}
-                  kgs
+                  {movie.summery.total_package_weight
+                    ? `${movie.summery.total_package_weight}`
+                    : 0}
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_co2_save
                     ? `${movie.summery.total_co2_save}`
                     : 0}{" "}
-                  Mg
                 </th>
                 <th scope="col" className="text-dark th">
                   {movie.summery.total_boxes
