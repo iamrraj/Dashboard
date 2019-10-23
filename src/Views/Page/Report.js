@@ -99,7 +99,7 @@ class ReportPage extends Component {
                 <th scope="col">
                   Dystans<br></br> (km)
                 </th>
-                <th scope="col">
+                <th scope="col" style={{ width: "100px" }}>
                   Czas w ruchu <br></br> (g : min)
                 </th>
                 <th scope="col">
@@ -107,7 +107,7 @@ class ReportPage extends Component {
                 </th>
                 <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">
+                <th scope="col" style={{ width: "140px" }}>
                   Masa przesyłek listowych <br></br> (kg)
                 </th>
 
@@ -124,8 +124,8 @@ class ReportPage extends Component {
               </tr>
             </thead>
 
-            {this.state.movies1.map(c =>
-              c ? (
+            {this.state.movies1.length > 0 ? (
+              this.state.movies1.map(c => (
                 <tbody key={c.pk}>
                   <tr>
                     <th scope="row">{c.pk}</th>
@@ -154,11 +154,12 @@ class ReportPage extends Component {
                     <td>{c.total_user ? `${c.total_user}` : 0}</td>
                   </tr>
                 </tbody>
-              ) : (
-                <td>
-                  <h1>There is No data Availbe for this moment</h1>
-                </td>
-              )
+              ))
+            ) : (
+              <div>
+                {/* <p style={{ textAlign: "center" }}>BRAK DANYCH</p> */}
+                <h5>BRAK DANYCH</h5>
+              </div>
             )}
             <thead className="thead">
               <tr>

@@ -85,11 +85,11 @@ export class Cdetails extends Component {
                 <th scope="col">
                   Średnia prędkość <br></br>(km/h)
                 </th>
-                <th scope="col" className="t">
-                  Ilość przesylek listowych
+                <th scope="col">
+                  Ilość przesylek <br></br> listowych
                 </th>
                 <th scope="col">
-                  Masa przesylek listowych <br></br>(kg){" "}
+                  Masa przesylek <br></br> listowych(kg){" "}
                 </th>
                 <th scope="col" className="t">
                   {" "}
@@ -98,8 +98,8 @@ export class Cdetails extends Component {
                 <th scope="col">
                   Masa paczek <br></br>(kg)
                 </th>
-                <th scope="col" className="t">
-                  Liczba dobrań przesylek
+                <th scope="col">
+                  Liczba dobrań <br></br> przesylek
                 </th>
               </tr>
             </thead>

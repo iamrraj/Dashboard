@@ -68,23 +68,33 @@ export class Details extends Component {
           <table class="table " style={{ marginTop: "20px" }}>
             <thead>
               <tr style={{ background: "#CCEFDC" }} className="thead1">
-                <th scope="col">Ld</th>
-                <th scope="col">Data</th>
+                <th scope="col" className="t">
+                  Ld
+                </th>
+                <th scope="col" className="t">
+                  Data
+                </th>
                 <th scope="col">
                   Dystans <br></br> (km)
                 </th>
                 <th scope="col">
                   Czas w ruchu<br></br> (g : min)
                 </th>
-                <th scope="col">Ilość przesylek listowych</th>
                 <th scope="col">
-                  Masa przesylek listowych<br></br> (kg)
+                  Ilość przesylek <br></br> listowych
                 </th>
-                <th scope="col">Ilość paczek</th>
+                <th scope="col">
+                  Masa przesylek <br></br>listowych (kg)
+                </th>
+                <th scope="col" className="t">
+                  Ilość paczek
+                </th>
                 <th scope="col">
                   Masa paczek<br></br> (kg)
                 </th>
-                <th scope="col">Liczba dobrań przesylek</th>
+                <th scope="col">
+                  Liczba dobrań <br></br> przesylek
+                </th>
               </tr>
             </thead>
             {walk.detail.map(c => (

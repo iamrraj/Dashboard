@@ -79,7 +79,7 @@ class Walk extends Component {
                   Ilość przesylek listowych
                 </th>
                 <th scope="col">
-                  Masa przesylek listowych<br></br> (kg)
+                  Masa przesylek <br></br>listowych (kg)
                 </th>
                 <th scope="col" className="t">
                   Ilość paczek

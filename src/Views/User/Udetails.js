@@ -142,25 +142,25 @@ class Udetails extends Component {
                 <th scope="col" className="t" style={{ width: "130px" }}>
                   Data
                 </th>
-                <th scope="col" className="t" style={{ width: "130px" }}>
+                <th scope="col" style={{ width: "100px" }}>
                   Typ dystrybucji
                 </th>
                 <th scope="col">
                   Dystans<br></br> (km)
                 </th>
-                <th scope="col">
-                  Czas w ruchu <br></br> (g : min)
+                <th scope="col" style={{ width: "130px" }}>
+                  Czas w <br></br>ruchu (g : min)
                 </th>
 
                 <th scope="col">Ilość przesylek listowych </th>
                 {/* Adde New in api */}
-                <th scope="col">
-                  Masa przesylek listowych <br></br> (kg)
+                <th scope="col" style={{ width: "130px" }}>
+                  Masa przesylek <br></br>listowych (kg)
                 </th>
                 {/* Adde New in api */}
                 <th scope="col">Ilość paczek</th>
-                <th scope="col">
-                  Masa paczek <br></br> (kg)
+                <th scope="col" style={{ width: "100px" }}>
+                  Masa <br></br>paczek (kg)
                 </th>
                 <th scope="col">Liczba dobrań przesylek</th>
                 <th scope="col"></th>

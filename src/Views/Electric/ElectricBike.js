@@ -78,7 +78,7 @@ class ElectricBike extends Component {
                 </th>
                 <th scope="col">Ilość przesyłek listowych</th>
 
-                <th scope="col">
+                <th scope="col" style={{ width: "150px" }}>
                   Masa przesyłek listowych<br></br> (kg)
                 </th>
 
