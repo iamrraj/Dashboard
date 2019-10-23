@@ -71,14 +71,14 @@ class ClassicBike extends Component {
                 </th>
                 <th scope="col">Ilość przesyłek listowych</th>
                 <th scope="col">
-                  Masa przesyłek listowych <br></br> (kg)
+                  Masa przesyłek listowych(kg) <br></br>
                 </th>
                 <th scope="col">Ilość paczek</th>
-                <th scope="col">
-                  Masa paczek <br></br> (kg)
+                <th scope="col" style={{ width: "100px" }}>
+                  Masa paczek (kg)
                 </th>
                 <th scope="col" style={{ width: "100px" }}>
-                  Zaoszczędzone CO2 <br></br> (mg)
+                  Zaoszczędzone <br></br>Co2 (mg)
                 </th>
                 <th scope="col">Liczba dobrań przesyłek </th>
               </tr>

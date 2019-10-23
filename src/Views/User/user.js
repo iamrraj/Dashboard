@@ -63,13 +63,13 @@ export class user extends Component {
                   Lp{" "}
                 </th>
                 <th scope="col" className="t">
-                  Uzytkownik
+                  Id
                 </th>
                 <th scope="col">
                   Dystans pieszo <br></br> (km)
                 </th>
-                <th scope="col">
-                  Przeniesiona masa przesyłek <br></br> (kg)
+                <th scope="col" style={{ width: "110px" }}>
+                  Przeniesiona masa <br></br>przesyłek (kg)
                 </th>
                 <th scope="col">
                   Dystans rowerem klasycznym <br></br> (km)
