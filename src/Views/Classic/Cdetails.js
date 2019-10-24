@@ -111,9 +111,9 @@ export class Cdetails extends Component {
                   <td>{item.bike_mileage ? `${item.bike_mileage}` : 0}</td>
                   <td>{item.classicaverage ? `${item.classicaverage}` : 0}</td>
                   <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
-                  <td>{item.letterweight ? `${item.letterweight}` : 0} kg</td>
+                  <td>{item.letterweight ? `${item.letterweight}` : 0}</td>
                   <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
-                  <td>{item.packageweight ? `${item.packageweight}` : 0} kg</td>
+                  <td>{item.packageweight ? `${item.packageweight}` : 0} </td>
                   <td>{item.delivery_count ? `${item.delivery_count}` : 0}</td>
                 </tr>
               </tbody>

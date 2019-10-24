@@ -129,14 +129,14 @@ export class Edetails extends Component {
                     {item.electric_bike_time ? `${item.electric_bike_time}` : 0}
                   </td>
                   <td>
-                    {item.electricaverage ? `${item.electricaverage}` : 0} km/hr
+                    {item.electricaverage ? `${item.electricaverage}` : 0}
                   </td>
                   <td>{item.letternumber ? `${item.letternumber}` : 0}</td>
-                  <td>{item.packageweight ? `${item.packageweight}` : 0} kg</td>
+                  <td>{item.packageweight ? `${item.packageweight}` : 0} </td>
                   <td>{item.packagenumber ? `${item.packagenumber}` : 0}</td>
-                  <td>{item.weight ? `${item.weight}` : 0} kg</td>
+                  <td>{item.weight ? `${item.weight}` : 0} </td>
 
-                  <td>{item.co2 ? `${item.co2}` : 0} mg</td>
+                  <td>{item.co2 ? `${item.co2}` : 0} </td>
 
                   <td>{item.delivery_count ? `${item.delivery_count}` : 0}</td>
                 </tr>
