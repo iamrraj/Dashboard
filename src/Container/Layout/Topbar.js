@@ -3,7 +3,6 @@ import head from "../../img/head.png";
 import { withRouter } from "react-router-dom";
 import Notification from "./Notification";
 import User from "../User";
-import config from "../../Views/config";
 
 class Topbar extends Component {
   constructor(props) {
@@ -23,28 +22,6 @@ class Topbar extends Component {
     window.location.reload();
   }
 
-  // Get Data from filter date
-  getData = async e => {
-    try {
-      // alert("Your favorite flavor is: " + this.state.value);
-      const edd = e.target.elements.edd.value;
-      const idd = e.target.elements.idd.value;
-      const modee = e.target.elements.modee.value;
-      const from = e.target.elements.from.value;
-      const to = e.target.elements.to.value;
-      e.preventDefault();
-      const res = await fetch(
-        `${config.apiUrl.report}?too__lte=${to}&fromm__gte=${from}&user=${idd}&mode=${modee}&electric_bike=${edd}`
-      );
-      const movies = await res.json();
-      console.log(movies);
-      this.setState({
-        movies
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
   render() {
     const { loggedIn } = this.props;
     return (

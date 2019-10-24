@@ -39,7 +39,6 @@ function DateForm({ loaddata }) {
               name="to"
               id="enddate"
               min={fromDate}
-              id="enddate"
               value={toDate}
               max={moment().format("YYYY-MM-DD")}
               placeholder="Select Date"

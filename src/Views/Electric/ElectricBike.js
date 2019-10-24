@@ -67,7 +67,7 @@ class ElectricBike extends Component {
                 <th scope="col" className="t">
                   Identyfikator
                 </th>
-                <th scope="col">
+                <th scope="col" id="tl">
                   Dystans <br></br> (km)
                 </th>
                 <th scope="col">
@@ -82,16 +82,22 @@ class ElectricBike extends Component {
                   Masa przesyłek listowych<br></br> (kg)
                 </th>
 
-                <th scope="col">Ilość paczek</th>
+                <th scope="col" id="tl">
+                  Ilość paczek
+                </th>
 
-                <th scope="col">
+                <th scope="col " id="tl">
                   Masa paczek<br></br> (kg)
                 </th>
                 <th scope="col">
                   Zaoszczędzone CO2 <br></br> (mg)
                 </th>
-                <th scope="col">Liczba dobrań </th>
-                <th scope="col">Liczba uzytkowników</th>
+                <th scope="col" id="tl">
+                  Liczba dobrań{" "}
+                </th>
+                <th scope="col" id="tl">
+                  Liczba uzytkowników
+                </th>
               </tr>
             </thead>
 

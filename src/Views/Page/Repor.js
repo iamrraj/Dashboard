@@ -135,6 +135,7 @@ export class Repor extends Component {
                     <select
                       name="selectOptions"
                       multiple={true}
+                      id="selectOptions"
                       className="form-control"
                       onChange={this.handleChange}
                       value={this.state.selectOptions}
@@ -147,7 +148,6 @@ export class Repor extends Component {
                         <option value={c.pk}>{c.user1}</option>
                       ))}
                     </select>
-                    {/* <div>{this.state.selectOptions.join(", ")}</div> */}
 
                     <br></br>
                     <label>Select Mode</label>

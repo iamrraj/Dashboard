@@ -158,7 +158,19 @@ class ReportPage extends Component {
             ) : (
               <div>
                 {/* <p style={{ textAlign: "center" }}>BRAK DANYCH</p> */}
-                <h5>BRAK DANYCH</h5>
+                <center>
+                  <p
+                    className="font-weight-bolder"
+                    style={{
+                      position: "relative",
+                      padding: "5px",
+                      left: "500px",
+                      fontSize:"20px"
+                    }}
+                  >
+                    BRAK DANYCH
+                  </p>
+                </center>
               </div>
             )}
             <thead className="thead">

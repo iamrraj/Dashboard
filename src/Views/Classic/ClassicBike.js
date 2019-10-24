@@ -59,27 +59,29 @@ class ClassicBike extends Component {
                 <th scope="col" className="t">
                   Lp
                 </th>
-                <th scope="col" style={{ margin: "40px" }}>
+                <th scope="col" id="tl">
                   Identyfikator roweru
                 </th>
-                <th scope="col" style={{ width: "90px" }}>
+                <th scope="col" id="tl" style={{ width: "90px" }}>
                   Dystans <br></br>(km)
                 </th>
                 <th scope="col" style={{ width: "100px" }}>
                   Czas w ruchu <br></br> (g : min)
                 </th>
-                <th scope="col" style={{ width: "100px" }}>
+                <th scope="col" id="tl" style={{ width: "100px" }}>
                   Średnia prędkość <br></br> (km/h)
                 </th>
                 <th scope="col">Ilość przesyłek listowych</th>
-                <th scope="col">
+                <th scope="col" id="tl">
                   Masa przesyłek listowych(kg) <br></br>
                 </th>
-                <th scope="col">Ilość paczek</th>
-                <th scope="col" style={{ width: "100px" }}>
+                <th id="tl" scope="col">
+                  Ilość paczek
+                </th>
+                <th id="tl" scope="col" style={{ width: "100px" }}>
                   Masa paczek (kg)
                 </th>
-                <th scope="col" style={{ width: "100px" }}>
+                <th id="tl" scope="col" style={{ width: "100px" }}>
                   Zaoszczędzone <br></br>Co2 (mg)
                 </th>
                 <th scope="col">Liczba dobrań przesyłek </th>

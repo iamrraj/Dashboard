@@ -1,9 +1,13 @@
 import $ from "jquery";
 
-$("#exampleModal").on("submit", function() {
-  $("#StudentModal").on("hide.bs.modal", function(e) {
-    e.preventDefault();
-  });
+// $("#exampleModal").on("submit", function() {
+//   $("#StudentModal").on("hide.bs.modal", function(e) {
+//     e.preventDefault();
+//   });
+// });
+
+$("#select_all").click(function() {
+  $("#selectOptions option").prop("selected", true);
 });
 
 // Get Data from filter date and This All Data Belongs to Report Page To display the data by
