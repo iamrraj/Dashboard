@@ -10,7 +10,7 @@
     "leaflet": "^1.5.1",
     "local-storage": "^2.0.0",
     "mdbreact": "^4.19.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "multiselect-dropdown-react": "^1.0.5",
     "prop-types": "^15.7.2",
     "qs": "^6.9.0",
