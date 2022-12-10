@@ -13,7 +13,7 @@
     "moment": "^2.24.0",
     "multiselect-dropdown-react": "^1.0.5",
     "prop-types": "^15.7.2",
-    "qs": "^6.9.0",
+    "qs": "^6.9.7",
     "react": "^16.9.0",
     "react-admin": "^2.9.7",
     "react-bootstrap": "^1.0.0-beta.14",
